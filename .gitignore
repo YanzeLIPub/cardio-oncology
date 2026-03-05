@@ -1,0 +1,46 @@
+# Virtual environment
+.venv/
+
+# Raw data & intermediate results
+data/
+outputs/
+MIMIC-3/data/
+MIMIC-3/results/
+mimic-iii-clinical-database-1.4/
+Manuscript/Submit/
+Manuscript/v11/
+Manuscript/v12/
+Manuscript/V7/
+Manuscript/V8/
+MERGE/figures_main/
+MERGE/figures_supplementary/
+Manuscript/v13/figures/
+Manuscript/v13/files/
+
+# Generated files
+*.pkl
+*.parquet
+*.feather
+*.csv
+*.xlsx
+*.h5
+*.hdf5
+*.npy
+*.npz
+*.pdf
+*.png
+*.svg
+*.eps
+*.docx
+*.doc
+*.enl
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Patch / audit scripts (not part of reproducible pipeline)
+_*.py
+Manuscript/v14/
