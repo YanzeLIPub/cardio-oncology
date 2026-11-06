@@ -1,0 +1,64 @@
+{
+  "version": "native_input_missingness_sensitivity_v1",
+  "scope": "Patient-isolated internal sensitivity using previously studied cohorts, original labels and original full-record inputs; no OMOP, harmonized transfer, prospective endpoint or new external validation.",
+  "cohorts": [
+    "SCH",
+    "WHU",
+    "MIMIC"
+  ],
+  "expected_counts": {
+    "SCH": [
+      38509,
+      38509,
+      1323,
+      104
+    ],
+    "WHU": [
+      2562,
+      2562,
+      281,
+      104
+    ],
+    "MIMIC": [
+      9946,
+      6783,
+      4462,
+      43
+    ]
+  },
+  "roles": "Reuse exact saved 5-fold patient roles from original_v5_independent_validation_v1: 0 outer test, 1 calibration, 2 inner fit, 3 inner stop; final sensitivity models refit all non-test patients. No calibration model is added.",
+  "variants": [
+    "value_indicator_ensemble",
+    "native_xgb"
+  ],
+  "value_indicator_ensemble": "Original numeric preprocessing plus binary NaN indicators for nominal inputs having both observed and missing values in the fitting partition; 50:50 XGBoost/RandomForest probabilities. Indicators are generated before imputation. Constant indicators are not appended. All nominal input types are eligible, not laboratory orders alone.",
+  "native_xgb": "Original NaN values passed to XGBoost; retain the original column order and fit-partition empty-column rule (Chinese nominal columns retained; MIMIC all-empty columns dropped). Compare with the frozen original-input xgb_full, not with the ensemble.",
+  "preprocessing": "China retains original constant-zero numeric filling; MIMIC median imputation learned only from fitting rows and fitting-row empty-column removal. Native XGBoost does not fill NaNs. No zero value is reclassified as missing.",
+  "model_configuration": "Exact frozen xgb/rf parameters and weighting policies from original_v5_independent_validation_v1/protocol.json; maximum 300 rounds, inner early stopping 20. Each variant independently selects its rounds using saved inner-fit/inner-stop roles, then refits all outer-training patients.",
+  "max_threads": 4,
+  "seed_policy": "China XGBoost/RandomForest seed 42; MIMIC 1-based fold; outer roles unchanged.",
+  "metrics": [
+    "auc",
+    "average_precision",
+    "brier",
+    "e_over_o"
+  ],
+  "paired_comparisons": [
+    [
+      "value_indicator_ensemble",
+      "baseline_ensemble"
+    ],
+    [
+      "native_xgb",
+      "baseline_xgb"
+    ]
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261015,
+  "bootstrap_unit": "Patient with all admissions receiving the same sampled patient multiplicity; use identical draws across all methods within a cohort.",
+  "intervals": "95% percentile conditional on fixed OOF predictions; no model refitting or multiplicity adjustment.",
+  "feature_subset_sensitivity": "Not included in this protocol; no coverage threshold or selected subset is chosen from performance.",
+  "shap": "Store exact XGBoost pred_contribs on held-out outer-test rows only, with sum-to-margin check. These explain the XGBoost component in log-odds space, not the ensemble probability, clinical causation or missingness-adjusted importance stability.",
+  "no_outcome_based_feature_selection": true,
+  "no_new_patient_rows_in_public_outputs": true
+}

@@ -1,0 +1,69 @@
+{
+  "version": "R3 outcome-definition-independent demographic reference v1",
+  "reviewer_scope": "R3 section 2.2 D0013 direct and indirect outcome information paths",
+  "purpose": "Execute a source-rebuilt strict-input reference and audit prohibited paths; do not certify original laboratory models leakage-free.",
+  "new_predictors": [
+    "age at earliest dated source observation in China or admission in MIMIC",
+    "recorded sex at that same observation or source patient registry"
+  ],
+  "excluded_predictor_families": [
+    "all laboratory values",
+    "diagnosis codes and text",
+    "cardiac admission flag",
+    "outcome components",
+    "death and discharge variables",
+    "treatment and procedures",
+    "observation density and missingness indicators",
+    "regional variables",
+    "identifiers and absolute dates"
+  ],
+  "population": "Existing native cohort and original diagnosis labels retained; complete-case source-rebuilt demographics only. Do not select by outcome or AUC.",
+  "source_rules": "Do not forward-fill later observations. Conflicting same-earliest-time values and undocumented sex codes remain missing. No demographic imputation; exclude rows with either required value missing.",
+  "folds": "Reuse frozen five-fold patient roles from original_v5_independent_validation_v1, restricted to eligible complete cases; test patients disjoint from all training roles.",
+  "primary_model": "Same fixed 50:50 XGBoost and random forest architecture as the prior patient-isolated validation; inner-training/early-stopping roles reused. Refit outer-training only. No outer-test selection or tuning.",
+  "xgb": {
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "max_rounds": 300,
+    "early_stopping_rounds": 20,
+    "tree_method": "hist"
+  },
+  "rf": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+  },
+  "secondary_reference": "L2 logistic C=1 with training-only standardization using the same two source-rebuilt covariates",
+  "comparisons": "Previous full-input patient-isolated OOF and previous age-only OOF restricted to exact same eligible rows. Differences describe reference discrimination, not causal effects of leakage; feature construction and training populations can differ.",
+  "metrics": [
+    "ROC AUC",
+    "average precision",
+    "Brier score"
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261021,
+  "bootstrap_unit": "patient, retaining every admission and multiplicity in a resampled patient cluster",
+  "uncertainty": "Percentile 95% intervals conditional on fixed OOF predictions; no refitting uncertainty",
+  "engineering_checks": [
+    "predictor allowlist exactly two variables",
+    "no nonfinite values in eligible inputs",
+    "patient-role isolation",
+    "one test prediction per eligible row",
+    "fit/preprocessing API accepts training arrays only",
+    "heldout label mutation leaves fitted reference unchanged",
+    "input and output hashes"
+  ],
+  "unresolved_by_design": [
+    "onset and first result availability for original laboratories",
+    "event-free eligibility",
+    "clinical endpoint adjudication and complete negative capture",
+    "future-dependent original cohort selection and survivor conditioning",
+    "clinical absence of indirect disease-related signal in original models"
+  ],
+  "no_omop": true,
+  "no_original_auc_or_figure_replacement": true,
+  "no_claim_of_complete_R3_closure": true,
+  "private_outputs_not_for_submission": true
+}

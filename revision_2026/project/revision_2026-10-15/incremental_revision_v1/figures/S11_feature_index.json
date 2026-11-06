@@ -1,0 +1,845 @@
+{
+  "China": [
+    {
+      "index": 1,
+      "name": "Angle",
+      "SCH_missing_percent": 82.60146978628372,
+      "WHU_missing_percent": 82.08430913348947
+    },
+    {
+      "index": 2,
+      "name": "C反应蛋白",
+      "SCH_missing_percent": 92.43034095925627,
+      "WHU_missing_percent": 99.96096799375488
+    },
+    {
+      "index": 3,
+      "name": "D-二聚体",
+      "SCH_missing_percent": 11.32722220779558,
+      "WHU_missing_percent": 48.90710382513661
+    },
+    {
+      "index": 4,
+      "name": "EPL",
+      "SCH_missing_percent": 82.60146978628372,
+      "WHU_missing_percent": 78.22014051522248
+    },
+    {
+      "index": 5,
+      "name": "G",
+      "SCH_missing_percent": 82.60146978628372,
+      "WHU_missing_percent": 78.22014051522248
+    },
+    {
+      "index": 6,
+      "name": "IFN-γ",
+      "SCH_missing_percent": 99.98961281778286,
+      "WHU_missing_percent": 96.56518345042934
+    },
+    {
+      "index": 7,
+      "name": "K",
+      "SCH_missing_percent": 82.60146978628372,
+      "WHU_missing_percent": 78.22014051522248
+    },
+    {
+      "index": 8,
+      "name": "K轻链",
+      "SCH_missing_percent": 99.7974499467657,
+      "WHU_missing_percent": 98.20452771272443
+    },
+    {
+      "index": 9,
+      "name": "LY30",
+      "SCH_missing_percent": 82.60406658183801,
+      "WHU_missing_percent": 78.22014051522248
+    },
+    {
+      "index": 10,
+      "name": "MA",
+      "SCH_missing_percent": 82.60146978628372,
+      "WHU_missing_percent": 78.22014051522248
+    },
+    {
+      "index": 11,
+      "name": "R",
+      "SCH_missing_percent": 82.60146978628372,
+      "WHU_missing_percent": 83.80171740827478
+    },
+    {
+      "index": 12,
+      "name": "α-羟丁酸脱氢酶",
+      "SCH_missing_percent": 6.411488223532161,
+      "WHU_missing_percent": 33.41139734582357
+    },
+    {
+      "index": 13,
+      "name": "丙氨酸氨基转移酶",
+      "SCH_missing_percent": 42.23428289490768,
+      "WHU_missing_percent": 1.3270882123341141
+    },
+    {
+      "index": 14,
+      "name": "乙肝e抗体",
+      "SCH_missing_percent": 96.38266379287958,
+      "WHU_missing_percent": 51.60031225604996
+    },
+    {
+      "index": 15,
+      "name": "乙肝e抗原",
+      "SCH_missing_percent": 99.74811083123426,
+      "WHU_missing_percent": 99.84387197501951
+    },
+    {
+      "index": 16,
+      "name": "乙肝核心抗体",
+      "SCH_missing_percent": 99.99740320444572,
+      "WHU_missing_percent": 64.32474629195941
+    },
+    {
+      "index": 17,
+      "name": "乙肝表面抗原",
+      "SCH_missing_percent": 99.99740320444572,
+      "WHU_missing_percent": 94.84777517564403
+    },
+    {
+      "index": 18,
+      "name": "乳酸脱氢酶",
+      "SCH_missing_percent": 42.08626554831338,
+      "WHU_missing_percent": 5.425448868071818
+    },
+    {
+      "index": 19,
+      "name": "人附睾蛋白4",
+      "SCH_missing_percent": 93.60668934534783,
+      "WHU_missing_percent": 100.0
+    },
+    {
+      "index": 20,
+      "name": "低密度脂蛋白胆固醇",
+      "SCH_missing_percent": 45.07517723129658,
+      "WHU_missing_percent": 12.568306010928962
+    },
+    {
+      "index": 21,
+      "name": "促甲状腺素受体抗体",
+      "SCH_missing_percent": 97.88880521436548,
+      "WHU_missing_percent": 99.96096799375488
+    },
+    {
+      "index": 22,
+      "name": "免疫球蛋白A",
+      "SCH_missing_percent": 99.77407878677712,
+      "WHU_missing_percent": 88.2903981264637
+    },
+    {
+      "index": 23,
+      "name": "免疫球蛋白G",
+      "SCH_missing_percent": 99.77407878677712,
+      "WHU_missing_percent": 88.25136612021858
+    },
+    {
+      "index": 24,
+      "name": "免疫球蛋白M",
+      "SCH_missing_percent": 99.77407878677712,
+      "WHU_missing_percent": 88.2903981264637
+    },
+    {
+      "index": 25,
+      "name": "前白蛋白",
+      "SCH_missing_percent": 6.481601703497884,
+      "WHU_missing_percent": 14.519906323185012
+    },
+    {
+      "index": 26,
+      "name": "叶酸",
+      "SCH_missing_percent": 99.95585447557713,
+      "WHU_missing_percent": 95.39422326307572
+    },
+    {
+      "index": 27,
+      "name": "同型半胱氨酸",
+      "SCH_missing_percent": 73.90999506608846,
+      "WHU_missing_percent": 87.47072599531616
+    },
+    {
+      "index": 28,
+      "name": "天门冬氨酸氨基转移酶",
+      "SCH_missing_percent": 42.2135085304734,
+      "WHU_missing_percent": 0.5854800936768151
+    },
+    {
+      "index": 29,
+      "name": "孕酮",
+      "SCH_missing_percent": 99.97143524890285,
+      "WHU_missing_percent": 100.0
+    },
+    {
+      "index": 30,
+      "name": "尿比重",
+      "SCH_missing_percent": 47.687553558908306,
+      "WHU_missing_percent": 20.29664324746292
+    },
+    {
+      "index": 31,
+      "name": "尿素",
+      "SCH_missing_percent": 69.70837985925368,
+      "WHU_missing_percent": 87.66588602654176
+    },
+    {
+      "index": 32,
+      "name": "尿素氮",
+      "SCH_missing_percent": 60.9987275701784,
+      "WHU_missing_percent": 1.639344262295082
+    },
+    {
+      "index": 33,
+      "name": "尿胆原",
+      "SCH_missing_percent": 45.01285413799371,
+      "WHU_missing_percent": 96.68227946916471
+    },
+    {
+      "index": 34,
+      "name": "尿酸",
+      "SCH_missing_percent": 42.11223350385624,
+      "WHU_missing_percent": 0.897736143637783
+    },
+    {
+      "index": 35,
+      "name": "总胆固醇",
+      "SCH_missing_percent": 44.69085148926225,
+      "WHU_missing_percent": 79.07884465261515
+    },
+    {
+      "index": 36,
+      "name": "总胆汁酸",
+      "SCH_missing_percent": 22.397361655716846,
+      "WHU_missing_percent": 12.724434035909447
+    },
+    {
+      "index": 37,
+      "name": "总胆红素",
+      "SCH_missing_percent": 40.55415617128463,
+      "WHU_missing_percent": 1.3270882123341141
+    },
+    {
+      "index": 38,
+      "name": "总蛋白",
+      "SCH_missing_percent": 42.107039912747666,
+      "WHU_missing_percent": 1.209992193598751
+    },
+    {
+      "index": 39,
+      "name": "抗RA33抗体",
+      "SCH_missing_percent": 99.97403204445715,
+      "WHU_missing_percent": 99.88290398126463
+    },
+    {
+      "index": 40,
+      "name": "氯",
+      "SCH_missing_percent": 42.673141343582024,
+      "WHU_missing_percent": 0.819672131147541
+    },
+    {
+      "index": 41,
+      "name": "淀粉样蛋白A",
+      "SCH_missing_percent": 98.32506686748552,
+      "WHU_missing_percent": 73.92661982825918
+    },
+    {
+      "index": 42,
+      "name": "淀粉酶",
+      "SCH_missing_percent": 6.4893920901607425,
+      "WHU_missing_percent": 93.24746291959407
+    },
+    {
+      "index": 43,
+      "name": "球蛋白",
+      "SCH_missing_percent": 6.476408112389312,
+      "WHU_missing_percent": 1.249024199843872
+    },
+    {
+      "index": 44,
+      "name": "甘油三脂",
+      "SCH_missing_percent": 44.69085148926225,
+      "WHU_missing_percent": 66.58860265417643
+    },
+    {
+      "index": 45,
+      "name": "甲状腺球蛋白",
+      "SCH_missing_percent": 68.51645069983641,
+      "WHU_missing_percent": 95.58938329430133
+    },
+    {
+      "index": 46,
+      "name": "甲胎蛋白",
+      "SCH_missing_percent": 82.94684359500376,
+      "WHU_missing_percent": 44.37939110070258
+    },
+    {
+      "index": 47,
+      "name": "病理管型",
+      "SCH_missing_percent": 63.29429484016723,
+      "WHU_missing_percent": 91.06167056986729
+    },
+    {
+      "index": 48,
+      "name": "癌胚抗原",
+      "SCH_missing_percent": 49.27419564257706,
+      "WHU_missing_percent": 80.99141295862607
+    },
+    {
+      "index": 49,
+      "name": "白细胞",
+      "SCH_missing_percent": 45.77890882650809,
+      "WHU_missing_percent": 0.78064012490242
+    },
+    {
+      "index": 50,
+      "name": "白细胞介素-10",
+      "SCH_missing_percent": 99.95585447557713,
+      "WHU_missing_percent": 96.2919594067135
+    },
+    {
+      "index": 51,
+      "name": "白细胞介素-2",
+      "SCH_missing_percent": 99.91170895115428,
+      "WHU_missing_percent": 96.21389539422326
+    },
+    {
+      "index": 52,
+      "name": "白细胞介素-4",
+      "SCH_missing_percent": 99.99740320444572,
+      "WHU_missing_percent": 96.37002341920375
+    },
+    {
+      "index": 53,
+      "name": "白细胞介素-6",
+      "SCH_missing_percent": 99.04178244046847,
+      "WHU_missing_percent": 96.25292740046838
+    },
+    {
+      "index": 54,
+      "name": "白蛋白",
+      "SCH_missing_percent": 42.0654911838791,
+      "WHU_missing_percent": 1.249024199843872
+    },
+    {
+      "index": 55,
+      "name": "直接胆红素",
+      "SCH_missing_percent": 5.873951543794957,
+      "WHU_missing_percent": 7.845433255269321
+    },
+    {
+      "index": 56,
+      "name": "睾酮",
+      "SCH_missing_percent": 98.52761692071982,
+      "WHU_missing_percent": 98.67291178766588
+    },
+    {
+      "index": 57,
+      "name": "碱性磷酸酶",
+      "SCH_missing_percent": 40.5983016957075,
+      "WHU_missing_percent": 1.3270882123341141
+    },
+    {
+      "index": 58,
+      "name": "磷",
+      "SCH_missing_percent": 42.69131891246202,
+      "WHU_missing_percent": 1.56128024980484
+    },
+    {
+      "index": 59,
+      "name": "神经元特异性烯醇化酶",
+      "SCH_missing_percent": 58.453867926978106,
+      "WHU_missing_percent": 75.8391881342701
+    },
+    {
+      "index": 60,
+      "name": "类风湿因子",
+      "SCH_missing_percent": 100.0,
+      "WHU_missing_percent": 99.92193598750976
+    },
+    {
+      "index": 61,
+      "name": "糖化血红蛋白",
+      "SCH_missing_percent": 99.69877171570283,
+      "WHU_missing_percent": 69.28181108508977
+    },
+    {
+      "index": 62,
+      "name": "糖类抗原CA125",
+      "SCH_missing_percent": 76.05235139837441,
+      "WHU_missing_percent": 82.04527712724435
+    },
+    {
+      "index": 63,
+      "name": "糖类抗原CA15-3",
+      "SCH_missing_percent": 88.65979381443299,
+      "WHU_missing_percent": 95.82357533177205
+    },
+    {
+      "index": 64,
+      "name": "糖类抗原CA19-9",
+      "SCH_missing_percent": 56.82827390999506,
+      "WHU_missing_percent": 90.5152224824356
+    },
+    {
+      "index": 65,
+      "name": "红细胞",
+      "SCH_missing_percent": 55.71165182165208,
+      "WHU_missing_percent": 0.78064012490242
+    },
+    {
+      "index": 66,
+      "name": "红细胞压积",
+      "SCH_missing_percent": 41.28125892648472,
+      "WHU_missing_percent": 0.78064012490242
+    },
+    {
+      "index": 67,
+      "name": "细胞角蛋白19片段",
+      "SCH_missing_percent": 55.08582409306916,
+      "WHU_missing_percent": 74.27790788446526
+    },
+    {
+      "index": 68,
+      "name": "维生素B12",
+      "SCH_missing_percent": 99.97143524890285,
+      "WHU_missing_percent": 95.58938329430133
+    },
+    {
+      "index": 69,
+      "name": "肌红蛋白",
+      "SCH_missing_percent": 100.0,
+      "WHU_missing_percent": 99.41451990632318
+    },
+    {
+      "index": 70,
+      "name": "肌酐",
+      "SCH_missing_percent": 41.959022566153365,
+      "WHU_missing_percent": 28.220140515222482
+    },
+    {
+      "index": 71,
+      "name": "肌酸激酶",
+      "SCH_missing_percent": 40.691786335661796,
+      "WHU_missing_percent": 5.6596409055425445
+    },
+    {
+      "index": 72,
+      "name": "胆碱酯酶",
+      "SCH_missing_percent": 6.4867952946064555,
+      "WHU_missing_percent": 99.96096799375488
+    },
+    {
+      "index": 73,
+      "name": "胱抑素C",
+      "SCH_missing_percent": 25.54987145862006,
+      "WHU_missing_percent": 25.80015612802498
+    },
+    {
+      "index": 74,
+      "name": "脂蛋白相关磷脂酶A2",
+      "SCH_missing_percent": 72.06886701809967,
+      "WHU_missing_percent": 99.92193598750976
+    },
+    {
+      "index": 75,
+      "name": "腺苷脱氨酶",
+      "SCH_missing_percent": 6.51016645459503,
+      "WHU_missing_percent": 96.25292740046838
+    },
+    {
+      "index": 76,
+      "name": "葡萄糖",
+      "SCH_missing_percent": 42.766625983536315,
+      "WHU_missing_percent": 92.31069476971116
+    },
+    {
+      "index": 77,
+      "name": "血小板压积",
+      "SCH_missing_percent": 4.736555091017684,
+      "WHU_missing_percent": 11.943793911007026
+    },
+    {
+      "index": 78,
+      "name": "血栓调节蛋白",
+      "SCH_missing_percent": 99.63125503129139,
+      "WHU_missing_percent": 100.0
+    },
+    {
+      "index": 79,
+      "name": "血氨",
+      "SCH_missing_percent": 100.0,
+      "WHU_missing_percent": 94.69164715066356
+    },
+    {
+      "index": 80,
+      "name": "血红蛋白",
+      "SCH_missing_percent": 41.28125892648472,
+      "WHU_missing_percent": 0.78064012490242
+    },
+    {
+      "index": 81,
+      "name": "补体C3",
+      "SCH_missing_percent": 99.97662884001143,
+      "WHU_missing_percent": 88.2903981264637
+    },
+    {
+      "index": 82,
+      "name": "补体C4",
+      "SCH_missing_percent": 99.97662884001143,
+      "WHU_missing_percent": 88.32943013270882
+    },
+    {
+      "index": 83,
+      "name": "转铁蛋白",
+      "SCH_missing_percent": 99.98961281778286,
+      "WHU_missing_percent": 100.0
+    },
+    {
+      "index": 84,
+      "name": "载脂蛋白AⅠ",
+      "SCH_missing_percent": 58.59409488690955,
+      "WHU_missing_percent": 73.224043715847
+    },
+    {
+      "index": 85,
+      "name": "载脂蛋白B",
+      "SCH_missing_percent": 40.45547794022177,
+      "WHU_missing_percent": 73.224043715847
+    },
+    {
+      "index": 86,
+      "name": "钙",
+      "SCH_missing_percent": 42.68352852579916,
+      "WHU_missing_percent": 0.819672131147541
+    },
+    {
+      "index": 87,
+      "name": "钠",
+      "SCH_missing_percent": 42.15897582383339,
+      "WHU_missing_percent": 0.819672131147541
+    },
+    {
+      "index": 88,
+      "name": "钾",
+      "SCH_missing_percent": 42.16157261938768,
+      "WHU_missing_percent": 0.819672131147541
+    },
+    {
+      "index": 89,
+      "name": "铁蛋白",
+      "SCH_missing_percent": 98.03941935651406,
+      "WHU_missing_percent": 50.35128805620609
+    },
+    {
+      "index": 90,
+      "name": "镁",
+      "SCH_missing_percent": 6.985380041029369,
+      "WHU_missing_percent": 1.56128024980484
+    },
+    {
+      "index": 91,
+      "name": "降钙素原",
+      "SCH_missing_percent": 99.54815757355424,
+      "WHU_missing_percent": 85.90944574551132
+    },
+    {
+      "index": 92,
+      "name": "雌二醇",
+      "SCH_missing_percent": 99.95066088446856,
+      "WHU_missing_percent": 99.02419984387197
+    },
+    {
+      "index": 93,
+      "name": "高密度脂蛋白胆固醇",
+      "SCH_missing_percent": 45.07777402685086,
+      "WHU_missing_percent": 12.568306010928962
+    },
+    {
+      "index": 94,
+      "name": "鳞状细胞癌相关抗原",
+      "SCH_missing_percent": 68.97608351294502,
+      "WHU_missing_percent": 87.97814207650273
+    },
+    {
+      "index": 95,
+      "name": "性别",
+      "SCH_missing_percent": 0.0,
+      "WHU_missing_percent": 0.0
+    },
+    {
+      "index": 96,
+      "name": "年龄",
+      "SCH_missing_percent": 0.0,
+      "WHU_missing_percent": 0.0
+    },
+    {
+      "index": 97,
+      "name": "上次诊断",
+      "SCH_missing_percent": 100.0,
+      "WHU_missing_percent": 100.0
+    },
+    {
+      "index": 98,
+      "name": "上次入院科室",
+      "SCH_missing_percent": 100.0,
+      "WHU_missing_percent": 100.0
+    },
+    {
+      "index": 99,
+      "name": "上次出院科室",
+      "SCH_missing_percent": 100.0,
+      "WHU_missing_percent": 100.0
+    },
+    {
+      "index": 100,
+      "name": "人均地区生产总值(元)",
+      "SCH_missing_percent": 1.4723830792801682,
+      "WHU_missing_percent": 0.039032006245121
+    },
+    {
+      "index": 101,
+      "name": "职工平均工资(元)",
+      "SCH_missing_percent": 22.16105326027682,
+      "WHU_missing_percent": 0.039032006245121
+    },
+    {
+      "index": 102,
+      "name": "医院、卫生院数(个)",
+      "SCH_missing_percent": 1.4723830792801682,
+      "WHU_missing_percent": 0.039032006245121
+    },
+    {
+      "index": 103,
+      "name": "医院、卫生院床位数(张)",
+      "SCH_missing_percent": 1.4723830792801682,
+      "WHU_missing_percent": 0.039032006245121
+    },
+    {
+      "index": 104,
+      "name": "医生数(人)",
+      "SCH_missing_percent": 1.4723830792801682,
+      "WHU_missing_percent": 0.039032006245121
+    }
+  ],
+  "MIMIC": [
+    {
+      "index": 1,
+      "name": "Age",
+      "missing_percent": 0.0
+    },
+    {
+      "index": 2,
+      "name": "Apolipoprotein B",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 3,
+      "name": "LDL Cholesterol",
+      "missing_percent": 90.89081037603056
+    },
+    {
+      "index": 4,
+      "name": "Total Cholesterol",
+      "missing_percent": 89.75467524633018
+    },
+    {
+      "index": 5,
+      "name": "Cholinesterase",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 6,
+      "name": "Albumin",
+      "missing_percent": 38.9000603257591
+    },
+    {
+      "index": 7,
+      "name": "Total Bile Acids",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 8,
+      "name": "Prealbumin",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 9,
+      "name": "D-Dimer",
+      "missing_percent": 95.75708827669415
+    },
+    {
+      "index": 10,
+      "name": "CYFRA 21-1",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 11,
+      "name": "Cystatin C",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 12,
+      "name": "Triglycerides",
+      "missing_percent": 85.12970038206315
+    },
+    {
+      "index": 13,
+      "name": "Adenosine Deaminase",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 14,
+      "name": "Globulin",
+      "missing_percent": 92.93183189221797
+    },
+    {
+      "index": 15,
+      "name": "Plateletcrit",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 16,
+      "name": "SCC Antigen",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 17,
+      "name": "Direct Bilirubin",
+      "missing_percent": 88.63864870299618
+    },
+    {
+      "index": 18,
+      "name": "No. of Physicians",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 19,
+      "name": "Amylase",
+      "missing_percent": 69.59581741403579
+    },
+    {
+      "index": 20,
+      "name": "Hospital Beds",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 21,
+      "name": "Glucose",
+      "missing_percent": 1.7896641866076817
+    },
+    {
+      "index": 22,
+      "name": "Sex_M",
+      "missing_percent": 0.0
+    },
+    {
+      "index": 23,
+      "name": "HDL Cholesterol",
+      "missing_percent": 90.63945304645084
+    },
+    {
+      "index": 24,
+      "name": "Magnesium",
+      "missing_percent": 2.4834104162477377
+    },
+    {
+      "index": 25,
+      "name": "α-HBDH",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 26,
+      "name": "ALT",
+      "missing_percent": 35.22018902071184
+    },
+    {
+      "index": 27,
+      "name": "GDP per Capita",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 28,
+      "name": "No. of Hospitals",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 29,
+      "name": "HBcAb",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 30,
+      "name": "LDH",
+      "missing_percent": 52.352704604866275
+    },
+    {
+      "index": 31,
+      "name": "Phosphorus",
+      "missing_percent": 4.544540518801528
+    },
+    {
+      "index": 32,
+      "name": "AST",
+      "missing_percent": 35.159863261612706
+    },
+    {
+      "index": 33,
+      "name": "Uric Acid",
+      "missing_percent": 91.75547958978484
+    },
+    {
+      "index": 34,
+      "name": "Alpha-Fetoprotein",
+      "missing_percent": 98.15001005429318
+    },
+    {
+      "index": 35,
+      "name": "Total Protein",
+      "missing_percent": 92.00683691936456
+    },
+    {
+      "index": 36,
+      "name": "HbA1c",
+      "missing_percent": 89.9155439372612
+    },
+    {
+      "index": 37,
+      "name": "Creatinine",
+      "missing_percent": 1.7393927206917354
+    },
+    {
+      "index": 38,
+      "name": "Creatine Kinase",
+      "missing_percent": 42.499497285340844
+    },
+    {
+      "index": 39,
+      "name": "Avg. Employee Wage",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 40,
+      "name": "Potassium",
+      "missing_percent": 1.6891212547757894
+    },
+    {
+      "index": 41,
+      "name": "Sodium",
+      "missing_percent": 1.7796098934244924
+    },
+    {
+      "index": 42,
+      "name": "Apolipoprotein AI",
+      "missing_percent": 100.0
+    },
+    {
+      "index": 43,
+      "name": "Ferritin",
+      "missing_percent": 84.47617132515585
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "figure": "S1",
+    "source": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/incremental_revision_v1/figures/FigureS11_incremental.pdf"
+  },
+  {
+    "figure": "S4",
+    "source": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/landmark_completion_v1/figures_main/Figure_3.svg"
+  },
+  {
+    "figure": "S5",
+    "source": "${CARDIO_PROJECT_ROOT}/FigureS2_Admission_ROC.pdf"
+  },
+  {
+    "figure": "S13",
+    "source": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/landmark_completion_v1/mimic/figures/MIMIC_measurement_window_calibration.svg"
+  },
+  {
+    "figure": "S14",
+    "source": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/landmark_completion_v1/figures_main/Figure_5.svg"
+  },
+  {
+    "figure": "S21",
+    "source": "${CARDIO_PROJECT_ROOT}/FigureS4_CrudeMACE_Tertiles.pdf"
+  },
+  {
+    "figure": "S24",
+    "source": "${CARDIO_PROJECT_ROOT}/FigureS7_ConditionalDistributions.pdf"
+  },
+  {
+    "figure": "S26",
+    "source": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/incremental_revision_v1/figures/FigureS10_incremental.pdf"
+  }
+]

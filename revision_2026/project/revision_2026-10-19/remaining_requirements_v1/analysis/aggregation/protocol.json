@@ -1,0 +1,117 @@
+{
+  "version": "matched_laboratory_aggregation_v1",
+  "date": "2026-10-19",
+  "question": "R1 item 2: assess laboratory aggregation sensitivity within the same original patients, labels, feature roster, folds and model family; not reproduce the historical encounter-versus-patient comparison.",
+  "cohorts": {
+    "SCH": {
+      "patients": 38509,
+      "positive": 1323
+    },
+    "WHU": {
+      "patients": 2562,
+      "positive": 281
+    }
+  },
+  "label": "Unchanged historical patient ever-MACE recorded-diagnosis label.",
+  "input_features": 104,
+  "laboratory_features_changed": 94,
+  "fixed_nonlaboratory_features": "The original all-record means of age, sex, five regional fields and three numerically empty prior-diagnosis/department slots remain unchanged in every aggregation variant. Thus this is NOT a complete first-visit model.",
+  "variants": [
+    "mean",
+    "first_record",
+    "first_observed",
+    "median"
+  ],
+  "variant_definitions": {
+    "mean": "Arithmetic mean of all finite numeric source values per patient/feature; exactly the frozen original mean matrix.",
+    "first_record": "Use all laboratory slots from the earliest recorded check-time row per patient, preserving its missing cells; ties use stable original CSV row order.",
+    "first_observed": "For each laboratory slot separately, select its first finite numeric value in recorded check-time order; different slots may come from different records and this is not a single baseline visit.",
+    "median": "Median of all finite numeric source values per patient/laboratory slot."
+  },
+  "temporal_guard": "Require complete parsable check timestamps for both cohorts before temporal variants are allowed; stop rather than substitute file order when dates are missing. Check time is not verified result-availability or event onset.",
+  "timestamp_tie_rule": "Stable original CSV row order within tied patient/check-time groups; no clinical meaning or ordering is asserted within ties.",
+  "roles": "Exact frozen 10/15 patient-role matrices; five outer patient-isolated folds. Inner role 2 fit and role 3 stopping; all nonzero roles for final refit. No patient or label changes.",
+  "model": "Uncalibrated equal-weight XGBoost/RandomForest ensemble with original fixed parameters. Zero fill each variant as in original Chinese model. Fit-role labels only for class weights.",
+  "xgb": {
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "max_rounds": 300,
+    "early_stopping_rounds": 20,
+    "seed": 42,
+    "tree_method": "hist"
+  },
+  "rf": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5,
+    "random_state": 42,
+    "positive_weight": "integer fit-role negatives/positives"
+  },
+  "max_threads": 2,
+  "mean_baseline": "Rebuild and require exact frozen matrix equality; replay each of 10 stored full models and require exact component and ensemble probability equality. Reuse those probabilities and models, without refitting them.",
+  "expected_new_fits": {
+    "inner_xgboost": 30,
+    "outer_xgboost": 30,
+    "outer_random_forest": 30,
+    "record_count_logistic": 10
+  },
+  "record_count_comparator": "Log1p(total processed record count) as a single feature, StandardScaler and L2 logistic C=1 fitted only to outer-training patients. Descriptive recording-process comparator, not a deployable early risk model.",
+  "subgroups": [
+    "all",
+    "1",
+    "2-4",
+    ">=5"
+  ],
+  "subgroup_interpretation": "Stratify already held-out predictions by full-record count; do not retrain or exclude patients from the main experiment. Processed rows are check-record rows, not verified distinct hospital admissions.",
+  "metrics": [
+    "auc",
+    "average_precision",
+    "brier",
+    "e_over_o"
+  ],
+  "primary_comparisons": [
+    [
+      "mean",
+      "first_record"
+    ],
+    [
+      "mean",
+      "first_observed"
+    ]
+  ],
+  "secondary_comparisons": [
+    [
+      "median",
+      "mean"
+    ],
+    [
+      "first_observed",
+      "first_record"
+    ],
+    [
+      "median",
+      "first_record"
+    ],
+    [
+      "mean",
+      "record_count"
+    ]
+  ],
+  "between_centre_comparison": "WHU minus SCH paired gains for each prespecified contrast; independent centre-specific patient bootstrap streams.",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261019,
+  "intervals": "Nominal percentile 95% intervals conditional on fixed OOF predictions, not refitting uncertainty or a causal decomposition; identical patient multiplicities across variants within a cohort and stratum.",
+  "invalid_resamples": "Omit only bootstrap draws with no positive or no negative label and record counts; do not relax strata or choose alternatives based on model performance.",
+  "original_results_retained": true,
+  "omop_or_unit_harmonization": false,
+  "early_warning_or_first_event_claims": false,
+  "prohibited": [
+    "performance-based variant choice",
+    "changed labels",
+    "public patient rows or original identifiers",
+    "claiming causal mechanism from aggregation differences",
+    "replacing original AUC or panels"
+  ]
+}

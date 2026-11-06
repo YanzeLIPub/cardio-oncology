@@ -1,0 +1,91 @@
+{
+  "version": "original_lab_input_training_side_high_coverage_v1",
+  "authorized_sequence": "Prepare, test and freeze first; train only after root confirms analysis 1 summary and replay have completed.",
+  "scope": "Within-centre patient-isolated sensitivity on the original full-record matrices and historical labels, not incident-event prediction, new external validation, harmonization or OMOP.",
+  "expected_counts": {
+    "SCH": [
+      38509,
+      38509,
+      1323,
+      104
+    ],
+    "WHU": [
+      2562,
+      2562,
+      281,
+      104
+    ],
+    "MIMIC": [
+      9946,
+      6783,
+      4462,
+      43
+    ]
+  },
+  "laboratory_inventory": "Original ordered prepared feature lists, cross-checked against preparation evidence. Exclude Chinese age, sex, three diagnosis/department text slots and five regional fields, giving 94 laboratory-labelled slots. Exclude MIMIC age, sex and five regional slots plus the known erroneous AST and HDL Cholesterol slots in every new variant, giving 34 nominal laboratory slots. This inventory does not certify specimen, assay, unit or cross-centre semantic equivalence.",
+  "variants": [
+    "all_labs",
+    "coverage_80",
+    "coverage_50"
+  ],
+  "minimum_coverage_percent": {
+    "all_labs": 0,
+    "coverage_80": 80,
+    "coverage_50": 50
+  },
+  "primary_comparison": [
+    "coverage_80",
+    "all_labs"
+  ],
+  "secondary_comparison": [
+    "coverage_50",
+    "all_labs"
+  ],
+  "context_comparisons": [
+    [
+      "coverage_80",
+      "coverage_50"
+    ],
+    [
+      "all_labs",
+      "original_full_reference"
+    ]
+  ],
+  "mimic_additional_context_comparison": [
+    "all_labs",
+    "original_exclude_AST_HDL_reference"
+  ],
+  "coverage_definition": "Number of finite original unfilled values divided by fitting rows for each eligible laboratory column: patient rows in China, admission rows in MIMIC. Threshold comparisons are inclusive and computed with integer counts. True zero values remain observed; no target/test row contributes.",
+  "selection_roles": "Select the inner model feature set from saved role 2 (inner_fit) only before evaluating role 3 (inner_stop). Independently select the final feature set from all saved nonzero roles (full_outer_training) before predicting role 0 (outer_test). Record both sets and their differences. No outcome is used to choose a coverage set.",
+  "constant_policy": "Chinese all-lab baseline retains all 94 nominal laboratory columns, including all-NaN columns that become constants under original zero filling. MIMIC removes fit-side all-empty columns as in the original independent validation. Coverage thresholds naturally exclude empty columns; no additional outcome-based or variability-based filtering is performed.",
+  "empty_set_policy": "If either fitting role has no eligible columns, mark that variant-fold not estimable without lowering the threshold or inventing probabilities. Do not calculate a full-cohort OOF metric for an incomplete variant.",
+  "cohort_policy": "Retain all rows and all labels, including rows with no observed selected laboratory. Do not impose a patient coverage filter.",
+  "preprocessing": "Preserve raw NaNs until fit-side selection. China original zero filling; MIMIC fit-side medians. No indicator, native-NaN or MICE model is added in this experiment.",
+  "model": "50:50 XGBoost and RandomForest ensemble, inherited fixed parameters and weighting from original_v5_independent_validation_v1/protocol.json. Each variant selects rounds inside training, then refits on all outer-training patients. Maximum 300 rounds, early stopping 20, no new calibration.",
+  "roles": "Reuse exact original saved five patient-isolated role vectors; 0 test, 1 prior calibration allocation, 2 inner fit, 3 inner stop. Role 1 joins final training but does not influence inner early stopping.",
+  "max_threads": 2,
+  "expected_outer_fits": 45,
+  "model_seed": "China 42; MIMIC one-based fold, identical to original revalidation.",
+  "metrics": [
+    "auc",
+    "average_precision",
+    "brier",
+    "e_over_o"
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261015,
+  "bootstrap_unit": "Patient cluster, retaining all MIMIC admissions under the same patient multiplicity. Identical draws across all variants and references within each cohort.",
+  "intervals": "Nominal 95 percent percentile intervals conditional on fixed OOF predictions, not refitting uncertainty; no multiplicity correction.",
+  "interpretation": "Primary coverage effects compare each threshold with the matched all-laboratory model, not the original demographic/regional-inclusive ensemble. Differences also include changed feature-sampling opportunities, selected rounds and fitted trees; no causal missingness effect is identified.",
+  "performance_selection_prohibited": true,
+  "raw_patient_identifiers_in_outputs": false,
+  "public_patient_rows_prohibited": true,
+  "remaining_limits": [
+    "Previously used cohorts and historical diagnosis labels",
+    "Full-record aggregation without verified event-free cutoff",
+    "MIMIC survivor-only selection and remaining unaudited laboratory mappings",
+    "Laboratory names do not establish fully verified assay definitions",
+    "No high-coverage cross-centre transfer",
+    "No prospective or clinical-use validation"
+  ]
+}

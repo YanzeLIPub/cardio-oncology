@@ -1,0 +1,27 @@
+{
+  "version": "china_earliest_demographics_v1",
+  "frozen_before_preparation": true,
+  "purpose": "Restricted control for recorded-diagnosis classification, excluding all laboratory, diagnosis, treatment, geographic and longitudinal utilization inputs.",
+  "patient_set": "Preserve SCH 38509 and WHU 2562 original patient rows and frozen order.",
+  "date": "Earliest parseable recorded check timestamp in original processed source. Abort if any source timestamp is invalid or missing, because excluding that row could select a later record.",
+  "age": "Use only age values on the earliest timestamp; numeric nonfinite or outside 0 to 120 is missing. If multiple distinct nonmissing numeric ages are present at that timestamp, set missing. Never use later values or whole-record means.",
+  "sex": "Use only numeric codes on the earliest timestamp. Require one unambiguous code in {1,2}; any other nonmissing code or discordant codes at that time makes it missing. Encode source code 1 as 0, source code 2 as 1; do not assign male/female meanings or claim sex-at-birth verification.",
+  "missingness": "Do not create missingness indicators or fill from later records; training-only imputation belongs to the separately frozen model protocol.",
+  "tie": "Consider all records with the same minimum patient timestamp, without using label or diagnostic fields to select a record.",
+  "private_output": "X as float32 [age_at_earliest_check, sex_source_code2_indicator] and groups copied from verified frozen patient order; feature_names included. No raw identifiers, labels, timestamps, diagnoses or clinical rows are exported to public reports.",
+  "prohibited_inputs": [
+    "laboratory values",
+    "lab missingness",
+    "diagnoses",
+    "department",
+    "treatment",
+    "region",
+    "dates",
+    "record counts",
+    "follow-up",
+    "probabilities",
+    "outcomes"
+  ],
+  "scope_limit": "Earliest recorded check time is not a verified admission landmark, first result availability time or event-free time. These demographic controls do not validate first-MACE prediction or certify the full laboratory model as leakage-free.",
+  "model_training": "Not performed by this preparation; root will use frozen patient roles and outcome-independent hyperparameters."
+}

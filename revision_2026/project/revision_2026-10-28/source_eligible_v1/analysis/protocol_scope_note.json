@@ -1,0 +1,24 @@
+{
+  "reason": "The analysis protocol retains generic entries from the certified 2026-10-15 helper. This note fixes the reporting scope without altering the frozen pre-fit protocol or run.",
+  "actual_run": "WHU_source_eligible only",
+  "actual_population": "2258 WHU patients with linked original raw JSON, 182 original algorithm-positive labels.304 patients excluded before all role assignment and fitting.",
+  "actual_source_rule": "Only complete failure to link original clinical/diagnosis source excludes a unit. Individual missing laboratory values or absent discharge summaries do not exclude additional units.",
+  "not_executed": [
+    "MIMIC_exclude_AST_HDL",
+    "new SCH fit",
+    "new MIMIC fit",
+    "new transfer models"
+  ],
+  "actual_paired_comparisons_on_retained_patients": [
+    "retrained primary_raw minus prior patient-isolated primary_raw fixed-score slice",
+    "retrained primary_raw minus historical original fixed-score slice",
+    "retrained base_platt minus retrained base_raw",
+    "retrained primary_raw minus retrained age",
+    "retrained primary_raw minus retrained missingness"
+  ],
+  "scope_comparisons": "All original2562, retained2258, excluded304 using fixed prior probability vectors describe case composition. Only new retrained scores exclude304 patients from model fitting.",
+  "same_sample_limit": "Paired score comparisons evaluate the same2258 retained patients, but the prior and new fitting populations, outer splits and selected boosting rounds differ. Their differences are not an isolated causal effect of excluding records.",
+  "uncertainty": "2000 patient resamples and percentile95% intervals, conditional on saved held-out probabilities; does not include model-refitting uncertainty.",
+  "algorithm_negative": "No positive event match under the unchanged specified diagnosis rule; not a clinically verified negative.",
+  "unchanged_scientific_limits": "No clinical adjudication, event onset, first result visibility, negative capture or future-event validity is established by this source-availability sensitivity."
+}

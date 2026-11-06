@@ -1,0 +1,7 @@
+{
+  "CARDIO_WORK_ROOT": "/path/to/private/revision_work",
+  "CARDIO_CHINA_ROOT": "/path/to/controlled/china",
+  "CARDIO_PIPELINE_ROOT": "/path/to/controlled/pipeline",
+  "CARDIO_NJM_ROOT": "/path/to/controlled/njm",
+  "CARDIO_MIMIC_ROOT": "/path/to/controlled/mimic"
+}

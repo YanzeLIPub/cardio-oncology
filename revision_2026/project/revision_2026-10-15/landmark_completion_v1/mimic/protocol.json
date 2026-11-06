@@ -1,0 +1,142 @@
+{
+  "version": "mimic_native_measurement_windows_v1",
+  "scope": "Admission-linked CHARTTIME measurement-window sensitivity of retrospective recorded-diagnosis classification; not incident MACE, result-available baseline, early warning or external validation",
+  "original_analysis_retained": true,
+  "omop_or_cross_centre_alignment": false,
+  "original_labels_and_cohort_filters_retained": true,
+  "runs": [
+    {
+      "name": "MIMIC_0h_original",
+      "cohort": "MIMIC",
+      "hours": 0,
+      "matrix": "MIMIC_0h.npz",
+      "drop_features": []
+    },
+    {
+      "name": "MIMIC_0h_exclude_AST_HDL",
+      "cohort": "MIMIC",
+      "hours": 0,
+      "matrix": "MIMIC_0h.npz",
+      "drop_features": [
+        "AST",
+        "HDL Cholesterol"
+      ]
+    },
+    {
+      "name": "MIMIC_24h_original",
+      "cohort": "MIMIC",
+      "hours": 24,
+      "matrix": "MIMIC_24h.npz",
+      "drop_features": []
+    },
+    {
+      "name": "MIMIC_24h_exclude_AST_HDL",
+      "cohort": "MIMIC",
+      "hours": 24,
+      "matrix": "MIMIC_24h.npz",
+      "drop_features": [
+        "AST",
+        "HDL Cholesterol"
+      ]
+    },
+    {
+      "name": "MIMIC_48h_original",
+      "cohort": "MIMIC",
+      "hours": 48,
+      "matrix": "MIMIC_48h.npz",
+      "drop_features": []
+    },
+    {
+      "name": "MIMIC_48h_exclude_AST_HDL",
+      "cohort": "MIMIC",
+      "hours": 48,
+      "matrix": "MIMIC_48h.npz",
+      "drop_features": [
+        "AST",
+        "HDL Cholesterol"
+      ]
+    }
+  ],
+  "outer_folds": 5,
+  "outer_seed": 42,
+  "outer_split": "StratifiedKFold for one-row-per-patient China; StratifiedGroupKFold for MIMIC",
+  "calibration_fraction_of_outer_train_patients": 0.25,
+  "calibration_seed_base": 1042,
+  "inner_validation_fraction_of_base_fit_patients": 0.25,
+  "inner_seed_base": 2042,
+  "inner_and_calibration_stratification": "patient-level any-positive original label, never split a patient",
+  "xgb": {
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "max_rounds": 300,
+    "early_stopping_rounds": 20
+  },
+  "rf": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+  },
+  "class_weights": "fit-role labels only; China RF integer negative/positive ratio as original; MIMIC RF balanced",
+  "primary_model": "50:50 XGBoost/RandomForest; select rounds independently inside each window's fixed inner role; refit full outer-training role; raw probability is primary",
+  "calibration_models": "separate base-fit raw model and Platt-calibrated probabilities; calibration patients excluded from base fit",
+  "calibrator": "L2 logistic C=1 on clipped probability logit, fit on calibration patients only",
+  "comparators": [
+    "L2 logistic C=1 all original features",
+    "L2 logistic C=1 missingness indicators only",
+    "L2 logistic C=1 age only"
+  ],
+  "preprocessing": "China original patient full-record mean and constant-zero imputation; MIMIC fit-role median and fit-role empty-column removal; scaling for logistic fit-role only",
+  "primary_metric": "binary ROC AUC",
+  "secondary_metrics": [
+    "average_precision",
+    "Brier",
+    "E_over_O",
+    "calibration_in_the_large",
+    "joint_calibration_intercept",
+    "joint_calibration_slope"
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261015,
+  "bootstrap_unit": "patient, retaining all admissions and patient multiplicity for MIMIC",
+  "bootstrap_interpretation": "percentile 95 percent intervals conditional on fixed out-of-fold predictions, not refitting uncertainty",
+  "paired_comparisons": [
+    "24h minus 0h, 48h minus 24h, 48h minus 0h separately for retained and excluded-column variants",
+    "excluded-column minus retained-column at each window",
+    "each window primary minus the previously completed same-fold full-cache patient-isolated primary (reference only)",
+    "base Platt minus base raw within each run",
+    "primary minus logistic and primary minus age within each run"
+  ],
+  "no_performance_based_selection": true,
+  "clinical_time_or_endpoint_repairs_claimed": false,
+  "external_validation_claimed": false,
+  "window_specification": {
+    "hours": [
+      0,
+      24,
+      48
+    ],
+    "selection_based_on_performance": false,
+    "anchor": "Original raw ADMISSIONS.ADMITTIME for hospital admission, not ICU INTIME",
+    "start": "Same-admission EDREGTIME when nonmissing and <= ADMITTIME, otherwise ADMITTIME",
+    "end": "min(ADMITTIME + hours, DISCHTIME)",
+    "boundary_inclusion": "start <= CHARTTIME <= end; invalid or missing required times contribute no laboratory measurement, never change the original label",
+    "admission_scope": "Exactly the original 9946 admissions from 6783 patients and 4462 positive original labels; no discharge-time exclusions in the primary analysis",
+    "zero_hour": "ED-registration-to-hospital-admission measurement proxy where an admissible ED anchor exists; otherwise exact-admission measurements plus original demographics. Not complete admission-time information and not confirmed result availability.",
+    "aggregation": "Preserve original ITEMID-to-Feature mapping and median VALUENUM within each selected window; derive Globulin as median Total Protein minus median Albumin, as original; do not repair units or alter any other input",
+    "outside_window": "Exclude cached pre-ED/no-ED preadmission and post-discharge measurement rows; no arbitrary retrospective lookback",
+    "availability": "CHARTTIME only, not STORETIME or clinician-visible result release",
+    "onset": "No event onset reconstructed and no event-free landmark risk set asserted"
+  },
+  "frozen_roles": "Copy and verify patient_roles.npz from original_v5_independent_validation_v1/private/runs/MIMIC_original; all six runs use these identical roles",
+  "secondary_common_subset": {
+    "definition": "DISCHTIME > ADMITTIME + 48h with valid raw timestamps",
+    "expected_admissions": 9427,
+    "application": "Apply the same subset to every completed OOF prediction array for paired evaluation only; do not retrain or redefine splits",
+    "warning": "Selected using future stay duration; not an event-free landmark risk set and not a prospective validation cohort"
+  },
+  "reference_branch": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1",
+  "preparation": "Preserve original 43 nominal columns and NaN masks; unchanged source Age/Sex_M; fit-role-only median imputation and empty-column handling",
+  "preparation_or_training_overwrites_original_files": false
+}

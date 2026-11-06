@@ -1,0 +1,93 @@
+{
+  "frozen_at_utc": "2026-10-29T08:28:14.168536+00:00",
+  "purpose": "Quantify conditional score sensitivity to hypothetical recorded-label errors; not clinical adjudication.",
+  "centres": [
+    "SCH",
+    "WHU",
+    "MIMIC"
+  ],
+  "score_channels": [
+    "original",
+    "primary_raw"
+  ],
+  "scenario_rates_of_original_positive_count": [
+    0.01,
+    0.05,
+    0.1
+  ],
+  "m_rule": "floor(rate * number of original positive labels); each arm uses this same integer count.",
+  "families": {
+    "balanced_exchange": "m original positives to negative AND m original negatives to positive; prevalence unchanged.",
+    "positive_to_negative_only": "m original positives to negative, with no opposite changes; prevalence decreases.",
+    "negative_to_positive_only": "m original negatives to positive, with no opposite changes; prevalence increases."
+  },
+  "unit": "Native analytic row: patient in SCH/WHU, admission in MIMIC. Repeated admissions are not constrained to share a hypothetical change.",
+  "bounds": "Exact deterministic minimum/maximum fixed-score AUC over exactly the stipulated number of changes in each class, using average ranks for ties.",
+  "paired_comparison": "Patient-isolated primary_raw minus historical original on identical rows with one shared hypothetical label perturbation; optimize the rank difference.",
+  "restrictions": [
+    "Rates are hypothetical scenario budgets, not observed or plausible clinical error-rate estimates.",
+    "Bounds are not confidence or credible intervals and have no probability interpretation.",
+    "Labels used to train the frozen models are unchanged; this does not evaluate refitting under corrected labels.",
+    "No clinical reviewer has classified these scenarios; no synthetic label vector is stored or substituted into the primary dataset.",
+    "No event timing, future-event prediction, independent clinical truth, common endpoints or clinical utility are certified.",
+    "Extrema for two separately reported models need not arise from the same perturbation; the paired contrast has its own shared perturbation."
+  ],
+  "no_training": true,
+  "expected_cohorts": {
+    "SCH": [
+      38509,
+      38509,
+      1323
+    ],
+    "WHU": [
+      2562,
+      2562,
+      281
+    ],
+    "MIMIC": [
+      9946,
+      6783,
+      4462
+    ]
+  },
+  "environment": {
+    "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.8.0"
+    }
+  },
+  "inputs": [
+    {
+      "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/runs/SCH_original/predictions.npz",
+      "bytes": 2291904
+    },
+    {
+      "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/runs/WHU_original/predictions.npz",
+      "bytes": 163750
+    },
+    {
+      "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/runs/MIMIC_original/predictions.npz",
+      "bytes": 559923
+    },
+    {
+      "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/prepared/SCH.npz",
+      "bytes": 4028930
+    },
+    {
+      "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/prepared/WHU.npz",
+      "bytes": 338920
+    },
+    {
+      "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/prepared/MIMIC.npz",
+      "bytes": 278770
+    }
+  ],
+  "script": {
+    "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-29/evidence_closure_v1/label_sensitivity/run_label_bounds.py",
+    "bytes": 9981
+  }
+}

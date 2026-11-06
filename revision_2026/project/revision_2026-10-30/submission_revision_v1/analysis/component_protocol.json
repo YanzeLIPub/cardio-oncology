@@ -1,0 +1,52 @@
+{
+  "schema": "recorded_label_composition_protocol_v1",
+  "status": "approved_before_new_performance_computation",
+  "date": "2026-10-21",
+  "purpose": "Recorded-label composition and definition sensitivity; not clinical adjudication, incident-event prediction or new external validation",
+  "source_prediction_run": "revision_2026-10-15/original_v5_independent_validation_v1/private/runs/MIMIC_original/predictions.npz",
+  "probability_column": "primary_raw",
+  "model": "Previously fitted 50:50 XGBoost/RandomForest composite model, five-fold patient-isolated internal OOF, uncalibrated",
+  "unit": "admission",
+  "expected_rows": 9946,
+  "expected_patients": 6783,
+  "expected_original_positive_labels": 4462,
+  "original_cohort_filters_retained": true,
+  "inpatient_deaths_excluded_in_source_cohort": true,
+  "analysis_targets": [
+    "original_union",
+    "MI",
+    "Stroke",
+    "Heart_Failure",
+    "Cardiac_Arrest",
+    "Cardiomyopathy",
+    "Unstable_Angina",
+    "union_without_cardiomyopathy_specific_contribution"
+  ],
+  "rules": "Use the exact source-code prefix lists authenticated in the 2026-10-20 label contract; any supplied diagnosis position; remove dots and uppercase but do not strip. Retain implementation limitations.",
+  "reduced_union": "Keep all 9946 admissions; only admissions positive exclusively through the Cardiomyopathy code group become zero. Unstable_Angina is retained and is nested in MI.",
+  "comparators": "Each label versus all other admissions in the same fixed cohort. Other component-positive admissions remain in the comparator if the target component is absent.",
+  "metrics": [
+    "ROC_AUC",
+    "average_precision"
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261021,
+  "bootstrap_unit": "Patient clusters sampled with replacement, retaining every admission and cluster multiplicity",
+  "bootstrap_interval": "Percentile 95% interval, conditional on fixed OOF predictions and the retained cohort, not refitting uncertainty",
+  "intervals_are_exploratory_not_multiplicity_adjusted": true,
+  "retraining": false,
+  "threshold_selection": false,
+  "component_specific_probability_calibration_claimed": false,
+  "narrow_clinical_endpoint_added": false,
+  "china": "Counts only: exact original keyword matching and case behavior, row/patient hit counts, overlap and unique contributions. No clinical subtype relabeling or new performance estimates.",
+  "context_cue_screen": "Literal same-record co-occurrence with uncertainty, negation or history terms; descriptive prompts for future review only, not clinical adjudication or corrected labels",
+  "clinical_validation": "SOP, blank CRF and adjustable precision planning only; no sampled patient package and no completed manual review",
+  "known_boundaries": [
+    "Original full-admission or full-record feature aggregation remains",
+    "Original diagnostic labels are not a clinical reference standard",
+    "Original MIMIC source feature mapping defects are not repaired in this fixed-score analysis",
+    "Original MIMIC survivor-selection restriction remains",
+    "China and MIMIC retain different labels and analysis units",
+    "No onset or clinical negative capture is validated"
+  ]
+}

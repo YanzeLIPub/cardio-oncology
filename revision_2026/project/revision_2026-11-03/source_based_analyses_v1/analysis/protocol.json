@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-03",
+  "purpose": "Supplement reviewer-requested temporal aggregation and measurement-definition analyses using retrieved source records",
+  "reviewer_items": [
+    "D0012",
+    "D0013",
+    "D0015",
+    "D0016",
+    "D0019",
+    "D0085",
+    "T0004",
+    "T0006",
+    "T0008"
+  ],
+  "whu": {
+    "population": "Original WHU cancer cohort; one earliest source-linked admission per patient with an unambiguous native encounter and admission/discharge clocks matching processed stay days",
+    "outcome": "Unchanged original patient-level recorded-MACE label; not a same-stay incident-event endpoint",
+    "features": [
+      "Age at source admission",
+      "Sex",
+      "Albumin g/L",
+      "Total protein g/L",
+      "CBC hemoglobin g/L",
+      "CBC hematocrit percent"
+    ],
+    "windows": [
+      0,
+      24,
+      48,
+      "whole_admission"
+    ],
+    "window_rule": "Only reports linked to the selected native encounter, at or after its admission and no later than min(cutoff, discharge). Admission-only is a zero-hour measurement cap; no claim that all prior-history information is absent.",
+    "primary_clock": "Outer report datetime; omit reports whose inner date disagrees with the outer calendar date",
+    "clock_sensitivities": [
+      "retain discrepant inner dates using outer report datetime",
+      "date-only end-of-day inclusion, avoiding invented midnight availability"
+    ],
+    "aggregation": "Median of deduplicated accepted numeric measurements within each cap",
+    "assay_rules": "Reuse exact names, literal units and report-context rules of the completed four-laboratory transfer analysis",
+    "assay_sensitivity": "All linked patients, all source records: exact-name numeric aggregation versus documented-unit/context aggregation. This is a new permissive-mapping comparison, not a reconstruction of the original 104-input model.",
+    "validation": "Five patient-stratified folds with fixed seed 42; same folds for all measurement caps. Training-side median imputation; logistic scaling within train; ensemble round selection within outer training only.",
+    "models": [
+      "unweighted L2 logistic C=1",
+      "50:50 XGBoost/random-forest ensemble using existing four-laboratory protocol"
+    ],
+    "uncertainty": "2000 patient bootstrap resamples of fixed OOF predictions, seed 20261103; paired comparisons share draws. Excludes refitting uncertainty."
+  },
+  "sch": {
+    "population": "Original SCH patients and stay-day keys; raw 2021-2025 seven-slot diagnosis exports",
+    "analysis": "Deduplicate identical clinical rows, combine matched same-stay diagnosis slots, tabulate component/role/POA and current-patient overlap. Separate MI/stroke, cardiac arrest, heart failure diagnosis and history codes.",
+    "interpretation": "Recorded-diagnosis composition and present-on-admission sensitivity; no manufactured onset time, no new first-MACE model",
+    "old_staging_exports": "Previously unlinked older binary tables cannot supply current-stay adjustment covariates",
+    "four_lab_transfer": "Not estimable without source-linked SCH unit/specimen definitions; original numeric values alone do not establish comparability",
+    "post_hoc_candidate_analysis": {
+      "rule": "Require both MI/stroke code and compatible name without explicit historical or uncertain qualifier; POA absent only within a matched stay",
+      "reconciliation": "Seven candidates had negative original labels; targeted source-locator index prepared, no clinical relabeling performed",
+      "conditional_scenario": "Retain original SCH OOF scores and hypothetically assign the seven candidates positive labels; 2000 paired patient bootstrap draws; not an overall label validation estimate"
+    }
+  },
+  "primary_manuscript_results": "Retained; all outputs stored in this new directory"
+}

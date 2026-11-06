@@ -1,0 +1,66 @@
+{
+  "scope": "Original-label regional-feature sensitivity and prespecified grouping stress tests; no OMOP or time-isolated inference",
+  "expected_counts": {
+    "SCH": [
+      38509,
+      1323,
+      104
+    ],
+    "WHU": [
+      2562,
+      281,
+      104
+    ]
+  },
+  "primary_variants": [
+    "no_regional",
+    "regional_only"
+  ],
+  "regional_field_source": "AST literal REGIONAL_FIELDS in frozen prepare_china.py; all five fields selected by exact name, never importance or outcome",
+  "primary_design": "Reuse all five frozen original patient-role arrays, parameters, raw NaN inputs, labels and full-outer-train 50:50 XGBoost/RandomForest ensemble. Select XGBoost rounds separately using only saved inner-fit/inner-stop roles. Numeric NaN values are zero-filled only after feature selection, preserving the original Chinese strategy; true observed zero is not classified as missing.",
+  "primary_models": [
+    "baseline_ensemble",
+    "no_regional",
+    "regional_only"
+  ],
+  "primary_comparisons": [
+    [
+      "no_regional",
+      "baseline_ensemble"
+    ],
+    [
+      "regional_only",
+      "baseline_ensemble"
+    ]
+  ],
+  "stress_tests": {
+    "SCH": {
+      "name": "stored_city_holdout",
+      "eligibility": "All original records have exactly one complete nonplaceholder province/city pair after whitespace trimming",
+      "patients": 38420,
+      "positive_labels": 1319,
+      "groups": 193
+    },
+    "WHU": {
+      "name": "numeric_signature_holdout",
+      "eligibility": "All frozen patients; groups are exact five-column float32 patient-mean numeric regional signatures including missingness, NOT verified geographic units",
+      "patients": 2562,
+      "positive_labels": 281,
+      "groups": 834
+    }
+  },
+  "stress_split": "One deterministic StratifiedGroupKFold(n_splits=5, shuffle=True, random_state=42), fixed after assignment/class-count feasibility audit and before any performance analysis. No seed search. All 104 inputs. Outer-test groups excluded from all training. Original patient-stratified calibration/inner role proportions and seeds are used inside outer-training only; inner roles are not city/signature-disjoint. Calibration role joins full refit; no new calibration is fitted.",
+  "stress_comparator": "Original patient-isolated primary predictions restricted to exactly the same eligible patients; paired difference changes partition and sometimes eligible training cohort, not an isolated causal effect of geographic leakage",
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261015,
+  "bootstrap_unit": "patient; identical multinomial multiplicities for all models in each comparison; conditional fixed-OOF percentile 95% intervals, no refitting, no multiplicity correction",
+  "stress_secondary_uncertainty": "Also provide 2000 outer-group-cluster bootstrap intervals for stress versus restricted original predictions, acknowledging potential within-city/signature correlation. Signatures remain non-geographic and 5-fold model selection uncertainty is not captured.",
+  "max_threads": 2,
+  "not_performed": [
+    "Time-period holdout",
+    "External verification of original address/administrative/year mapping",
+    "Causal attribution of feature-set or split differences",
+    "Use of individual SES exposures",
+    "Retuning model hyperparameters"
+  ]
+}

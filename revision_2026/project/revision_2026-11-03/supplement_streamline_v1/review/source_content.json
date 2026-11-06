@@ -1,0 +1,6651 @@
+{
+  "tables": [
+    {
+      "old_number": 1,
+      "rows": [
+        [
+          "Source",
+          "Unit and sample",
+          "Recorded positives",
+          "Important endpoint limits"
+        ],
+        [
+          "SCH",
+          "38,509 patients; 530,450 source records",
+          "1,323 patients (3.44%)",
+          "Patient-level ever-recorded diagnosis label; full-record aggregation."
+        ],
+        [
+          "WHU",
+          "2,562 selected patients; 7,325 source records",
+          "281 patients (10.97%)",
+          "Patient-level ever-recorded diagnosis label; cancer-specific processed file."
+        ],
+        [
+          "MIMIC-III",
+          "9,946 admissions; 6,783 patients",
+          "4,462 admissions (44.86%)",
+          "Broad concurrent admission diagnosis composite; original survivor filter retained."
+        ]
+      ]
+    },
+    {
+      "old_number": 2,
+      "rows": [
+        [
+          "No",
+          "Original input field",
+          "SCH missing",
+          "WHU missing"
+        ],
+        [
+          "1",
+          "Angle",
+          "82.60%",
+          "82.08%"
+        ],
+        [
+          "2",
+          "C反应蛋白",
+          "92.43%",
+          "99.96%"
+        ],
+        [
+          "3",
+          "D-二聚体",
+          "11.33%",
+          "48.91%"
+        ],
+        [
+          "4",
+          "EPL",
+          "82.60%",
+          "78.22%"
+        ],
+        [
+          "5",
+          "G",
+          "82.60%",
+          "78.22%"
+        ],
+        [
+          "6",
+          "IFN-γ",
+          "99.99%",
+          "96.57%"
+        ],
+        [
+          "7",
+          "K",
+          "82.60%",
+          "78.22%"
+        ],
+        [
+          "8",
+          "K轻链",
+          "99.80%",
+          "98.20%"
+        ],
+        [
+          "9",
+          "LY30",
+          "82.60%",
+          "78.22%"
+        ],
+        [
+          "10",
+          "MA",
+          "82.60%",
+          "78.22%"
+        ],
+        [
+          "11",
+          "R",
+          "82.60%",
+          "83.80%"
+        ],
+        [
+          "12",
+          "α-羟丁酸脱氢酶",
+          "6.41%",
+          "33.41%"
+        ],
+        [
+          "13",
+          "丙氨酸氨基转移酶",
+          "42.23%",
+          "1.33%"
+        ],
+        [
+          "14",
+          "乙肝e抗体",
+          "96.38%",
+          "51.60%"
+        ],
+        [
+          "15",
+          "乙肝e抗原",
+          "99.75%",
+          "99.84%"
+        ],
+        [
+          "16",
+          "乙肝核心抗体",
+          ">99.99%",
+          "64.32%"
+        ],
+        [
+          "17",
+          "乙肝表面抗原",
+          ">99.99%",
+          "94.85%"
+        ],
+        [
+          "18",
+          "乳酸脱氢酶",
+          "42.09%",
+          "5.43%"
+        ],
+        [
+          "19",
+          "人附睾蛋白4",
+          "93.61%",
+          "100.00%"
+        ],
+        [
+          "20",
+          "低密度脂蛋白胆固醇",
+          "45.08%",
+          "12.57%"
+        ],
+        [
+          "21",
+          "促甲状腺素受体抗体",
+          "97.89%",
+          "99.96%"
+        ],
+        [
+          "22",
+          "免疫球蛋白A",
+          "99.77%",
+          "88.29%"
+        ],
+        [
+          "23",
+          "免疫球蛋白G",
+          "99.77%",
+          "88.25%"
+        ],
+        [
+          "24",
+          "免疫球蛋白M",
+          "99.77%",
+          "88.29%"
+        ],
+        [
+          "25",
+          "前白蛋白",
+          "6.48%",
+          "14.52%"
+        ],
+        [
+          "26",
+          "叶酸",
+          "99.96%",
+          "95.39%"
+        ],
+        [
+          "27",
+          "同型半胱氨酸",
+          "73.91%",
+          "87.47%"
+        ],
+        [
+          "28",
+          "天门冬氨酸氨基转移酶",
+          "42.21%",
+          "0.59%"
+        ],
+        [
+          "29",
+          "孕酮",
+          "99.97%",
+          "100.00%"
+        ],
+        [
+          "30",
+          "尿比重",
+          "47.69%",
+          "20.30%"
+        ],
+        [
+          "31",
+          "尿素",
+          "69.71%",
+          "87.67%"
+        ],
+        [
+          "32",
+          "尿素氮",
+          "61.00%",
+          "1.64%"
+        ],
+        [
+          "33",
+          "尿胆原",
+          "45.01%",
+          "96.68%"
+        ],
+        [
+          "34",
+          "尿酸",
+          "42.11%",
+          "0.90%"
+        ],
+        [
+          "35",
+          "总胆固醇",
+          "44.69%",
+          "79.08%"
+        ],
+        [
+          "36",
+          "总胆汁酸",
+          "22.40%",
+          "12.72%"
+        ],
+        [
+          "37",
+          "总胆红素",
+          "40.55%",
+          "1.33%"
+        ],
+        [
+          "38",
+          "总蛋白",
+          "42.11%",
+          "1.21%"
+        ],
+        [
+          "39",
+          "抗RA33抗体",
+          "99.97%",
+          "99.88%"
+        ],
+        [
+          "40",
+          "氯",
+          "42.67%",
+          "0.82%"
+        ],
+        [
+          "41",
+          "淀粉样蛋白A",
+          "98.33%",
+          "73.93%"
+        ],
+        [
+          "42",
+          "淀粉酶",
+          "6.49%",
+          "93.25%"
+        ],
+        [
+          "43",
+          "球蛋白",
+          "6.48%",
+          "1.25%"
+        ],
+        [
+          "44",
+          "甘油三脂",
+          "44.69%",
+          "66.59%"
+        ],
+        [
+          "45",
+          "甲状腺球蛋白",
+          "68.52%",
+          "95.59%"
+        ],
+        [
+          "46",
+          "甲胎蛋白",
+          "82.95%",
+          "44.38%"
+        ],
+        [
+          "47",
+          "病理管型",
+          "63.29%",
+          "91.06%"
+        ],
+        [
+          "48",
+          "癌胚抗原",
+          "49.27%",
+          "80.99%"
+        ],
+        [
+          "49",
+          "白细胞",
+          "45.78%",
+          "0.78%"
+        ],
+        [
+          "50",
+          "白细胞介素-10",
+          "99.96%",
+          "96.29%"
+        ],
+        [
+          "51",
+          "白细胞介素-2",
+          "99.91%",
+          "96.21%"
+        ],
+        [
+          "52",
+          "白细胞介素-4",
+          ">99.99%",
+          "96.37%"
+        ],
+        [
+          "53",
+          "白细胞介素-6",
+          "99.04%",
+          "96.25%"
+        ],
+        [
+          "54",
+          "白蛋白",
+          "42.07%",
+          "1.25%"
+        ],
+        [
+          "55",
+          "直接胆红素",
+          "5.87%",
+          "7.85%"
+        ],
+        [
+          "56",
+          "睾酮",
+          "98.53%",
+          "98.67%"
+        ],
+        [
+          "57",
+          "碱性磷酸酶",
+          "40.60%",
+          "1.33%"
+        ],
+        [
+          "58",
+          "磷",
+          "42.69%",
+          "1.56%"
+        ],
+        [
+          "59",
+          "神经元特异性烯醇化酶",
+          "58.45%",
+          "75.84%"
+        ],
+        [
+          "60",
+          "类风湿因子",
+          "100.00%",
+          "99.92%"
+        ],
+        [
+          "61",
+          "糖化血红蛋白",
+          "99.70%",
+          "69.28%"
+        ],
+        [
+          "62",
+          "糖类抗原CA125",
+          "76.05%",
+          "82.05%"
+        ],
+        [
+          "63",
+          "糖类抗原CA15-3",
+          "88.66%",
+          "95.82%"
+        ],
+        [
+          "64",
+          "糖类抗原CA19-9",
+          "56.83%",
+          "90.52%"
+        ],
+        [
+          "65",
+          "红细胞",
+          "55.71%",
+          "0.78%"
+        ],
+        [
+          "66",
+          "红细胞压积",
+          "41.28%",
+          "0.78%"
+        ],
+        [
+          "67",
+          "细胞角蛋白19片段",
+          "55.09%",
+          "74.28%"
+        ],
+        [
+          "68",
+          "维生素B12",
+          "99.97%",
+          "95.59%"
+        ],
+        [
+          "69",
+          "肌红蛋白",
+          "100.00%",
+          "99.41%"
+        ],
+        [
+          "70",
+          "肌酐",
+          "41.96%",
+          "28.22%"
+        ],
+        [
+          "71",
+          "肌酸激酶",
+          "40.69%",
+          "5.66%"
+        ],
+        [
+          "72",
+          "胆碱酯酶",
+          "6.49%",
+          "99.96%"
+        ],
+        [
+          "73",
+          "胱抑素C",
+          "25.55%",
+          "25.80%"
+        ],
+        [
+          "74",
+          "脂蛋白相关磷脂酶A2",
+          "72.07%",
+          "99.92%"
+        ],
+        [
+          "75",
+          "腺苷脱氨酶",
+          "6.51%",
+          "96.25%"
+        ],
+        [
+          "76",
+          "葡萄糖",
+          "42.77%",
+          "92.31%"
+        ],
+        [
+          "77",
+          "血小板压积",
+          "4.74%",
+          "11.94%"
+        ],
+        [
+          "78",
+          "血栓调节蛋白",
+          "99.63%",
+          "100.00%"
+        ],
+        [
+          "79",
+          "血氨",
+          "100.00%",
+          "94.69%"
+        ],
+        [
+          "80",
+          "血红蛋白",
+          "41.28%",
+          "0.78%"
+        ],
+        [
+          "81",
+          "补体C3",
+          "99.98%",
+          "88.29%"
+        ],
+        [
+          "82",
+          "补体C4",
+          "99.98%",
+          "88.33%"
+        ],
+        [
+          "83",
+          "转铁蛋白",
+          "99.99%",
+          "100.00%"
+        ],
+        [
+          "84",
+          "载脂蛋白AⅠ",
+          "58.59%",
+          "73.22%"
+        ],
+        [
+          "85",
+          "载脂蛋白B",
+          "40.46%",
+          "73.22%"
+        ],
+        [
+          "86",
+          "钙",
+          "42.68%",
+          "0.82%"
+        ],
+        [
+          "87",
+          "钠",
+          "42.16%",
+          "0.82%"
+        ],
+        [
+          "88",
+          "钾",
+          "42.16%",
+          "0.82%"
+        ],
+        [
+          "89",
+          "铁蛋白",
+          "98.04%",
+          "50.35%"
+        ],
+        [
+          "90",
+          "镁",
+          "6.99%",
+          "1.56%"
+        ],
+        [
+          "91",
+          "降钙素原",
+          "99.55%",
+          "85.91%"
+        ],
+        [
+          "92",
+          "雌二醇",
+          "99.95%",
+          "99.02%"
+        ],
+        [
+          "93",
+          "高密度脂蛋白胆固醇",
+          "45.08%",
+          "12.57%"
+        ],
+        [
+          "94",
+          "鳞状细胞癌相关抗原",
+          "68.98%",
+          "87.98%"
+        ],
+        [
+          "95",
+          "性别",
+          "0.00%",
+          "0.00%"
+        ],
+        [
+          "96",
+          "年龄",
+          "0.00%",
+          "0.00%"
+        ],
+        [
+          "97",
+          "上次诊断",
+          "100.00%",
+          "100.00%"
+        ],
+        [
+          "98",
+          "上次入院科室",
+          "100.00%",
+          "100.00%"
+        ],
+        [
+          "99",
+          "上次出院科室",
+          "100.00%",
+          "100.00%"
+        ],
+        [
+          "100",
+          "人均地区生产总值(元)",
+          "1.47%",
+          "0.04%"
+        ],
+        [
+          "101",
+          "职工平均工资(元)",
+          "22.16%",
+          "0.04%"
+        ],
+        [
+          "102",
+          "医院、卫生院数(个)",
+          "1.47%",
+          "0.04%"
+        ],
+        [
+          "103",
+          "医院、卫生院床位数(张)",
+          "1.47%",
+          "0.04%"
+        ],
+        [
+          "104",
+          "医生数(人)",
+          "1.47%",
+          "0.04%"
+        ]
+      ]
+    },
+    {
+      "old_number": 3,
+      "rows": [
+        [
+          "No",
+          "Original input field",
+          "Observed admissions",
+          "Missing"
+        ],
+        [
+          "1",
+          "Age",
+          "9946",
+          "0.00%"
+        ],
+        [
+          "2",
+          "Apolipoprotein B",
+          "0",
+          "100.00%"
+        ],
+        [
+          "3",
+          "LDL Cholesterol",
+          "906",
+          "90.89%"
+        ],
+        [
+          "4",
+          "Total Cholesterol",
+          "1019",
+          "89.75%"
+        ],
+        [
+          "5",
+          "Cholinesterase",
+          "0",
+          "100.00%"
+        ],
+        [
+          "6",
+          "Albumin",
+          "6077",
+          "38.90%"
+        ],
+        [
+          "7",
+          "Total Bile Acids",
+          "0",
+          "100.00%"
+        ],
+        [
+          "8",
+          "Prealbumin",
+          "0",
+          "100.00%"
+        ],
+        [
+          "9",
+          "D-Dimer",
+          "422",
+          "95.76%"
+        ],
+        [
+          "10",
+          "CYFRA 21-1",
+          "0",
+          "100.00%"
+        ],
+        [
+          "11",
+          "Cystatin C",
+          "0",
+          "100.00%"
+        ],
+        [
+          "12",
+          "Triglycerides",
+          "1479",
+          "85.13%"
+        ],
+        [
+          "13",
+          "Adenosine Deaminase",
+          "0",
+          "100.00%"
+        ],
+        [
+          "14",
+          "Globulin",
+          "703",
+          "92.93%"
+        ],
+        [
+          "15",
+          "Plateletcrit",
+          "0",
+          "100.00%"
+        ],
+        [
+          "16",
+          "SCC Antigen",
+          "0",
+          "100.00%"
+        ],
+        [
+          "17",
+          "Direct Bilirubin",
+          "1130",
+          "88.64%"
+        ],
+        [
+          "18",
+          "No. of Physicians",
+          "0",
+          "100.00%"
+        ],
+        [
+          "19",
+          "Amylase",
+          "3024",
+          "69.60%"
+        ],
+        [
+          "20",
+          "Hospital Beds",
+          "0",
+          "100.00%"
+        ],
+        [
+          "21",
+          "Glucose",
+          "9768",
+          "1.79%"
+        ],
+        [
+          "22",
+          "Sex_M",
+          "9946",
+          "0.00%"
+        ],
+        [
+          "23",
+          "HDL Cholesterol",
+          "931",
+          "90.64%"
+        ],
+        [
+          "24",
+          "Magnesium",
+          "9699",
+          "2.48%"
+        ],
+        [
+          "25",
+          "α-HBDH",
+          "0",
+          "100.00%"
+        ],
+        [
+          "26",
+          "ALT",
+          "6443",
+          "35.22%"
+        ],
+        [
+          "27",
+          "GDP per Capita",
+          "0",
+          "100.00%"
+        ],
+        [
+          "28",
+          "No. of Hospitals",
+          "0",
+          "100.00%"
+        ],
+        [
+          "29",
+          "HBcAb",
+          "0",
+          "100.00%"
+        ],
+        [
+          "30",
+          "LDH",
+          "4739",
+          "52.35%"
+        ],
+        [
+          "31",
+          "Phosphorus",
+          "9494",
+          "4.54%"
+        ],
+        [
+          "32",
+          "AST",
+          "6449",
+          "35.16%"
+        ],
+        [
+          "33",
+          "Uric Acid",
+          "820",
+          "91.76%"
+        ],
+        [
+          "34",
+          "Alpha-Fetoprotein",
+          "184",
+          "98.15%"
+        ],
+        [
+          "35",
+          "Total Protein",
+          "795",
+          "92.01%"
+        ],
+        [
+          "36",
+          "HbA1c",
+          "1003",
+          "89.92%"
+        ],
+        [
+          "37",
+          "Creatinine",
+          "9773",
+          "1.74%"
+        ],
+        [
+          "38",
+          "Creatine Kinase",
+          "5719",
+          "42.50%"
+        ],
+        [
+          "39",
+          "Avg. Employee Wage",
+          "0",
+          "100.00%"
+        ],
+        [
+          "40",
+          "Potassium",
+          "9778",
+          "1.69%"
+        ],
+        [
+          "41",
+          "Sodium",
+          "9769",
+          "1.78%"
+        ],
+        [
+          "42",
+          "Apolipoprotein AI",
+          "0",
+          "100.00%"
+        ],
+        [
+          "43",
+          "Ferritin",
+          "1544",
+          "84.48%"
+        ]
+      ]
+    },
+    {
+      "old_number": 4,
+      "rows": [
+        [
+          "Source",
+          "Established source evidence",
+          "Remaining clinical boundary"
+        ],
+        [
+          "SCH",
+          "Admission/discharge and examination dates; 16 first-recorded-eligible stays with concordant acute-component/POA-absent candidates.",
+          "Date-only laboratory observations lack first result availability. Candidate intervals do not establish first MACE after 24 or 48 hours; complete negative capture and cardiovascular cause of death remain unverified."
+        ],
+        [
+          "WHU",
+          "5,744 matched source-record occurrences, 5,415 stay-day keys and 2,246 patients; 68,581 inpatient-course/discharge narrative fields were re-read. Death-time records are also present.",
+          "Narrative dates and death-time bindings require clinical adjudication and episode-clock conflict resolution. Cardiovascular cause and first-event eligibility remain unverified; neither a POA field nor a phrase establishes an event-free risk set."
+        ],
+        [
+          "MIMIC-III",
+          "Hospital admission/discharge clocks; LABEVENTS CHARTTIME; structured admission death time.",
+          "DIAGNOSES_ICD supplies no onset or POA clock. CHARTTIME is not first release; death time is not cardiovascular cause. Unreviewed notes could contain additional clues."
+        ]
+      ]
+    },
+    {
+      "old_number": 5,
+      "rows": [
+        [
+          "Evidence",
+          "Observed scope",
+          "Interpretation boundary"
+        ],
+        [
+          "SCH source files",
+          "34 unchanged files; 290,355 current text rows",
+          "Unchanged source material adds no event-onset or verified assay-unit dictionary."
+        ],
+        [
+          "WHU matched schema",
+          "18,897,219 native key occurrences",
+          "The broader follow-up found 127 occurrences of an onset-named key: 123 empty and four day-level infection dates, not MACE onset. No source field establishing first clinical result availability or complete diagnosis capture was found (section S2)."
+        ],
+        [
+          "WHU verification clock",
+          "33,303 nonempty verification-time occurrences",
+          "All were in examination-report lists, not laboratory lists. They cannot replace LIS result-availability times."
+        ],
+        [
+          "Historical recovery",
+          "Historical prediction and software records",
+          "The four matching MIMIC transfer probability vectors and complete historical environment locks were not recovered. Later record recovery identified a historical MIMIC environment query and UMAP installation versions (section S3); the exact historical SHAP version remains unresolved."
+        ],
+        [
+          "Processed timing",
+          "All check/admission/discharge fields date-only",
+          "Zero records have HH:MM precision. These processed fields cannot reconstruct 0/24/48-hour ordering."
+        ]
+      ]
+    },
+    {
+      "old_number": 6,
+      "rows": [
+        [
+          "Slot",
+          "Present",
+          "Absent",
+          "Uncertain",
+          "Unknown",
+          "Empty"
+        ],
+        [
+          "Primary",
+          "260692",
+          "13782",
+          "14494",
+          "1377",
+          "10"
+        ],
+        [
+          "Other 1",
+          "268555",
+          "13306",
+          "6167",
+          "2293",
+          "34"
+        ],
+        [
+          "Other 2",
+          "270055",
+          "7552",
+          "7248",
+          "3638",
+          "1862"
+        ],
+        [
+          "Other 3",
+          "261220",
+          "4814",
+          "8226",
+          "4105",
+          "11990"
+        ],
+        [
+          "Other 4",
+          "242142",
+          "3940",
+          "7676",
+          "3875",
+          "32722"
+        ],
+        [
+          "Other 5",
+          "214674",
+          "3374",
+          "6993",
+          "3972",
+          "61342"
+        ],
+        [
+          "Other 6",
+          "183352",
+          "2826",
+          "6099",
+          "3551",
+          "94527"
+        ]
+      ]
+    },
+    {
+      "old_number": 7,
+      "rows": [
+        [
+          "Field family",
+          "Native context",
+          "Patients",
+          "Key occurrences"
+        ],
+        [
+          "Cancer/pathology named keys",
+          "Unspecified",
+          "2246",
+          "24345"
+        ],
+        [
+          "Stage named keys",
+          "Unspecified",
+          "128",
+          "229"
+        ],
+        [
+          "Antitumour treatment named keys",
+          "Plan named",
+          "505",
+          "736"
+        ],
+        [
+          "Medication/order named keys",
+          "Admission/history named",
+          "1959",
+          "9020"
+        ],
+        [
+          "Acuity/vital-sign named keys",
+          "Admission/history named",
+          "2177",
+          "37107"
+        ]
+      ]
+    },
+    {
+      "old_number": 8,
+      "rows": [
+        [
+          "Eligibility and survival rule",
+          "Admissions",
+          "Patients",
+          "Positive labels",
+          "Death-rule positives",
+          "Death-only positives"
+        ],
+        [
+          "Ever eligible, all stays",
+          "11,622",
+          "7,887",
+          "6,105 (52.5%)",
+          "1643",
+          "662"
+        ],
+        [
+          "Ever eligible, survivors",
+          "9,946",
+          "6,783",
+          "4,462 (44.9%)",
+          "0",
+          "0"
+        ],
+        [
+          "Prior eligible, all stays",
+          "2,651",
+          "1,682",
+          "1,489 (56.2%)",
+          "427",
+          "161"
+        ],
+        [
+          "Prior eligible, survivors",
+          "2,194",
+          "1,391",
+          "1,062 (48.4%)",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "old_number": 9,
+      "rows": [
+        [
+          "Eligibility and survival rule",
+          "ROC AUC (95% CI)",
+          "Average precision (95% CI)",
+          "Brier score (95% CI)"
+        ],
+        [
+          "Ever eligible, all stays",
+          "0.743 (0.733 to 0.752)",
+          "0.766 (0.754 to 0.778)",
+          "0.207 (0.205 to 0.210)"
+        ],
+        [
+          "Ever eligible, survivors",
+          "0.739 (0.728 to 0.750)",
+          "0.711 (0.696 to 0.727)",
+          "0.207 (0.204 to 0.210)"
+        ],
+        [
+          "Prior eligible, all stays",
+          "0.748 (0.727 to 0.770)",
+          "0.796 (0.773 to 0.819)",
+          "0.205 (0.199 to 0.211)"
+        ],
+        [
+          "Prior eligible, survivors",
+          "0.733 (0.707 to 0.759)",
+          "0.731 (0.696 to 0.765)",
+          "0.211 (0.205 to 0.218)"
+        ]
+      ]
+    },
+    {
+      "old_number": 10,
+      "rows": [
+        [
+          "Training contrast and target",
+          "Target admissions",
+          "AUC difference (95% CI)",
+          "Average precision difference (95% CI)",
+          "Brier difference (95% CI)"
+        ],
+        [
+          "All - survivor training; ever-survivor target",
+          "9946",
+          "-0.0115 (-0.0155 to -0.0076)",
+          "-0.0179 (-0.0236 to -0.0125)",
+          "+0.0040 (+0.0029 to +0.0051)"
+        ],
+        [
+          "All - survivor training; prior-survivor target",
+          "2194",
+          "-0.0027 (-0.0104 to +0.0053)",
+          "-0.0053 (-0.0169 to +0.0053)",
+          "-0.0004 (-0.0027 to +0.0017)"
+        ],
+        [
+          "Prior - ever training; prior-all target",
+          "2651",
+          "-0.0052 (-0.0134 to +0.0031)",
+          "+0.0030 (-0.0071 to +0.0133)",
+          "-0.0004 (-0.0029 to +0.0020)"
+        ],
+        [
+          "Prior - ever training; prior-survivor target",
+          "2194",
+          "-0.0143 (-0.0249 to -0.0030)",
+          "-0.0054 (-0.0222 to +0.0125)",
+          "+0.0047 (+0.0016 to +0.0078)"
+        ]
+      ]
+    },
+    {
+      "old_number": 11,
+      "rows": [
+        [
+          "Centre",
+          "Unit",
+          "Original N / positive",
+          "Retained N / positive",
+          "Excluded N / positive",
+          "Source rule"
+        ],
+        [
+          "SCH",
+          "Patient",
+          "38,509 / 1,323",
+          "38,509 / 1,323",
+          "0 / 0",
+          "Original diagnosis linked"
+        ],
+        [
+          "WHU",
+          "Patient",
+          "2,562 / 281",
+          "2,258 / 182",
+          "304 / 99",
+          "No linked raw JSON excluded"
+        ],
+        [
+          "MIMIC-III",
+          "Admission",
+          "9,946 / 4,462",
+          "9,946 / 4,462",
+          "0 / 0",
+          "Original diagnosis linked"
+        ]
+      ]
+    },
+    {
+      "old_number": 12,
+      "rows": [
+        [
+          "Model and training scope",
+          "AUC (95% CI)",
+          "Average precision (95% CI)",
+          "Brier score (95% CI)"
+        ],
+        [
+          "Historical original scores, fixed slice",
+          "0.808 (0.774 to 0.841)",
+          "0.362 (0.294 to 0.433)",
+          "0.0851 (0.0795 to 0.0909)"
+        ],
+        [
+          "Prior patient-isolated raw scores, fixed slice",
+          "0.800 (0.764 to 0.835)",
+          "0.366 (0.299 to 0.441)",
+          "0.0843 (0.0785 to 0.0899)"
+        ],
+        [
+          "Source-availability sensitivity full-training raw ensemble",
+          "0.784 (0.749 to 0.818)",
+          "0.340 (0.272 to 0.409)",
+          "0.0845 (0.0788 to 0.0900)"
+        ],
+        [
+          "Source-availability sensitivity base raw ensemble",
+          "0.756 (0.718 to 0.793)",
+          "0.304 (0.238 to 0.370)",
+          "0.0824 (0.0763 to 0.0882)"
+        ],
+        [
+          "Source-availability sensitivity base with independent Platt fit",
+          "0.775 (0.739 to 0.810)",
+          "0.296 (0.234 to 0.369)",
+          "0.0659 (0.0578 to 0.0737)"
+        ]
+      ]
+    },
+    {
+      "old_number": 13,
+      "rows": [
+        [
+          "Cutoff h",
+          "Chart-selected records",
+          "Stored later records / stays",
+          "Storage missing records / stays",
+          "Negative delay records / stays"
+        ],
+        [
+          "0",
+          "6724",
+          "4 / 4",
+          "6701 / 3928",
+          "0 / 0"
+        ],
+        [
+          "24",
+          "43448",
+          "1095 / 642",
+          "18433 / 7266",
+          "76 / 47"
+        ],
+        [
+          "48",
+          "70445",
+          "903 / 493",
+          "24985 / 7637",
+          "119 / 79"
+        ]
+      ]
+    },
+    {
+      "old_number": 14,
+      "rows": [
+        [
+          "Cohort",
+          "Fold",
+          "Outer test",
+          "Calib-ration",
+          "Base fit",
+          "Inner fit",
+          "Inner stop",
+          "Full train"
+        ],
+        [
+          "SCH",
+          "1",
+          "7702",
+          "7702",
+          "23105",
+          "17328",
+          "5777",
+          "30807"
+        ],
+        [
+          "SCH",
+          "2",
+          "7702",
+          "7702",
+          "23105",
+          "17328",
+          "5777",
+          "30807"
+        ],
+        [
+          "SCH",
+          "3",
+          "7702",
+          "7702",
+          "23105",
+          "17328",
+          "5777",
+          "30807"
+        ],
+        [
+          "SCH",
+          "4",
+          "7702",
+          "7702",
+          "23105",
+          "17328",
+          "5777",
+          "30807"
+        ],
+        [
+          "SCH",
+          "5",
+          "7701",
+          "7702",
+          "23106",
+          "17329",
+          "5777",
+          "30808"
+        ],
+        [
+          "WHU",
+          "1",
+          "513",
+          "513",
+          "1536",
+          "1152",
+          "384",
+          "2049"
+        ],
+        [
+          "WHU",
+          "2",
+          "513",
+          "513",
+          "1536",
+          "1152",
+          "384",
+          "2049"
+        ],
+        [
+          "WHU",
+          "3",
+          "512",
+          "513",
+          "1537",
+          "1152",
+          "385",
+          "2050"
+        ],
+        [
+          "WHU",
+          "4",
+          "512",
+          "513",
+          "1537",
+          "1152",
+          "385",
+          "2050"
+        ],
+        [
+          "WHU",
+          "5",
+          "512",
+          "513",
+          "1537",
+          "1152",
+          "385",
+          "2050"
+        ],
+        [
+          "MIMIC",
+          "1",
+          "1378",
+          "1352",
+          "4053",
+          "3039",
+          "1014",
+          "5405"
+        ],
+        [
+          "MIMIC",
+          "2",
+          "1341",
+          "1361",
+          "4081",
+          "3060",
+          "1021",
+          "5442"
+        ],
+        [
+          "MIMIC",
+          "3",
+          "1373",
+          "1353",
+          "4057",
+          "3042",
+          "1015",
+          "5410"
+        ],
+        [
+          "MIMIC",
+          "4",
+          "1330",
+          "1364",
+          "4089",
+          "3066",
+          "1023",
+          "5453"
+        ],
+        [
+          "MIMIC",
+          "5",
+          "1361",
+          "1356",
+          "4066",
+          "3049",
+          "1017",
+          "5422"
+        ]
+      ]
+    },
+    {
+      "old_number": 15,
+      "rows": [
+        [
+          "Analysis",
+          "Fold 1",
+          "Fold 2",
+          "Fold 3",
+          "Fold 4",
+          "Fold 5"
+        ],
+        [
+          "SCH original",
+          "11",
+          "40",
+          "38",
+          "52",
+          "31"
+        ],
+        [
+          "WHU original",
+          "168",
+          "22",
+          "107",
+          "66",
+          "144"
+        ],
+        [
+          "MIMIC original",
+          "39",
+          "69",
+          "77",
+          "171",
+          "92"
+        ],
+        [
+          "MIMIC without AST/HDL",
+          "38",
+          "94",
+          "66",
+          "176",
+          "91"
+        ],
+        [
+          "MIMIC 0h original",
+          "17",
+          "13",
+          "20",
+          "7",
+          "38"
+        ],
+        [
+          "MIMIC 0h without AST/HDL",
+          "20",
+          "9",
+          "31",
+          "9",
+          "34"
+        ],
+        [
+          "MIMIC 24h original",
+          "68",
+          "28",
+          "51",
+          "55",
+          "45"
+        ],
+        [
+          "MIMIC 24h without AST/HDL",
+          "87",
+          "46",
+          "79",
+          "45",
+          "47"
+        ],
+        [
+          "MIMIC 48h original",
+          "38",
+          "62",
+          "27",
+          "70",
+          "6"
+        ],
+        [
+          "MIMIC 48h without AST/HDL",
+          "87",
+          "64",
+          "94",
+          "22",
+          "65"
+        ]
+      ]
+    },
+    {
+      "old_number": 16,
+      "rows": [
+        [
+          "Cohort",
+          "Analysis",
+          "AUROC",
+          "Average precision",
+          "Brier score"
+        ],
+        [
+          "SCH",
+          "Historical cached",
+          "0.657 (0.643 to 0.671)",
+          "0.063 (0.057 to 0.070)",
+          "0.177 (0.176 to 0.178)"
+        ],
+        [
+          "SCH",
+          "New patient-isolated",
+          "0.658 (0.644 to 0.672)",
+          "0.062 (0.056 to 0.069)",
+          "0.184 (0.183 to 0.185)"
+        ],
+        [
+          "WHU",
+          "Historical cached",
+          "0.840 (0.814 to 0.864)",
+          "0.488 (0.425 to 0.549)",
+          "0.094 (0.089 to 0.100)"
+        ],
+        [
+          "WHU",
+          "New patient-isolated",
+          "0.836 (0.809 to 0.862)",
+          "0.500 (0.434 to 0.561)",
+          "0.093 (0.088 to 0.098)"
+        ],
+        [
+          "MIMIC",
+          "Historical cached",
+          "0.742 (0.731 to 0.753)",
+          "0.712 (0.697 to 0.728)",
+          "0.205 (0.202 to 0.209)"
+        ],
+        [
+          "MIMIC",
+          "New patient-isolated",
+          "0.737 (0.726 to 0.748)",
+          "0.707 (0.691 to 0.723)",
+          "0.207 (0.204 to 0.211)"
+        ]
+      ]
+    },
+    {
+      "old_number": 17,
+      "rows": [
+        [
+          "Model",
+          "SCH AUROC",
+          "WHU AUROC",
+          "MIMIC AUROC"
+        ],
+        [
+          "50:50 ensemble",
+          "0.658 (0.644 to 0.672)",
+          "0.836 (0.809 to 0.862)",
+          "0.737 (0.726 to 0.748)"
+        ],
+        [
+          "XGBoost",
+          "0.657 (0.644 to 0.671)",
+          "0.820 (0.791 to 0.847)",
+          "0.736 (0.725 to 0.748)"
+        ],
+        [
+          "Random forest",
+          "0.649 (0.634 to 0.663)",
+          "0.834 (0.807 to 0.859)",
+          "0.733 (0.721 to 0.744)"
+        ],
+        [
+          "Logistic regression",
+          "0.660 (0.646 to 0.674)",
+          "0.794 (0.763 to 0.825)",
+          "0.675 (0.663 to 0.688)"
+        ],
+        [
+          "Missingness only",
+          "0.526 (0.510 to 0.542)",
+          "0.779 (0.749 to 0.808)",
+          "0.692 (0.681 to 0.702)"
+        ],
+        [
+          "Age only",
+          "0.639 (0.626 to 0.653)",
+          "0.609 (0.572 to 0.646)",
+          "0.635 (0.621 to 0.649)"
+        ]
+      ]
+    },
+    {
+      "old_number": 18,
+      "rows": [
+        [
+          "Cohort",
+          "Probability",
+          "Joint intercept",
+          "Joint slope"
+        ],
+        [
+          "SCH",
+          "Primary raw",
+          "-3.021 (-3.083 to -2.963)",
+          "1.247 (1.128 to 1.380)"
+        ],
+        [
+          "SCH",
+          "Base raw",
+          "-2.990 (-3.055 to -2.931)",
+          "1.127 (1.010 to 1.250)"
+        ],
+        [
+          "SCH",
+          "Base Platt",
+          "0.012 (-0.321 to 0.373)",
+          "1.005 (0.902 to 1.116)"
+        ],
+        [
+          "WHU",
+          "Primary raw",
+          "-0.781 (-0.939 to -0.620)",
+          "1.486 (1.325 to 1.663)"
+        ],
+        [
+          "WHU",
+          "Base raw",
+          "-0.710 (-0.880 to -0.537)",
+          "1.369 (1.214 to 1.541)"
+        ],
+        [
+          "WHU",
+          "Base Platt",
+          "0.043 (-0.182 to 0.281)",
+          "1.038 (0.926 to 1.164)"
+        ],
+        [
+          "MIMIC",
+          "Primary raw",
+          "-0.175 (-0.226 to -0.124)",
+          "1.293 (1.219 to 1.372)"
+        ],
+        [
+          "MIMIC",
+          "Base raw",
+          "-0.167 (-0.219 to -0.116)",
+          "1.276 (1.206 to 1.355)"
+        ],
+        [
+          "MIMIC",
+          "Base Platt",
+          "0.005 (-0.047 to 0.060)",
+          "0.992 (0.938 to 1.050)"
+        ]
+      ]
+    },
+    {
+      "old_number": 19,
+      "rows": [
+        [
+          "Cohort",
+          "Outer fold",
+          "Selected candidate",
+          "Mean inner AUROC",
+          "Final rounds"
+        ],
+        [
+          "SCH",
+          "1",
+          "shallow",
+          "0.6538",
+          "28"
+        ],
+        [
+          "SCH",
+          "2",
+          "shallow",
+          "0.6597",
+          "22"
+        ],
+        [
+          "SCH",
+          "3",
+          "shallow",
+          "0.6629",
+          "26"
+        ],
+        [
+          "SCH",
+          "4",
+          "shallow",
+          "0.6603",
+          "29"
+        ],
+        [
+          "SCH",
+          "5",
+          "shallow",
+          "0.6681",
+          "10"
+        ],
+        [
+          "WHU",
+          "1",
+          "regularized",
+          "0.8168",
+          "61"
+        ],
+        [
+          "WHU",
+          "2",
+          "regularized",
+          "0.8189",
+          "67"
+        ],
+        [
+          "WHU",
+          "3",
+          "regularized",
+          "0.8186",
+          "38"
+        ],
+        [
+          "WHU",
+          "4",
+          "regularized",
+          "0.8276",
+          "114"
+        ],
+        [
+          "WHU",
+          "5",
+          "fixed",
+          "0.8185",
+          "46"
+        ],
+        [
+          "MIMIC",
+          "1",
+          "lower_rate",
+          "0.7340",
+          "110"
+        ],
+        [
+          "MIMIC",
+          "2",
+          "shallow",
+          "0.7331",
+          "131"
+        ],
+        [
+          "MIMIC",
+          "3",
+          "lower_rate",
+          "0.7329",
+          "215"
+        ],
+        [
+          "MIMIC",
+          "4",
+          "shallow",
+          "0.7401",
+          "85"
+        ],
+        [
+          "MIMIC",
+          "5",
+          "shallow",
+          "0.7379",
+          "74"
+        ]
+      ]
+    },
+    {
+      "old_number": 20,
+      "rows": [
+        [
+          "Cohort",
+          "Model",
+          "AUROC",
+          "AP",
+          "Brier"
+        ],
+        [
+          "SCH",
+          "Nested selected ensemble",
+          "0.6589\n(0.6449, 0.6731)",
+          "0.0634\n(0.0576, 0.0709)",
+          "0.1947\n(0.1938, 0.1954)"
+        ],
+        [
+          "SCH",
+          "Nested fixed ensemble",
+          "0.6562\n(0.6420, 0.6706)",
+          "0.0629\n(0.0572, 0.0699)",
+          "0.1859\n(0.1850, 0.1868)"
+        ],
+        [
+          "SCH",
+          "Previous ensemble",
+          "0.6578\n(0.6440, 0.6720)",
+          "0.0621\n(0.0563, 0.0689)",
+          "0.1837\n(0.1827, 0.1846)"
+        ],
+        [
+          "SCH",
+          "Nested selected XGBoost",
+          "0.6583\n(0.6448, 0.6724)",
+          "0.0627\n(0.0569, 0.0705)",
+          "0.2273\n(0.2265, 0.2281)"
+        ],
+        [
+          "SCH",
+          "Nested fixed XGBoost",
+          "0.6547\n(0.6411, 0.6699)",
+          "0.0628\n(0.0573, 0.0703)",
+          "0.2079\n(0.2069, 0.2088)"
+        ],
+        [
+          "SCH",
+          "Previous XGBoost",
+          "0.6573\n(0.6442, 0.6713)",
+          "0.0623\n(0.0566, 0.0695)",
+          "0.2034\n(0.2023, 0.2044)"
+        ],
+        [
+          "WHU",
+          "Nested selected ensemble",
+          "0.8432\n(0.8163, 0.8684)",
+          "0.5068\n(0.4433, 0.5657)",
+          "0.0998\n(0.0950, 0.1051)"
+        ],
+        [
+          "WHU",
+          "Nested fixed ensemble",
+          "0.8378\n(0.8107, 0.8618)",
+          "0.4853\n(0.4239, 0.5462)",
+          "0.1061\n(0.1015, 0.1111)"
+        ],
+        [
+          "WHU",
+          "Previous ensemble",
+          "0.8359\n(0.8086, 0.8616)",
+          "0.4999\n(0.4341, 0.5614)",
+          "0.0928\n(0.0877, 0.0984)"
+        ],
+        [
+          "WHU",
+          "Nested selected XGBoost",
+          "0.8384\n(0.8108, 0.8637)",
+          "0.4866\n(0.4238, 0.5484)",
+          "0.1069\n(0.1016, 0.1128)"
+        ],
+        [
+          "WHU",
+          "Nested fixed XGBoost",
+          "0.8266\n(0.7993, 0.8515)",
+          "0.4395\n(0.3795, 0.5014)",
+          "0.1200\n(0.1150, 0.1253)"
+        ],
+        [
+          "WHU",
+          "Previous XGBoost",
+          "0.8197\n(0.7907, 0.8474)",
+          "0.4729\n(0.4096, 0.5369)",
+          "0.0963\n(0.0904, 0.1028)"
+        ],
+        [
+          "MIMIC",
+          "Nested selected ensemble",
+          "0.7369\n(0.7256, 0.7483)",
+          "0.7079\n(0.6928, 0.7240)",
+          "0.2076\n(0.2045, 0.2107)"
+        ],
+        [
+          "MIMIC",
+          "Nested fixed ensemble",
+          "0.7371\n(0.7259, 0.7485)",
+          "0.7075\n(0.6922, 0.7239)",
+          "0.2073\n(0.2041, 0.2105)"
+        ],
+        [
+          "MIMIC",
+          "Previous ensemble",
+          "0.7369\n(0.7256, 0.7484)",
+          "0.7070\n(0.6915, 0.7234)",
+          "0.2074\n(0.2041, 0.2105)"
+        ],
+        [
+          "MIMIC",
+          "Nested selected XGBoost",
+          "0.7377\n(0.7264, 0.7491)",
+          "0.7090\n(0.6944, 0.7251)",
+          "0.2066\n(0.2033, 0.2100)"
+        ],
+        [
+          "MIMIC",
+          "Nested fixed XGBoost",
+          "0.7376\n(0.7263, 0.7488)",
+          "0.7071\n(0.6917, 0.7233)",
+          "0.2063\n(0.2028, 0.2098)"
+        ],
+        [
+          "MIMIC",
+          "Previous XGBoost",
+          "0.7361\n(0.7249, 0.7476)",
+          "0.7046\n(0.6896, 0.7212)",
+          "0.2068\n(0.2033, 0.2101)"
+        ]
+      ]
+    },
+    {
+      "old_number": 21,
+      "rows": [
+        [
+          "Cohort",
+          "Comparison",
+          "Delta AUROC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "SCH",
+          "Nested selected ensemble minus Nested fixed ensemble",
+          "0.00274\n(-0.00052, 0.00578)",
+          "0.00045\n(-0.00234, 0.00369)",
+          "0.00872\n(0.00851, 0.00893)"
+        ],
+        [
+          "SCH",
+          "Nested selected XGBoost minus Nested fixed XGBoost",
+          "0.00359\n(-0.00339, 0.01026)",
+          "-0.00012\n(-0.00524, 0.00501)",
+          "0.01944\n(0.01899, 0.01989)"
+        ],
+        [
+          "SCH",
+          "Nested fixed ensemble minus Previous ensemble",
+          "-0.00164\n(-0.00495, 0.00152)",
+          "0.00085\n(-0.00171, 0.00334)",
+          "0.00226\n(0.00204, 0.00247)"
+        ],
+        [
+          "SCH",
+          "Nested selected ensemble minus Previous ensemble",
+          "0.00109\n(-0.00265, 0.00490)",
+          "0.00130\n(-0.00148, 0.00464)",
+          "0.01098\n(0.01071, 0.01125)"
+        ],
+        [
+          "WHU",
+          "Nested selected ensemble minus Nested fixed ensemble",
+          "0.00544\n(-0.00264, 0.01329)",
+          "0.02147\n(0.00641, 0.03548)",
+          "-0.00636\n(-0.00749, -0.00525)"
+        ],
+        [
+          "WHU",
+          "Nested selected XGBoost minus Nested fixed XGBoost",
+          "0.01182\n(-0.00218, 0.02532)",
+          "0.04708\n(0.01917, 0.07232)",
+          "-0.01302\n(-0.01533, -0.01069)"
+        ],
+        [
+          "WHU",
+          "Nested fixed ensemble minus Previous ensemble",
+          "0.00189\n(-0.00977, 0.01392)",
+          "-0.01461\n(-0.03580, 0.00834)",
+          "0.01334\n(0.01142, 0.01512)"
+        ],
+        [
+          "WHU",
+          "Nested selected ensemble minus Previous ensemble",
+          "0.00734\n(-0.00367, 0.01842)",
+          "0.00686\n(-0.01383, 0.02753)",
+          "0.00698\n(0.00522, 0.00862)"
+        ],
+        [
+          "MIMIC",
+          "Nested selected ensemble minus Nested fixed ensemble",
+          "-0.00019\n(-0.00135, 0.00087)",
+          "0.00034\n(-0.00130, 0.00195)",
+          "0.00028\n(-0.00002, 0.00061)"
+        ],
+        [
+          "MIMIC",
+          "Nested selected XGBoost minus Nested fixed XGBoost",
+          "0.00013\n(-0.00194, 0.00203)",
+          "0.00194\n(-0.00139, 0.00513)",
+          "0.00030\n(-0.00029, 0.00096)"
+        ],
+        [
+          "MIMIC",
+          "Nested fixed ensemble minus Previous ensemble",
+          "0.00027\n(-0.00096, 0.00154)",
+          "0.00053\n(-0.00139, 0.00232)",
+          "-0.00004\n(-0.00040, 0.00031)"
+        ],
+        [
+          "MIMIC",
+          "Nested selected ensemble minus Previous ensemble",
+          "0.00008\n(-0.00131, 0.00145)",
+          "0.00087\n(-0.00155, 0.00302)",
+          "0.00024\n(-0.00017, 0.00067)"
+        ]
+      ]
+    },
+    {
+      "old_number": 22,
+      "rows": [
+        [
+          "Direction",
+          "AUC",
+          "Within-CV AUC (target)",
+          "ΔAUC",
+          "Descriptive qualification"
+        ],
+        [
+          "SCH→WHU",
+          "0.438",
+          "0.840",
+          "−0.402",
+          "Historical transfer; causes are not isolated"
+        ],
+        [
+          "WHU→SCH",
+          "0.485",
+          "0.657",
+          "−0.172",
+          "Historical transfer; causes are not isolated"
+        ],
+        [
+          "SCH→MIMIC",
+          "0.500",
+          "0.742",
+          "−0.242",
+          "Historical transfer; causes are not isolated"
+        ],
+        [
+          "MIMIC→SCH",
+          "0.559",
+          "0.657",
+          "−0.098",
+          "Historical transfer; causes are not isolated"
+        ],
+        [
+          "WHU→MIMIC",
+          "0.494",
+          "0.742",
+          "−0.248",
+          "Historical transfer; causes are not isolated"
+        ],
+        [
+          "MIMIC→WHU",
+          "0.444",
+          "0.840",
+          "−0.396",
+          "Historical transfer; causes are not isolated"
+        ]
+      ]
+    },
+    {
+      "old_number": 23,
+      "rows": [
+        [
+          "Direction",
+          "Target unit and count",
+          "Historical AUROC",
+          "95% conditional CI"
+        ],
+        [
+          "SCH to WHU",
+          "patient; 2562",
+          "0.4381",
+          "0.4017 to 0.4759"
+        ],
+        [
+          "WHU to SCH",
+          "patient; 38509",
+          "0.4847",
+          "0.4679 to 0.5011"
+        ],
+        [
+          "SCH to MIMIC",
+          "Historical vector unavailable",
+          "0.4998",
+          "Not estimable"
+        ],
+        [
+          "MIMIC to SCH",
+          "Historical vector unavailable",
+          "0.5591",
+          "Not estimable"
+        ],
+        [
+          "WHU to MIMIC",
+          "Historical vector unavailable",
+          "0.4938",
+          "Not estimable"
+        ],
+        [
+          "MIMIC to WHU",
+          "Historical vector unavailable",
+          "0.4440",
+          "Not estimable"
+        ]
+      ]
+    },
+    {
+      "old_number": 24,
+      "rows": [
+        [
+          "Direction",
+          "Target rows",
+          "Target patients",
+          "Old AUC",
+          "Replay AUC (95% CI)"
+        ],
+        [
+          "SCH to MIMIC",
+          "9946",
+          "6783",
+          "0.4998",
+          "0.4998 (0.4872 to 0.5131)"
+        ],
+        [
+          "WHU to MIMIC",
+          "9946",
+          "6783",
+          "0.4938",
+          "0.4938 (0.4820 to 0.5062)"
+        ],
+        [
+          "MIMIC to SCH",
+          "38509",
+          "38509",
+          "0.5591",
+          "0.5591 (0.5448 to 0.5736)"
+        ],
+        [
+          "MIMIC to WHU",
+          "2562",
+          "2562",
+          "0.4440",
+          "0.4440 (0.4087 to 0.4778)"
+        ]
+      ]
+    },
+    {
+      "old_number": 25,
+      "rows": [
+        [
+          "Transfer direction",
+          "Target units / positive labels",
+          "Linear AUC (95% CI)",
+          "Spline AUC (95% CI)"
+        ],
+        [
+          "SCH to WHU",
+          "2,562 patients / 281",
+          "0.384 (0.346 to 0.421)",
+          "0.385 (0.349 to 0.423)"
+        ],
+        [
+          "SCH to MIMIC",
+          "9,946 admissions / 4,462",
+          "0.636 (0.623 to 0.649)",
+          "0.609 (0.597 to 0.623)"
+        ],
+        [
+          "WHU to SCH",
+          "38,509 patients / 1,323",
+          "0.361 (0.347 to 0.375)",
+          "0.365 (0.351 to 0.378)"
+        ],
+        [
+          "WHU to MIMIC",
+          "9,946 admissions / 4,462",
+          "0.364 (0.351 to 0.377)",
+          "0.401 (0.387 to 0.414)"
+        ],
+        [
+          "MIMIC to SCH",
+          "38,509 patients / 1,323",
+          "0.639 (0.625 to 0.653)",
+          "0.639 (0.625 to 0.653)"
+        ],
+        [
+          "MIMIC to WHU",
+          "2,562 patients / 281",
+          "0.384 (0.346 to 0.421)",
+          "0.384 (0.346 to 0.421)"
+        ]
+      ]
+    },
+    {
+      "old_number": 26,
+      "rows": [
+        [
+          "Transfer direction",
+          "Age model",
+          "Average precision (95% CI)",
+          "Brier score (95% CI)",
+          "E/O (95% CI)"
+        ],
+        [
+          "SCH to WHU",
+          "Linear",
+          "0.087 (0.076 to 0.101)",
+          "0.1043 (0.0931 to 0.1157)",
+          "0.358 (0.321 to 0.402)"
+        ],
+        [
+          "SCH to WHU",
+          "Spline",
+          "0.088 (0.077 to 0.103)",
+          "0.1044 (0.0932 to 0.1158)",
+          "0.344 (0.309 to 0.387)"
+        ],
+        [
+          "SCH to MIMIC",
+          "Linear",
+          "0.560 (0.541 to 0.578)",
+          "0.4005 (0.3894 to 0.4113)",
+          "0.112 (0.109 to 0.115)"
+        ],
+        [
+          "SCH to MIMIC",
+          "Spline",
+          "0.519 (0.502 to 0.537)",
+          "0.4112 (0.3995 to 0.4222)",
+          "0.089 (0.087 to 0.092)"
+        ],
+        [
+          "WHU to SCH",
+          "Linear",
+          "0.025 (0.023 to 0.026)",
+          "0.0437 (0.0422 to 0.0452)",
+          "3.474 (3.294 to 3.671)"
+        ],
+        [
+          "WHU to SCH",
+          "Spline",
+          "0.025 (0.023 to 0.026)",
+          "0.0439 (0.0424 to 0.0454)",
+          "3.436 (3.258 to 3.630)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Linear",
+          "0.365 (0.351 to 0.379)",
+          "0.3832 (0.3725 to 0.3933)",
+          "0.227 (0.219 to 0.235)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Spline",
+          "0.377 (0.363 to 0.392)",
+          "0.3747 (0.3643 to 0.3845)",
+          "0.242 (0.234 to 0.250)"
+        ],
+        [
+          "MIMIC to SCH",
+          "Linear",
+          "0.050 (0.046 to 0.054)",
+          "0.1674 (0.1667 to 0.1681)",
+          "11.504 (10.916 to 12.145)"
+        ],
+        [
+          "MIMIC to SCH",
+          "Spline",
+          "0.050 (0.047 to 0.055)",
+          "0.1647 (0.1639 to 0.1654)",
+          "11.364 (10.786 to 11.998)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Linear",
+          "0.087 (0.076 to 0.101)",
+          "0.2065 (0.2026 to 0.2105)",
+          "3.798 (3.412 to 4.265)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Spline",
+          "0.087 (0.077 to 0.101)",
+          "0.2056 (0.2015 to 0.2097)",
+          "3.767 (3.385 to 4.227)"
+        ]
+      ]
+    },
+    {
+      "old_number": 27,
+      "rows": [
+        [
+          "Centre",
+          "Laboratory",
+          "Rows measured / all",
+          "Patients measured",
+          "Missing rows"
+        ],
+        [
+          "WHU",
+          "Albumin",
+          "2227 / 2562",
+          "2227",
+          "13.08%"
+        ],
+        [
+          "WHU",
+          "Total protein",
+          "2227 / 2562",
+          "2227",
+          "13.08%"
+        ],
+        [
+          "WHU",
+          "CBC hemoglobin",
+          "2237 / 2562",
+          "2237",
+          "12.69%"
+        ],
+        [
+          "WHU",
+          "CBC hematocrit",
+          "2237 / 2562",
+          "2237",
+          "12.69%"
+        ],
+        [
+          "MIMIC",
+          "Albumin",
+          "6077 / 9946",
+          "4611",
+          "38.90%"
+        ],
+        [
+          "MIMIC",
+          "Total protein",
+          "795 / 9946",
+          "737",
+          "92.01%"
+        ],
+        [
+          "MIMIC",
+          "CBC hemoglobin",
+          "9763 / 9946",
+          "6748",
+          "1.84%"
+        ],
+        [
+          "MIMIC",
+          "CBC hematocrit",
+          "9772 / 9946",
+          "6750",
+          "1.75%"
+        ]
+      ]
+    },
+    {
+      "old_number": 28,
+      "rows": [
+        [
+          "Fit and target",
+          "Model",
+          "AUROC (95% CI)",
+          "AP (95% CI)",
+          "Brier (95% CI)"
+        ],
+        [
+          "WHU local",
+          "Median ensemble",
+          "0.6543\n(0.6144, 0.6919)",
+          "0.2245\n(0.1879, 0.2675)",
+          "0.1749\n(0.1690, 0.1805)"
+        ],
+        [
+          "WHU local",
+          "Median + indicators",
+          "0.6557\n(0.6164, 0.6926)",
+          "0.2248\n(0.1885, 0.2686)",
+          "0.1923\n(0.1870, 0.1971)"
+        ],
+        [
+          "WHU local",
+          "Logistic",
+          "0.5458\n(0.5137, 0.5782)",
+          "0.1335\n(0.1118, 0.1622)",
+          "0.2467\n(0.2443, 0.2490)"
+        ],
+        [
+          "WHU local",
+          "Missingness only",
+          "0.6201\n(0.5768, 0.6596)",
+          "0.1917\n(0.1597, 0.2287)",
+          "0.2164\n(0.2110, 0.2217)"
+        ],
+        [
+          "MIMIC local",
+          "Median ensemble",
+          "0.5569\n(0.5443, 0.5685)",
+          "0.4915\n(0.4745, 0.5091)",
+          "0.2477\n(0.2467, 0.2488)"
+        ],
+        [
+          "MIMIC local",
+          "Median + indicators",
+          "0.5559\n(0.5433, 0.5674)",
+          "0.4886\n(0.4712, 0.5066)",
+          "0.2479\n(0.2472, 0.2487)"
+        ],
+        [
+          "MIMIC local",
+          "Logistic",
+          "0.5627\n(0.5507, 0.5751)",
+          "0.4977\n(0.4799, 0.5161)",
+          "0.2473\n(0.2461, 0.2484)"
+        ],
+        [
+          "MIMIC local",
+          "Missingness only",
+          "0.5100\n(0.4981, 0.5213)",
+          "0.4546\n(0.4391, 0.4707)",
+          "0.2499\n(0.2495, 0.2504)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Median ensemble",
+          "0.3875\n(0.3496, 0.4231)",
+          "0.0927\n(0.0822, 0.1065)",
+          "0.2795\n(0.2778, 0.2812)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Median + indicators",
+          "0.3709\n(0.3316, 0.4081)",
+          "0.0915\n(0.0808, 0.1050)",
+          "0.3169\n(0.3136, 0.3205)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Logistic",
+          "0.4168\n(0.3786, 0.4538)",
+          "0.0992\n(0.0870, 0.1137)",
+          "0.3021\n(0.2996, 0.3048)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Missingness only",
+          "0.3640\n(0.3338, 0.3936)",
+          "0.0903\n(0.0805, 0.1004)",
+          "0.2809\n(0.2790, 0.2828)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Median ensemble",
+          "0.5247\n(0.5130, 0.5364)",
+          "0.4584\n(0.4428, 0.4752)",
+          "0.2562\n(0.2529, 0.2595)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Median + indicators",
+          "0.5404\n(0.5279, 0.5525)",
+          "0.4697\n(0.4538, 0.4867)",
+          "0.2630\n(0.2587, 0.2673)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Logistic",
+          "0.5346\n(0.5222, 0.5469)",
+          "0.4689\n(0.4524, 0.4865)",
+          "0.2482\n(0.2462, 0.2504)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Missingness only",
+          "0.4855\n(0.4753, 0.4961)",
+          "0.4405\n(0.4276, 0.4537)",
+          "0.2573\n(0.2559, 0.2586)"
+        ]
+      ]
+    },
+    {
+      "old_number": 29,
+      "rows": [
+        [
+          "Direction",
+          "First minus second",
+          "Delta AUC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "MIMIC to WHU",
+          "Transfer Median ensemble minus Local Median ensemble",
+          "-0.26680\n(-0.33081, -0.20237)",
+          "-0.13172\n(-0.17291, -0.09499)",
+          "0.10463\n(0.09826, 0.11124)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Transfer Median + indicators minus Local Median + indicators",
+          "-0.28479\n(-0.34931, -0.21608)",
+          "-0.13329\n(-0.17427, -0.09679)",
+          "0.12466\n(0.11735, 0.13240)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Transfer Logistic minus Local Logistic",
+          "-0.12900\n(-0.16470, -0.09181)",
+          "-0.03431\n(-0.05623, -0.01858)",
+          "0.05543\n(0.05257, 0.05834)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Transfer Missingness only minus Local Missingness only",
+          "-0.25616\n(-0.32191, -0.18662)",
+          "-0.10139\n(-0.13740, -0.07174)",
+          "0.06446\n(0.05744, 0.07168)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Transfer Median + indicators minus Transfer Median ensemble",
+          "-0.01658\n(-0.03122, -0.00121)",
+          "-0.00122\n(-0.00721, 0.00418)",
+          "0.03741\n(0.03534, 0.03955)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Transfer Logistic minus Transfer Median ensemble",
+          "0.02932\n(-0.00214, 0.06019)",
+          "0.00641\n(-0.00385, 0.01705)",
+          "0.02261\n(0.02053, 0.02471)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Transfer Missingness only minus Transfer Median ensemble",
+          "-0.02353\n(-0.05095, 0.00497)",
+          "-0.00242\n(-0.01172, 0.00308)",
+          "0.00135\n(-0.00039, 0.00317)"
+        ],
+        [
+          "WHU to WHU",
+          "Local Median + indicators minus Local Median ensemble",
+          "0.00141\n(-0.01918, 0.02254)",
+          "0.00035\n(-0.02516, 0.02612)",
+          "0.01738\n(0.01520, 0.01958)"
+        ],
+        [
+          "WHU to WHU",
+          "Local Logistic minus Local Median ensemble",
+          "-0.10847\n(-0.15269, -0.06422)",
+          "-0.09099\n(-0.13447, -0.05106)",
+          "0.07181\n(0.06629, 0.07760)"
+        ],
+        [
+          "WHU to WHU",
+          "Local Missingness only minus Local Median ensemble",
+          "-0.03417\n(-0.07380, 0.00408)",
+          "-0.03274\n(-0.05705, -0.00957)",
+          "0.04152\n(0.03844, 0.04459)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Transfer Median ensemble minus Local Median ensemble",
+          "-0.03217\n(-0.04494, -0.01918)",
+          "-0.03318\n(-0.04744, -0.01910)",
+          "0.00849\n(0.00503, 0.01185)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Transfer Median + indicators minus Local Median + indicators",
+          "-0.01548\n(-0.02740, -0.00353)",
+          "-0.01897\n(-0.03208, -0.00670)",
+          "0.01507\n(0.01077, 0.01945)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Transfer Logistic minus Local Logistic",
+          "-0.02809\n(-0.04033, -0.01647)",
+          "-0.02875\n(-0.04056, -0.01759)",
+          "0.00094\n(-0.00102, 0.00301)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Transfer Missingness only minus Local Missingness only",
+          "-0.02448\n(-0.04523, -0.00259)",
+          "-0.01414\n(-0.02749, -0.00059)",
+          "0.00735\n(0.00569, 0.00905)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Transfer Median + indicators minus Transfer Median ensemble",
+          "0.01566\n(0.00445, 0.02693)",
+          "0.01130\n(0.00273, 0.01987)",
+          "0.00678\n(0.00514, 0.00842)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Transfer Logistic minus Transfer Median ensemble",
+          "0.00988\n(0.00056, 0.01918)",
+          "0.01058\n(0.00130, 0.01990)",
+          "-0.00797\n(-0.00983, -0.00593)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Transfer Missingness only minus Transfer Median ensemble",
+          "-0.03921\n(-0.04992, -0.02837)",
+          "-0.01784\n(-0.02683, -0.00948)",
+          "0.00106\n(-0.00240, 0.00448)"
+        ],
+        [
+          "MIMIC to MIMIC",
+          "Local Median + indicators minus Local Median ensemble",
+          "-0.00103\n(-0.00497, 0.00305)",
+          "-0.00291\n(-0.00788, 0.00237)",
+          "0.00020\n(-0.00021, 0.00058)"
+        ],
+        [
+          "MIMIC to MIMIC",
+          "Local Logistic minus Local Median ensemble",
+          "0.00580\n(-0.00410, 0.01525)",
+          "0.00616\n(-0.00488, 0.01724)",
+          "-0.00042\n(-0.00130, 0.00051)"
+        ],
+        [
+          "MIMIC to MIMIC",
+          "Local Missingness only minus Local Median ensemble",
+          "-0.04690\n(-0.06372, -0.03003)",
+          "-0.03688\n(-0.05098, -0.02369)",
+          "0.00220\n(0.00113, 0.00323)"
+        ]
+      ]
+    },
+    {
+      "old_number": 30,
+      "rows": [
+        [
+          "Target",
+          "Covered rows / patients",
+          "Covered labels",
+          "Excluded rows / labels",
+          "Full rows / labels"
+        ],
+        [
+          "WHU",
+          "2244 / 2244",
+          "179",
+          "318 / 102",
+          "2562 / 281"
+        ],
+        [
+          "MIMIC",
+          "9772 / 6750",
+          "4402",
+          "174 / 60",
+          "9946 / 4462"
+        ]
+      ]
+    },
+    {
+      "old_number": 31,
+      "rows": [
+        [
+          "Fit and target",
+          "Model",
+          "AUROC (95% CI)",
+          "AP (95% CI)",
+          "Brier (95% CI)"
+        ],
+        [
+          "WHU local",
+          "Median ensemble",
+          "0.5346\n(0.4891, 0.5787)",
+          "0.1082\n(0.0841, 0.1458)",
+          "0.1467\n(0.1422, 0.1514)"
+        ],
+        [
+          "WHU local",
+          "Median + indicators",
+          "0.5358\n(0.4912, 0.5776)",
+          "0.1157\n(0.0886, 0.1627)",
+          "0.1661\n(0.1625, 0.1697)"
+        ],
+        [
+          "WHU local",
+          "Logistic",
+          "0.5650\n(0.5209, 0.6100)",
+          "0.1218\n(0.0935, 0.1637)",
+          "0.2462\n(0.2433, 0.2491)"
+        ],
+        [
+          "WHU local",
+          "Missingness only",
+          "0.4786\n(0.4364, 0.5221)",
+          "0.0765\n(0.0652, 0.0931)",
+          "0.1847\n(0.1826, 0.1870)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Median ensemble",
+          "0.4924\n(0.4499, 0.5358)",
+          "0.0785\n(0.0658, 0.0982)",
+          "0.2845\n(0.2826, 0.2863)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Median + indicators",
+          "0.4997\n(0.4553, 0.5415)",
+          "0.0804\n(0.0673, 0.0991)",
+          "0.3299\n(0.3264, 0.3334)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Logistic",
+          "0.5361\n(0.4932, 0.5812)",
+          "0.0879\n(0.0729, 0.1088)",
+          "0.3097\n(0.3069, 0.3126)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Missingness only",
+          "0.4967\n(0.4861, 0.5051)",
+          "0.0793\n(0.0687, 0.0914)",
+          "0.2890\n(0.2880, 0.2900)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Median ensemble",
+          "0.5294\n(0.5173, 0.5416)",
+          "0.4699\n(0.4533, 0.4870)",
+          "0.2547\n(0.2514, 0.2582)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Median + indicators",
+          "0.5456\n(0.5336, 0.5579)",
+          "0.4817\n(0.4657, 0.4998)",
+          "0.2608\n(0.2568, 0.2650)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Logistic",
+          "0.5378\n(0.5252, 0.5508)",
+          "0.4729\n(0.4575, 0.4900)",
+          "0.2482\n(0.2460, 0.2504)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Missingness only",
+          "0.4888\n(0.4783, 0.4991)",
+          "0.4450\n(0.4323, 0.4583)",
+          "0.2543\n(0.2533, 0.2552)"
+        ],
+        [
+          "MIMIC local",
+          "Median ensemble",
+          "0.5563\n(0.5440, 0.5681)",
+          "0.4925\n(0.4755, 0.5100)",
+          "0.2478\n(0.2468, 0.2488)"
+        ],
+        [
+          "MIMIC local",
+          "Median + indicators",
+          "0.5544\n(0.5424, 0.5665)",
+          "0.4893\n(0.4729, 0.5069)",
+          "0.2481\n(0.2473, 0.2489)"
+        ],
+        [
+          "MIMIC local",
+          "Logistic",
+          "0.5631\n(0.5509, 0.5760)",
+          "0.4991\n(0.4815, 0.5175)",
+          "0.2473\n(0.2461, 0.2484)"
+        ],
+        [
+          "MIMIC local",
+          "Missingness only",
+          "0.5066\n(0.4949, 0.5182)",
+          "0.4547\n(0.4400, 0.4709)",
+          "0.2503\n(0.2499, 0.2506)"
+        ]
+      ]
+    },
+    {
+      "old_number": 32,
+      "rows": [
+        [
+          "Fit and target",
+          "Model",
+          "Delta AUC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "WHU to WHU",
+          "Median ensemble",
+          "-0.11968\n(-0.15485, -0.08652)",
+          "-0.11627\n(-0.16129, -0.06859)",
+          "-0.02816\n(-0.03215, -0.02412)"
+        ],
+        [
+          "WHU to WHU",
+          "Median + indicators",
+          "-0.11993\n(-0.15431, -0.08862)",
+          "-0.10912\n(-0.15239, -0.05884)",
+          "-0.02620\n(-0.03013, -0.02219)"
+        ],
+        [
+          "WHU to WHU",
+          "Logistic",
+          "0.01920\n(0.00279, 0.03550)",
+          "-0.01172\n(-0.02280, 0.00201)",
+          "-0.00049\n(-0.00085, -0.00016)"
+        ],
+        [
+          "WHU to WHU",
+          "Missingness only",
+          "-0.14156\n(-0.17667, -0.10699)",
+          "-0.11524\n(-0.15391, -0.08201)",
+          "-0.03165\n(-0.03656, -0.02650)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Median ensemble",
+          "0.10495\n(0.07638, 0.13548)",
+          "-0.01420\n(-0.02028, -0.00733)",
+          "0.00503\n(0.00444, 0.00562)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Median + indicators",
+          "0.12875\n(0.09571, 0.16292)",
+          "-0.01116\n(-0.01676, -0.00482)",
+          "0.01296\n(0.01115, 0.01477)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Logistic",
+          "0.11933\n(0.08945, 0.15071)",
+          "-0.01129\n(-0.01751, -0.00464)",
+          "0.00761\n(0.00676, 0.00844)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Missingness only",
+          "0.13275\n(0.10379, 0.16232)",
+          "-0.01103\n(-0.01590, -0.00714)",
+          "0.00818\n(0.00647, 0.00974)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Median ensemble",
+          "0.00468\n(0.00189, 0.00744)",
+          "0.01159\n(0.00438, 0.01881)",
+          "-0.00150\n(-0.00205, -0.00093)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Median + indicators",
+          "0.00521\n(0.00239, 0.00803)",
+          "0.01203\n(0.00489, 0.01930)",
+          "-0.00223\n(-0.00299, -0.00145)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Logistic",
+          "0.00323\n(0.00137, 0.00509)",
+          "0.00396\n(0.00143, 0.00646)",
+          "-0.00003\n(-0.00007, 0.00001)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Missingness only",
+          "0.00329\n(0.00052, 0.00601)",
+          "0.00450\n(0.00114, 0.00754)",
+          "-0.00300\n(-0.00392, -0.00208)"
+        ],
+        [
+          "MIMIC to MIMIC",
+          "Median ensemble",
+          "-0.00061\n(-0.00158, 0.00043)",
+          "0.00097\n(0.00049, 0.00145)",
+          "0.00006\n(-0.00000, 0.00011)"
+        ],
+        [
+          "MIMIC to MIMIC",
+          "Median + indicators",
+          "-0.00142\n(-0.00373, 0.00098)",
+          "0.00065\n(0.00046, 0.00085)",
+          "0.00019\n(0.00004, 0.00034)"
+        ],
+        [
+          "MIMIC to MIMIC",
+          "Logistic",
+          "0.00038\n(0.00010, 0.00066)",
+          "0.00143\n(0.00058, 0.00226)",
+          "-0.00002\n(-0.00005, 0.00000)"
+        ],
+        [
+          "MIMIC to MIMIC",
+          "Missingness only",
+          "-0.00343\n(-0.00620, -0.00065)",
+          "0.00008\n(-0.00004, 0.00021)",
+          "0.00035\n(0.00006, 0.00063)"
+        ]
+      ]
+    },
+    {
+      "old_number": 33,
+      "rows": [
+        [
+          "Target",
+          "Population",
+          "Rows",
+          "Patients",
+          "Positive row labels"
+        ],
+        [
+          "WHU",
+          "Full original",
+          "2562",
+          "2562",
+          "281"
+        ],
+        [
+          "WHU",
+          "At least one accepted lab",
+          "2244",
+          "2244",
+          "179"
+        ],
+        [
+          "MIMIC",
+          "Full original",
+          "9946",
+          "6783",
+          "4462"
+        ],
+        [
+          "MIMIC",
+          "At least one accepted lab",
+          "9772",
+          "6750",
+          "4402"
+        ]
+      ]
+    },
+    {
+      "old_number": 34,
+      "rows": [
+        [
+          "Transfer",
+          "Method",
+          "AUROC",
+          "AP",
+          "Brier"
+        ],
+        [
+          "MIMIC to WHU",
+          "Frozen source\nTarget n = 0",
+          "0.3875\n(0.3526, 0.4231)",
+          "0.0927\n(0.0809, 0.1075)",
+          "0.2795\n(0.2779, 0.2812)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Frozen source\nTarget n = 0",
+          "0.5247\n(0.5123, 0.5367)",
+          "0.4584\n(0.4430, 0.4754)",
+          "0.2562\n(0.2530, 0.2596)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Unconstrained Platt\nTarget n = 50",
+          "0.5380\n(0.5205, 0.5570)",
+          "0.1339\n(0.1184, 0.1524)",
+          "0.0998\n(0.0899, 0.1097)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update\nTarget n = 50",
+          "0.5463\n(0.5216, 0.5721)",
+          "0.1246\n(0.1100, 0.1425)",
+          "0.1052\n(0.0953, 0.1152)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, source transform\nTarget n = 50",
+          "0.5379\n(0.5114, 0.5646)",
+          "0.1196\n(0.1050, 0.1365)",
+          "0.1039\n(0.0940, 0.1139)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, target transform\nTarget n = 50",
+          "0.5086\n(0.4850, 0.5316)",
+          "0.1121\n(0.0984, 0.1278)",
+          "0.1019\n(0.0920, 0.1119)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Unconstrained Platt\nTarget n = 200",
+          "0.6116\n(0.5771, 0.6475)",
+          "0.1559\n(0.1351, 0.1805)",
+          "0.0972\n(0.0874, 0.1067)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update\nTarget n = 200",
+          "0.6056\n(0.5756, 0.6384)",
+          "0.1490\n(0.1295, 0.1722)",
+          "0.0980\n(0.0883, 0.1076)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, source transform\nTarget n = 200",
+          "0.5802\n(0.5526, 0.6089)",
+          "0.1344\n(0.1180, 0.1544)",
+          "0.0982\n(0.0883, 0.1076)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, target transform\nTarget n = 200",
+          "0.5349\n(0.5096, 0.5600)",
+          "0.1210\n(0.1051, 0.1404)",
+          "0.0980\n(0.0882, 0.1076)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Unconstrained Platt\nTarget n = 800",
+          "0.6136\n(0.5787, 0.6488)",
+          "0.1539\n(0.1339, 0.1770)",
+          "0.0967\n(0.0870, 0.1062)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update\nTarget n = 800",
+          "0.6332\n(0.6000, 0.6679)",
+          "0.1601\n(0.1388, 0.1852)",
+          "0.0965\n(0.0868, 0.1059)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, source transform\nTarget n = 800",
+          "0.6117\n(0.5809, 0.6434)",
+          "0.1409\n(0.1234, 0.1615)",
+          "0.0971\n(0.0875, 0.1063)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, target transform\nTarget n = 800",
+          "0.5486\n(0.5186, 0.5785)",
+          "0.1265\n(0.1094, 0.1500)",
+          "0.0974\n(0.0877, 0.1069)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Unconstrained Platt\nTarget n = 50",
+          "0.5142\n(0.5049, 0.5234)",
+          "0.4556\n(0.4413, 0.4714)",
+          "0.2506\n(0.2491, 0.2521)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update\nTarget n = 50",
+          "0.5138\n(0.5053, 0.5228)",
+          "0.4563\n(0.4426, 0.4711)",
+          "0.2606\n(0.2584, 0.2629)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, source transform\nTarget n = 50",
+          "0.5136\n(0.5048, 0.5229)",
+          "0.4567\n(0.4425, 0.4717)",
+          "0.2586\n(0.2564, 0.2607)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, target transform\nTarget n = 50",
+          "0.5162\n(0.5072, 0.5253)",
+          "0.4640\n(0.4494, 0.4794)",
+          "0.2616\n(0.2591, 0.2640)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Unconstrained Platt\nTarget n = 200",
+          "0.5069\n(0.4987, 0.5149)",
+          "0.4515\n(0.4379, 0.4668)",
+          "0.2489\n(0.2475, 0.2503)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update\nTarget n = 200",
+          "0.5282\n(0.5189, 0.5381)",
+          "0.4713\n(0.4571, 0.4877)",
+          "0.2506\n(0.2486, 0.2524)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, source transform\nTarget n = 200",
+          "0.5287\n(0.5191, 0.5386)",
+          "0.4705\n(0.4560, 0.4871)",
+          "0.2499\n(0.2481, 0.2517)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, target transform\nTarget n = 200",
+          "0.5390\n(0.5293, 0.5490)",
+          "0.4811\n(0.4662, 0.4977)",
+          "0.2498\n(0.2477, 0.2518)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Unconstrained Platt\nTarget n = 800",
+          "0.5164\n(0.5066, 0.5261)",
+          "0.4558\n(0.4423, 0.4711)",
+          "0.2474\n(0.2461, 0.2487)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update\nTarget n = 800",
+          "0.5433\n(0.5320, 0.5541)",
+          "0.4816\n(0.4661, 0.4984)",
+          "0.2463\n(0.2447, 0.2479)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, source transform\nTarget n = 800",
+          "0.5423\n(0.5314, 0.5534)",
+          "0.4790\n(0.4631, 0.4959)",
+          "0.2463\n(0.2448, 0.2478)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, target transform\nTarget n = 800",
+          "0.5556\n(0.5443, 0.5671)",
+          "0.4922\n(0.4763, 0.5094)",
+          "0.2455\n(0.2439, 0.2471)"
+        ]
+      ]
+    },
+    {
+      "old_number": 35,
+      "rows": [
+        [
+          "Transfer",
+          "Comparison",
+          "Delta AUROC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "MIMIC to WHU",
+          "Unconstrained Platt minus Frozen source\nTarget n = 50",
+          "0.15054\n(0.10186, 0.19998)",
+          "0.04118\n(0.02657, 0.05553)",
+          "-0.17968\n(-0.19040, -0.16891)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update minus Frozen source\nTarget n = 50",
+          "0.15878\n(0.10683, 0.21065)",
+          "0.03186\n(0.01708, 0.04718)",
+          "-0.17428\n(-0.18541, -0.16323)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, target transform minus Frozen source\nTarget n = 50",
+          "0.12110\n(0.08070, 0.16148)",
+          "0.01937\n(0.00647, 0.03212)",
+          "-0.17760\n(-0.18850, -0.16682)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update minus Local logistic, target transform\nTarget n = 50",
+          "0.03769\n(0.01624, 0.05998)",
+          "0.01248\n(0.00468, 0.02155)",
+          "0.00332\n(0.00195, 0.00467)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Unconstrained Platt minus Frozen source\nTarget n = 200",
+          "0.22414\n(0.15512, 0.29412)",
+          "0.06312\n(0.03982, 0.08632)",
+          "-0.18235\n(-0.19310, -0.17181)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update minus Frozen source\nTarget n = 200",
+          "0.21807\n(0.15648, 0.28244)",
+          "0.05622\n(0.03618, 0.07746)",
+          "-0.18156\n(-0.19216, -0.17123)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, target transform minus Frozen source\nTarget n = 200",
+          "0.14742\n(0.10505, 0.19016)",
+          "0.02830\n(0.01406, 0.04496)",
+          "-0.18155\n(-0.19213, -0.17110)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update minus Local logistic, target transform\nTarget n = 200",
+          "0.07065\n(0.03998, 0.10153)",
+          "0.02792\n(0.01355, 0.04312)",
+          "-0.00000\n(-0.00112, 0.00110)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Unconstrained Platt minus Frozen source\nTarget n = 800",
+          "0.22611\n(0.15589, 0.29614)",
+          "0.06120\n(0.03930, 0.08277)",
+          "-0.18284\n(-0.19362, -0.17222)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update minus Frozen source\nTarget n = 800",
+          "0.24574\n(0.18098, 0.31308)",
+          "0.06735\n(0.04499, 0.09120)",
+          "-0.18306\n(-0.19370, -0.17266)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, target transform minus Frozen source\nTarget n = 800",
+          "0.16113\n(0.11530, 0.20666)",
+          "0.03379\n(0.01721, 0.05468)",
+          "-0.18207\n(-0.19259, -0.17161)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update minus Local logistic, target transform\nTarget n = 800",
+          "0.08461\n(0.04725, 0.12160)",
+          "0.03356\n(0.01452, 0.05167)",
+          "-0.00099\n(-0.00209, 0.00009)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Unconstrained Platt minus Frozen source\nTarget n = 50",
+          "-0.01054\n(-0.01609, -0.00415)",
+          "-0.00272\n(-0.00766, 0.00285)",
+          "-0.00564\n(-0.00771, -0.00367)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update minus Frozen source\nTarget n = 50",
+          "-0.01087\n(-0.02136, -0.00048)",
+          "-0.00205\n(-0.01093, 0.00769)",
+          "0.00441\n(0.00207, 0.00668)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, target transform minus Frozen source\nTarget n = 50",
+          "-0.00856\n(-0.02018, 0.00267)",
+          "0.00566\n(-0.00505, 0.01663)",
+          "0.00541\n(0.00279, 0.00810)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update minus Local logistic, target transform\nTarget n = 50",
+          "-0.00231\n(-0.00726, 0.00280)",
+          "-0.00770\n(-0.01245, -0.00263)",
+          "-0.00100\n(-0.00214, 0.00012)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Unconstrained Platt minus Frozen source\nTarget n = 200",
+          "-0.01786\n(-0.02662, -0.00738)",
+          "-0.00685\n(-0.01375, 0.00106)",
+          "-0.00729\n(-0.00943, -0.00529)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update minus Frozen source\nTarget n = 200",
+          "0.00349\n(-0.00825, 0.01598)",
+          "0.01294\n(0.00214, 0.02467)",
+          "-0.00563\n(-0.00822, -0.00330)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, target transform minus Frozen source\nTarget n = 200",
+          "0.01425\n(0.00264, 0.02610)",
+          "0.02275\n(0.01150, 0.03520)",
+          "-0.00640\n(-0.00898, -0.00393)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update minus Local logistic, target transform\nTarget n = 200",
+          "-0.01076\n(-0.01571, -0.00548)",
+          "-0.00981\n(-0.01473, -0.00435)",
+          "0.00077\n(-0.00004, 0.00154)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Unconstrained Platt minus Frozen source\nTarget n = 800",
+          "-0.00828\n(-0.01425, -0.00214)",
+          "-0.00254\n(-0.00694, 0.00193)",
+          "-0.00880\n(-0.01095, -0.00672)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update minus Frozen source\nTarget n = 800",
+          "0.01855\n(0.00578, 0.03195)",
+          "0.02320\n(0.01067, 0.03556)",
+          "-0.00992\n(-0.01238, -0.00760)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, target transform minus Frozen source\nTarget n = 800",
+          "0.03087\n(0.01837, 0.04443)",
+          "0.03384\n(0.02106, 0.04674)",
+          "-0.01069\n(-0.01312, -0.00833)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update minus Local logistic, target transform\nTarget n = 800",
+          "-0.01232\n(-0.01763, -0.00704)",
+          "-0.01064\n(-0.01549, -0.00570)",
+          "0.00078\n(0.00031, 0.00126)"
+        ]
+      ]
+    },
+    {
+      "old_number": 36,
+      "rows": [
+        [
+          "Transfer",
+          "Method",
+          "AUROC",
+          "AP",
+          "Brier"
+        ],
+        [
+          "MIMIC to WHU",
+          "Frozen source\nTarget n = 0",
+          "0.4924\n(0.4501, 0.5373)",
+          "0.0785\n(0.0662, 0.0977)",
+          "0.2845\n(0.2828, 0.2863)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Frozen source\nTarget n = 0",
+          "0.5294\n(0.5166, 0.5413)",
+          "0.4699\n(0.4525, 0.4864)",
+          "0.2547\n(0.2514, 0.2582)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Unconstrained Platt\nTarget n = 800",
+          "0.5086\n(0.4656, 0.5500)",
+          "0.0798\n(0.0663, 0.0975)",
+          "0.0754\n(0.0668, 0.0845)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Source-logit + values update\nTarget n = 800",
+          "0.5458\n(0.5045, 0.5847)",
+          "0.0904\n(0.0744, 0.1128)",
+          "0.0756\n(0.0673, 0.0847)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, source transform\nTarget n = 800",
+          "0.5408\n(0.5024, 0.5786)",
+          "0.0850\n(0.0717, 0.1021)",
+          "0.0752\n(0.0667, 0.0842)"
+        ],
+        [
+          "MIMIC to WHU",
+          "Local logistic, target transform\nTarget n = 800",
+          "0.5681\n(0.5266, 0.6118)",
+          "0.1105\n(0.0894, 0.1427)",
+          "0.0740\n(0.0657, 0.0829)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Unconstrained Platt\nTarget n = 800",
+          "0.5198\n(0.5099, 0.5298)",
+          "0.4639\n(0.4482, 0.4793)",
+          "0.2473\n(0.2460, 0.2487)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Source-logit + values update\nTarget n = 800",
+          "0.5437\n(0.5326, 0.5549)",
+          "0.4836\n(0.4675, 0.5009)",
+          "0.2465\n(0.2449, 0.2481)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, source transform\nTarget n = 800",
+          "0.5455\n(0.5343, 0.5569)",
+          "0.4834\n(0.4673, 0.5004)",
+          "0.2463\n(0.2448, 0.2479)"
+        ],
+        [
+          "WHU to MIMIC",
+          "Local logistic, target transform\nTarget n = 800",
+          "0.5560\n(0.5444, 0.5670)",
+          "0.4937\n(0.4772, 0.5115)",
+          "0.2457\n(0.2441, 0.2473)"
+        ]
+      ]
+    },
+    {
+      "old_number": 37,
+      "rows": [
+        [
+          "Cutoff h",
+          "Input variant",
+          "AUROC",
+          "Average precision",
+          "Brier score"
+        ],
+        [
+          "0",
+          "Original 43",
+          "0.645 (0.632 to 0.658)",
+          "0.582 (0.565 to 0.602)",
+          "0.236 (0.234 to 0.238)"
+        ],
+        [
+          "0",
+          "Without AST/HDL",
+          "0.643 (0.630 to 0.657)",
+          "0.580 (0.562 to 0.599)",
+          "0.236 (0.234 to 0.238)"
+        ],
+        [
+          "24",
+          "Original 43",
+          "0.722 (0.710 to 0.735)",
+          "0.690 (0.675 to 0.707)",
+          "0.213 (0.210 to 0.216)"
+        ],
+        [
+          "24",
+          "Without AST/HDL",
+          "0.724 (0.712 to 0.736)",
+          "0.691 (0.675 to 0.707)",
+          "0.213 (0.210 to 0.216)"
+        ],
+        [
+          "48",
+          "Original 43",
+          "0.726 (0.715 to 0.738)",
+          "0.693 (0.677 to 0.709)",
+          "0.213 (0.210 to 0.216)"
+        ],
+        [
+          "48",
+          "Without AST/HDL",
+          "0.728 (0.716 to 0.739)",
+          "0.698 (0.683 to 0.714)",
+          "0.211 (0.208 to 0.214)"
+        ],
+        [
+          "0",
+          "WHU ensemble, 6 inputs",
+          "0.553 (0.509 to 0.598)",
+          "0.099 (0.079 to 0.129)",
+          "0.208 (0.203 to 0.213)"
+        ],
+        [
+          "0",
+          "WHU logistic, 6 inputs",
+          "0.634 (0.589 to 0.677)",
+          "0.143 (0.113 to 0.187)",
+          "0.071 (0.062 to 0.081)"
+        ],
+        [
+          "24",
+          "WHU ensemble, 6 inputs",
+          "0.569 (0.521 to 0.614)",
+          "0.110 (0.088 to 0.146)",
+          "0.174 (0.170 to 0.178)"
+        ],
+        [
+          "24",
+          "WHU logistic, 6 inputs",
+          "0.649 (0.605 to 0.690)",
+          "0.172 (0.129 to 0.228)",
+          "0.071 (0.062 to 0.080)"
+        ],
+        [
+          "48",
+          "WHU ensemble, 6 inputs",
+          "0.590 (0.545 to 0.635)",
+          "0.131 (0.101 to 0.176)",
+          "0.173 (0.170 to 0.177)"
+        ],
+        [
+          "48",
+          "WHU logistic, 6 inputs",
+          "0.646 (0.601 to 0.687)",
+          "0.162 (0.125 to 0.212)",
+          "0.071 (0.062 to 0.080)"
+        ],
+        [
+          "Whole stay",
+          "WHU ensemble, 6 inputs",
+          "0.570 (0.519 to 0.615)",
+          "0.138 (0.105 to 0.188)",
+          "0.167 (0.163 to 0.171)"
+        ],
+        [
+          "Whole stay",
+          "WHU logistic, 6 inputs",
+          "0.631 (0.586 to 0.673)",
+          "0.158 (0.121 to 0.211)",
+          "0.071 (0.062 to 0.080)"
+        ]
+      ]
+    },
+    {
+      "old_number": 38,
+      "rows": [
+        [
+          "Evaluation set",
+          "Input variant",
+          "Comparison",
+          "AUROC difference"
+        ],
+        [
+          "All 9,946",
+          "Original 43",
+          "24h minus 0h",
+          "0.07747 (0.06817 to 0.08684)"
+        ],
+        [
+          "All 9,946",
+          "Original 43",
+          "48h minus 24h",
+          "0.00405 (-0.00007 to 0.00789)"
+        ],
+        [
+          "All 9,946",
+          "Without AST/HDL",
+          "24h minus 0h",
+          "0.08032 (0.07129 to 0.08964)"
+        ],
+        [
+          "All 9,946",
+          "Without AST/HDL",
+          "48h minus 24h",
+          "0.00398 (0.00029 to 0.00758)"
+        ],
+        [
+          "Common 9,427",
+          "Original 43",
+          "24h minus 0h",
+          "0.07771 (0.06824 to 0.08732)"
+        ],
+        [
+          "Common 9,427",
+          "Original 43",
+          "48h minus 24h",
+          "0.00402 (-0.00016 to 0.00825)"
+        ],
+        [
+          "Common 9,427",
+          "Without AST/HDL",
+          "24h minus 0h",
+          "0.08067 (0.07145 to 0.09025)"
+        ],
+        [
+          "Common 9,427",
+          "Without AST/HDL",
+          "48h minus 24h",
+          "0.00373 (-0.00009 to 0.00776)"
+        ],
+        [
+          "WHU 2,244 patients",
+          "Ensemble, 6 inputs",
+          "24h minus 0h",
+          "0.01517 (-0.02921 to 0.05975)"
+        ],
+        [
+          "WHU 2,244 patients",
+          "Logistic, 6 inputs",
+          "24h minus 0h",
+          "0.01441 (-0.01088 to 0.03883)"
+        ],
+        [
+          "WHU 2,244 patients",
+          "Ensemble, 6 inputs",
+          "48h minus 24h",
+          "0.02179 (-0.00777 to 0.05182)"
+        ],
+        [
+          "WHU 2,244 patients",
+          "Logistic, 6 inputs",
+          "48h minus 24h",
+          "-0.00294 (-0.01556 to 0.00946)"
+        ],
+        [
+          "WHU 2,244 patients",
+          "Ensemble, 6 inputs",
+          "Whole stay minus 48h",
+          "-0.02044 (-0.05753 to 0.01593)"
+        ],
+        [
+          "WHU 2,244 patients",
+          "Logistic, 6 inputs",
+          "Whole stay minus 48h",
+          "-0.01488 (-0.03121 to 0.00190)"
+        ]
+      ]
+    },
+    {
+      "old_number": 39,
+      "rows": [
+        [
+          "Cohort",
+          "Model",
+          "AUROC",
+          "AP",
+          "Brier"
+        ],
+        [
+          "SCH",
+          "Original-input ensemble",
+          "0.6578\n(0.6440, 0.6720)",
+          "0.0621\n(0.0563, 0.0689)",
+          "0.1837\n(0.1827, 0.1846)"
+        ],
+        [
+          "SCH",
+          "Values + indicators",
+          "0.6577\n(0.6438, 0.6720)",
+          "0.0625\n(0.0570, 0.0697)",
+          "0.1862\n(0.1853, 0.1871)"
+        ],
+        [
+          "SCH",
+          "Imputed XGBoost",
+          "0.6573\n(0.6442, 0.6713)",
+          "0.0623\n(0.0566, 0.0695)",
+          "0.2034\n(0.2023, 0.2044)"
+        ],
+        [
+          "SCH",
+          "Native NaN XGBoost",
+          "0.6549\n(0.6415, 0.6685)",
+          "0.0634\n(0.0572, 0.0709)",
+          "0.1990\n(0.1978, 0.2000)"
+        ],
+        [
+          "WHU",
+          "Original-input ensemble",
+          "0.8359\n(0.8086, 0.8616)",
+          "0.4999\n(0.4341, 0.5614)",
+          "0.0928\n(0.0877, 0.0984)"
+        ],
+        [
+          "WHU",
+          "Values + indicators",
+          "0.8263\n(0.7970, 0.8542)",
+          "0.4809\n(0.4176, 0.5445)",
+          "0.1107\n(0.1059, 0.1156)"
+        ],
+        [
+          "WHU",
+          "Imputed XGBoost",
+          "0.8197\n(0.7907, 0.8474)",
+          "0.4729\n(0.4096, 0.5369)",
+          "0.0963\n(0.0904, 0.1028)"
+        ],
+        [
+          "WHU",
+          "Native NaN XGBoost",
+          "0.8374\n(0.8100, 0.8622)",
+          "0.4812\n(0.4189, 0.5457)",
+          "0.0898\n(0.0834, 0.0964)"
+        ],
+        [
+          "MIMIC",
+          "Original-input ensemble",
+          "0.7369\n(0.7256, 0.7484)",
+          "0.7070\n(0.6915, 0.7234)",
+          "0.2074\n(0.2041, 0.2105)"
+        ],
+        [
+          "MIMIC",
+          "Values + indicators",
+          "0.7413\n(0.7305, 0.7523)",
+          "0.7133\n(0.6986, 0.7288)",
+          "0.2059\n(0.2027, 0.2089)"
+        ],
+        [
+          "MIMIC",
+          "Imputed XGBoost",
+          "0.7361\n(0.7249, 0.7476)",
+          "0.7046\n(0.6896, 0.7212)",
+          "0.2068\n(0.2033, 0.2101)"
+        ],
+        [
+          "MIMIC",
+          "Native NaN XGBoost",
+          "0.7332\n(0.7220, 0.7437)",
+          "0.7044\n(0.6887, 0.7196)",
+          "0.2087\n(0.2058, 0.2117)"
+        ]
+      ]
+    },
+    {
+      "old_number": 40,
+      "rows": [
+        [
+          "Cohort",
+          "Comparison",
+          "Delta AUC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "SCH",
+          "Values + indicators minus Original-input ensemble",
+          "-0.00007\n(-0.00409, 0.00394)",
+          "0.00040\n(-0.00248, 0.00365)",
+          "0.00258\n(0.00231, 0.00283)"
+        ],
+        [
+          "SCH",
+          "Native NaN XGBoost minus Imputed XGBoost",
+          "-0.00238\n(-0.01053, 0.00555)",
+          "0.00106\n(-0.00382, 0.00586)",
+          "-0.00442\n(-0.00495, -0.00387)"
+        ],
+        [
+          "WHU",
+          "Values + indicators minus Original-input ensemble",
+          "-0.00959\n(-0.02130, 0.00159)",
+          "-0.01908\n(-0.04052, 0.00353)",
+          "0.01789\n(0.01595, 0.01981)"
+        ],
+        [
+          "WHU",
+          "Native NaN XGBoost minus Imputed XGBoost",
+          "0.01765\n(-0.00372, 0.04075)",
+          "0.00826\n(-0.02476, 0.04244)",
+          "-0.00658\n(-0.01048, -0.00289)"
+        ],
+        [
+          "MIMIC",
+          "Values + indicators minus Original-input ensemble",
+          "0.00447\n(0.00180, 0.00698)",
+          "0.00634\n(0.00252, 0.00974)",
+          "-0.00148\n(-0.00220, -0.00073)"
+        ],
+        [
+          "MIMIC",
+          "Native NaN XGBoost minus Imputed XGBoost",
+          "-0.00296\n(-0.00723, 0.00105)",
+          "-0.00024\n(-0.00829, 0.00691)",
+          "0.00195\n(0.00061, 0.00340)"
+        ]
+      ]
+    },
+    {
+      "old_number": 41,
+      "rows": [
+        [
+          "Cohort",
+          "Variant",
+          "Nominal slots",
+          "Inner fit by fold",
+          "Final fit by fold"
+        ],
+        [
+          "SCH",
+          "All laboratory slots",
+          "94",
+          "94/94/94/94/94",
+          "94/94/94/94/94"
+        ],
+        [
+          "SCH",
+          "At least 80% coverage",
+          "94",
+          "10/10/10/10/10",
+          "10/10/10/10/10"
+        ],
+        [
+          "SCH",
+          "At least 50% coverage",
+          "94",
+          "39/39/39/39/39",
+          "39/39/39/39/39"
+        ],
+        [
+          "WHU",
+          "All laboratory slots",
+          "94",
+          "94/94/94/94/94",
+          "94/94/94/94/94"
+        ],
+        [
+          "WHU",
+          "At least 80% coverage",
+          "94",
+          "27/27/27/27/27",
+          "27/27/27/27/27"
+        ],
+        [
+          "WHU",
+          "At least 50% coverage",
+          "94",
+          "34/33/34/34/33",
+          "33/34/33/33/33"
+        ],
+        [
+          "MIMIC",
+          "All laboratory slots",
+          "34",
+          "22/22/22/22/22",
+          "22/22/22/22/22"
+        ],
+        [
+          "MIMIC",
+          "At least 80% coverage",
+          "34",
+          "6/6/6/6/6",
+          "6/6/6/6/6"
+        ],
+        [
+          "MIMIC",
+          "At least 50% coverage",
+          "34",
+          "9/9/9/9/9",
+          "9/9/9/9/9"
+        ]
+      ]
+    },
+    {
+      "old_number": 42,
+      "rows": [
+        [
+          "Cohort",
+          "Model",
+          "AUROC",
+          "AP",
+          "Brier"
+        ],
+        [
+          "SCH",
+          "All laboratory slots",
+          "0.6023\n(0.5870, 0.6173)",
+          "0.0529\n(0.0481, 0.0590)",
+          "0.2003\n(0.1997, 0.2009)"
+        ],
+        [
+          "SCH",
+          "At least 80% coverage",
+          "0.5378\n(0.5221, 0.5536)",
+          "0.0389\n(0.0360, 0.0422)",
+          "0.2064\n(0.2057, 0.2070)"
+        ],
+        [
+          "SCH",
+          "At least 50% coverage",
+          "0.6038\n(0.5880, 0.6183)",
+          "0.0530\n(0.0482, 0.0589)",
+          "0.1881\n(0.1873, 0.1889)"
+        ],
+        [
+          "SCH",
+          "Original full-input reference",
+          "0.6578\n(0.6440, 0.6720)",
+          "0.0621\n(0.0563, 0.0689)",
+          "0.1837\n(0.1827, 0.1846)"
+        ],
+        [
+          "WHU",
+          "All laboratory slots",
+          "0.8039\n(0.7732, 0.8323)",
+          "0.4266\n(0.3634, 0.4881)",
+          "0.1308\n(0.1269, 0.1349)"
+        ],
+        [
+          "WHU",
+          "At least 80% coverage",
+          "0.7436\n(0.7095, 0.7756)",
+          "0.3242\n(0.2706, 0.3853)",
+          "0.1279\n(0.1228, 0.1329)"
+        ],
+        [
+          "WHU",
+          "At least 50% coverage",
+          "0.7679\n(0.7336, 0.8003)",
+          "0.4015\n(0.3380, 0.4622)",
+          "0.1234\n(0.1187, 0.1282)"
+        ],
+        [
+          "WHU",
+          "Original full-input reference",
+          "0.8359\n(0.8086, 0.8616)",
+          "0.4999\n(0.4341, 0.5614)",
+          "0.0928\n(0.0877, 0.0984)"
+        ],
+        [
+          "MIMIC",
+          "All laboratory slots",
+          "0.7250\n(0.7141, 0.7357)",
+          "0.6972\n(0.6819, 0.7130)",
+          "0.2116\n(0.2089, 0.2144)"
+        ],
+        [
+          "MIMIC",
+          "At least 80% coverage",
+          "0.6422\n(0.6301, 0.6539)",
+          "0.5821\n(0.5639, 0.6006)",
+          "0.2352\n(0.2332, 0.2372)"
+        ],
+        [
+          "MIMIC",
+          "At least 50% coverage",
+          "0.6994\n(0.6883, 0.7102)",
+          "0.6400\n(0.6222, 0.6585)",
+          "0.2206\n(0.2178, 0.2233)"
+        ],
+        [
+          "MIMIC",
+          "Original full-input reference",
+          "0.7369\n(0.7256, 0.7484)",
+          "0.7070\n(0.6915, 0.7234)",
+          "0.2074\n(0.2041, 0.2105)"
+        ],
+        [
+          "MIMIC",
+          "Full-input reference without AST/HDL",
+          "0.7362\n(0.7250, 0.7478)",
+          "0.7073\n(0.6920, 0.7235)",
+          "0.2078\n(0.2046, 0.2109)"
+        ]
+      ]
+    },
+    {
+      "old_number": 43,
+      "rows": [
+        [
+          "Cohort",
+          "Comparison",
+          "Delta AUROC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "SCH",
+          "At least 80% coverage minus All laboratory slots",
+          "-0.06448\n(-0.08195, -0.04668)",
+          "-0.01406\n(-0.01970, -0.00980)",
+          "0.00610\n(0.00543, 0.00674)"
+        ],
+        [
+          "SCH",
+          "At least 50% coverage minus All laboratory slots",
+          "0.00152\n(-0.00571, 0.00925)",
+          "0.00007\n(-0.00366, 0.00356)",
+          "-0.01221\n(-0.01262, -0.01180)"
+        ],
+        [
+          "SCH",
+          "At least 80% coverage minus At least 50% coverage",
+          "-0.06600\n(-0.08314, -0.04908)",
+          "-0.01413\n(-0.01899, -0.01002)",
+          "0.01831\n(0.01754, 0.01907)"
+        ],
+        [
+          "SCH",
+          "All laboratory slots minus Original full-input reference",
+          "-0.05552\n(-0.06669, -0.04430)",
+          "-0.00915\n(-0.01328, -0.00548)",
+          "0.01663\n(0.01596, 0.01731)"
+        ],
+        [
+          "WHU",
+          "At least 80% coverage minus All laboratory slots",
+          "-0.06030\n(-0.08660, -0.03355)",
+          "-0.10242\n(-0.14926, -0.05178)",
+          "-0.00296\n(-0.00624, 0.00028)"
+        ],
+        [
+          "WHU",
+          "At least 50% coverage minus All laboratory slots",
+          "-0.03599\n(-0.05799, -0.01362)",
+          "-0.02506\n(-0.05957, 0.00867)",
+          "-0.00736\n(-0.00988, -0.00481)"
+        ],
+        [
+          "WHU",
+          "At least 80% coverage minus At least 50% coverage",
+          "-0.02430\n(-0.04462, -0.00334)",
+          "-0.07736\n(-0.11142, -0.03647)",
+          "0.00441\n(0.00164, 0.00704)"
+        ],
+        [
+          "WHU",
+          "All laboratory slots minus Original full-input reference",
+          "-0.03198\n(-0.05077, -0.01217)",
+          "-0.07333\n(-0.10782, -0.03828)",
+          "0.03803\n(0.03511, 0.04080)"
+        ],
+        [
+          "MIMIC",
+          "At least 80% coverage minus All laboratory slots",
+          "-0.08286\n(-0.09203, -0.07387)",
+          "-0.11514\n(-0.12801, -0.10176)",
+          "0.02356\n(0.02154, 0.02562)"
+        ],
+        [
+          "MIMIC",
+          "At least 50% coverage minus All laboratory slots",
+          "-0.02562\n(-0.03121, -0.02043)",
+          "-0.05726\n(-0.06711, -0.04696)",
+          "0.00890\n(0.00750, 0.01042)"
+        ],
+        [
+          "MIMIC",
+          "At least 80% coverage minus At least 50% coverage",
+          "-0.05723\n(-0.06585, -0.04831)",
+          "-0.05787\n(-0.06865, -0.04662)",
+          "0.01465\n(0.01277, 0.01662)"
+        ],
+        [
+          "MIMIC",
+          "All laboratory slots minus Original full-input reference",
+          "-0.01183\n(-0.01756, -0.00632)",
+          "-0.00978\n(-0.01590, -0.00390)",
+          "0.00429\n(0.00284, 0.00579)"
+        ],
+        [
+          "MIMIC",
+          "All laboratory slots minus Full-input reference without AST/HDL",
+          "-0.01116\n(-0.01668, -0.00551)",
+          "-0.01007\n(-0.01599, -0.00419)",
+          "0.00387\n(0.00243, 0.00531)"
+        ]
+      ]
+    },
+    {
+      "old_number": 44,
+      "rows": [
+        [
+          "Centre",
+          "Representation",
+          "AUC",
+          "Average precision",
+          "Brier",
+          "E/O"
+        ],
+        [
+          "SCH",
+          "All-record mean",
+          "0.658 (0.643 to 0.672)",
+          "0.062 (0.057 to 0.069)",
+          "0.184 (0.183 to 0.185)",
+          "11.936 (11.369 to 12.585)"
+        ],
+        [
+          "SCH",
+          "Earliest check record",
+          "0.653 (0.638 to 0.667)",
+          "0.057 (0.052 to 0.063)",
+          "0.193 (0.192 to 0.194)",
+          "12.341 (11.751 to 13.002)"
+        ],
+        [
+          "SCH",
+          "First observed per laboratory",
+          "0.654 (0.639 to 0.668)",
+          "0.061 (0.055 to 0.068)",
+          "0.186 (0.185 to 0.187)",
+          "12.085 (11.504 to 12.735)"
+        ],
+        [
+          "SCH",
+          "All-record median",
+          "0.657 (0.642 to 0.672)",
+          "0.063 (0.057 to 0.070)",
+          "0.185 (0.185 to 0.186)",
+          "12.026 (11.456 to 12.679)"
+        ],
+        [
+          "SCH",
+          "Record count only",
+          "0.503 (0.486 to 0.519)",
+          "0.035 (0.033 to 0.038)",
+          "0.033 (0.032 to 0.035)",
+          "1.000 (0.952 to 1.054)"
+        ],
+        [
+          "WHU",
+          "All-record mean",
+          "0.836 (0.809 to 0.862)",
+          "0.500 (0.443 to 0.561)",
+          "0.093 (0.088 to 0.098)",
+          "2.160 (1.967 to 2.385)"
+        ],
+        [
+          "WHU",
+          "Earliest check record",
+          "0.805 (0.776 to 0.833)",
+          "0.443 (0.382 to 0.507)",
+          "0.120 (0.115 to 0.125)",
+          "2.721 (2.465 to 3.013)"
+        ],
+        [
+          "WHU",
+          "First observed per laboratory",
+          "0.808 (0.777 to 0.836)",
+          "0.451 (0.391 to 0.512)",
+          "0.110 (0.105 to 0.115)",
+          "2.483 (2.251 to 2.753)"
+        ],
+        [
+          "WHU",
+          "All-record median",
+          "0.824 (0.795 to 0.850)",
+          "0.463 (0.403 to 0.526)",
+          "0.118 (0.113 to 0.122)",
+          "2.734 (2.475 to 3.031)"
+        ],
+        [
+          "WHU",
+          "Record count only",
+          "0.584 (0.549 to 0.620)",
+          "0.135 (0.117 to 0.159)",
+          "0.097 (0.088 to 0.106)",
+          "1.000 (0.900 to 1.115)"
+        ]
+      ]
+    },
+    {
+      "old_number": 45,
+      "rows": [
+        [
+          "Centre",
+          "Difference",
+          "AUC change",
+          "AP change",
+          "Brier change"
+        ],
+        [
+          "SCH",
+          "All-record mean minus Earliest check record",
+          "0.0052 (-0.0040 to 0.0137)",
+          "0.0049 (0.0005 to 0.0098)",
+          "-0.0094 (-0.0099 to -0.0088)"
+        ],
+        [
+          "SCH",
+          "All-record mean minus First observed per laboratory",
+          "0.0035 (-0.0036 to 0.0103)",
+          "0.0013 (-0.0030 to 0.0054)",
+          "-0.0025 (-0.0029 to -0.0021)"
+        ],
+        [
+          "SCH",
+          "All-record median minus All-record mean",
+          "-0.0006 (-0.0052 to 0.0041)",
+          "0.0008 (-0.0021 to 0.0037)",
+          "0.0018 (0.0015 to 0.0020)"
+        ],
+        [
+          "WHU",
+          "All-record mean minus Earliest check record",
+          "0.0304 (0.0114 to 0.0498)",
+          "0.0574 (0.0069 to 0.1057)",
+          "-0.0270 (-0.0303 to -0.0237)"
+        ],
+        [
+          "WHU",
+          "All-record mean minus First observed per laboratory",
+          "0.0274 (0.0124 to 0.0437)",
+          "0.0488 (0.0145 to 0.0813)",
+          "-0.0170 (-0.0194 to -0.0147)"
+        ],
+        [
+          "WHU",
+          "All-record median minus All-record mean",
+          "-0.0118 (-0.0274 to 0.0039)",
+          "-0.0366 (-0.0681 to -0.0041)",
+          "0.0248 (0.0221 to 0.0272)"
+        ]
+      ]
+    },
+    {
+      "old_number": 46,
+      "rows": [
+        [
+          "Within-centre contrast",
+          "Metric",
+          "Between-centre difference and 95% interval"
+        ],
+        [
+          "Mean minus Earliest check record",
+          "AUC",
+          "0.0252 (0.0039 to 0.0467)"
+        ],
+        [
+          "Mean minus Earliest check record",
+          "Average precision",
+          "0.0525 (0.0028 to 0.0997)"
+        ],
+        [
+          "Mean minus Earliest check record",
+          "Brier score",
+          "-0.0176 (-0.0211 to -0.0144)"
+        ],
+        [
+          "Mean minus First observed per laboratory",
+          "AUC",
+          "0.0239 (0.0074 to 0.0415)"
+        ],
+        [
+          "Mean minus First observed per laboratory",
+          "Average precision",
+          "0.0476 (0.0124 to 0.0805)"
+        ],
+        [
+          "Mean minus First observed per laboratory",
+          "Brier score",
+          "-0.0145 (-0.0170 to -0.0121)"
+        ]
+      ]
+    },
+    {
+      "old_number": 47,
+      "rows": [
+        [
+          "Centre",
+          "Records",
+          "Patients / labels",
+          "Mean",
+          "Earliest record",
+          "Count only"
+        ],
+        [
+          "SCH",
+          "1",
+          "10035 / 359",
+          "0.644 (0.617 to 0.672)",
+          "0.653 (0.626 to 0.679)",
+          "0.476 (0.446 to 0.506)"
+        ],
+        [
+          "SCH",
+          "2-4",
+          "5031 / 144",
+          "0.654 (0.611 to 0.697)",
+          "0.647 (0.600 to 0.691)",
+          "0.486 (0.438 to 0.536)"
+        ],
+        [
+          "SCH",
+          ">=5",
+          "23443 / 820",
+          "0.665 (0.647 to 0.684)",
+          "0.654 (0.636 to 0.671)",
+          "0.504 (0.483 to 0.524)"
+        ],
+        [
+          "WHU",
+          "1",
+          "1083 / 77",
+          "0.925 (0.891 to 0.952)",
+          "0.921 (0.881 to 0.953)",
+          "0.446 (0.384 to 0.509)"
+        ],
+        [
+          "WHU",
+          "2-4",
+          "1046 / 140",
+          "0.797 (0.753 to 0.839)",
+          "0.746 (0.699 to 0.792)",
+          "0.518 (0.468 to 0.569)"
+        ],
+        [
+          "WHU",
+          ">=5",
+          "433 / 64",
+          "0.741 (0.670 to 0.813)",
+          "0.702 (0.625 to 0.778)",
+          "0.472 (0.394 to 0.550)"
+        ]
+      ]
+    },
+    {
+      "old_number": 48,
+      "rows": [
+        [
+          "Recorded target",
+          "Positive admissions",
+          "ROC-AUC\n(95% CI)",
+          "Average precision\n(95% CI)"
+        ],
+        [
+          "Original non-death union",
+          "4,462\n(44.86%)",
+          "0.737\n(0.726-0.748)",
+          "0.707\n(0.691-0.722)"
+        ],
+        [
+          "MI code group",
+          "1,131\n(11.37%)",
+          "0.753\n(0.737-0.769)",
+          "0.321\n(0.293-0.351)"
+        ],
+        [
+          "Stroke code group",
+          "1,069\n(10.75%)",
+          "0.594\n(0.574-0.615)",
+          "0.168\n(0.152-0.186)"
+        ],
+        [
+          "Heart-failure code group",
+          "2,847\n(28.62%)",
+          "0.721\n(0.709-0.733)",
+          "0.459\n(0.439-0.480)"
+        ],
+        [
+          "Cardiac-arrest code group",
+          "418\n(4.20%)",
+          "0.631\n(0.604-0.659)",
+          "0.067\n(0.057-0.081)"
+        ],
+        [
+          "Cardiomyopathy code group",
+          "371\n(3.73%)",
+          "0.565\n(0.528-0.604)",
+          "0.043\n(0.037-0.051)"
+        ],
+        [
+          "Unstable-angina code group",
+          "245\n(2.46%)",
+          "0.618\n(0.583-0.654)",
+          "0.041\n(0.033-0.054)"
+        ],
+        [
+          "Union without cardiomyopathy-specific contribution",
+          "4,374\n(43.98%)",
+          "0.740\n(0.730-0.751)",
+          "0.704\n(0.688-0.720)"
+        ]
+      ]
+    },
+    {
+      "old_number": 49,
+      "rows": [
+        [
+          "Centre",
+          "Original keyword",
+          "Patients matched",
+          "Exclusive contribution"
+        ],
+        [
+          "SCH",
+          "心梗",
+          "0",
+          "0"
+        ],
+        [
+          "SCH",
+          "梗死",
+          "1,261",
+          "322"
+        ],
+        [
+          "SCH",
+          "中风",
+          "0",
+          "0"
+        ],
+        [
+          "SCH",
+          "卒中",
+          "3",
+          "2"
+        ],
+        [
+          "SCH",
+          "死亡",
+          "1",
+          "1"
+        ],
+        [
+          "SCH",
+          "stroke",
+          "0",
+          "0"
+        ],
+        [
+          "SCH",
+          "MI",
+          "0",
+          "0"
+        ],
+        [
+          "SCH",
+          "myocardial",
+          "0",
+          "0"
+        ],
+        [
+          "SCH",
+          "acute coronary",
+          "0",
+          "0"
+        ],
+        [
+          "SCH",
+          "ACS",
+          "0",
+          "0"
+        ],
+        [
+          "SCH",
+          "脑卒中",
+          "1",
+          "0"
+        ],
+        [
+          "SCH",
+          "脑梗",
+          "933",
+          "0"
+        ],
+        [
+          "SCH",
+          "脑出血",
+          "74",
+          "58"
+        ],
+        [
+          "WHU",
+          "心梗",
+          "42",
+          "28"
+        ],
+        [
+          "WHU",
+          "梗死",
+          "253",
+          "239"
+        ],
+        [
+          "WHU",
+          "中风",
+          "0",
+          "0"
+        ],
+        [
+          "WHU",
+          "卒中",
+          "0",
+          "0"
+        ],
+        [
+          "WHU",
+          "死亡",
+          "0",
+          "0"
+        ],
+        [
+          "WHU",
+          "stroke",
+          "0",
+          "0"
+        ],
+        [
+          "WHU",
+          "MI",
+          "0",
+          "0"
+        ]
+      ]
+    },
+    {
+      "old_number": 50,
+      "rows": [
+        [
+          "Centre",
+          "Budget",
+          "Positive to negative / reverse",
+          "Historical AUC bounds",
+          "Patient-isolated AUC bounds",
+          "Paired AUC difference bounds"
+        ],
+        [
+          "SCH",
+          "1%",
+          "13 / 13",
+          "0.647 to 0.667",
+          "0.648 to 0.668",
+          "-0.005 to 0.006"
+        ],
+        [
+          "SCH",
+          "5%",
+          "66 / 66",
+          "0.606 to 0.704",
+          "0.607 to 0.704",
+          "-0.020 to 0.022"
+        ],
+        [
+          "SCH",
+          "10%",
+          "132 / 132",
+          "0.556 to 0.744",
+          "0.556 to 0.744",
+          "-0.036 to 0.039"
+        ],
+        [
+          "WHU",
+          "1%",
+          "2 / 2",
+          "0.832 to 0.848",
+          "0.828 to 0.843",
+          "-0.011 to 0.002"
+        ],
+        [
+          "WHU",
+          "5%",
+          "14 / 14",
+          "0.784 to 0.884",
+          "0.780 to 0.882",
+          "-0.039 to 0.032"
+        ],
+        [
+          "WHU",
+          "10%",
+          "28 / 28",
+          "0.730 to 0.917",
+          "0.725 to 0.915",
+          "-0.065 to 0.059"
+        ],
+        [
+          "MIMIC",
+          "1%",
+          "44 / 44",
+          "0.724 to 0.758",
+          "0.719 to 0.754",
+          "-0.012 to 0.003"
+        ],
+        [
+          "MIMIC",
+          "5%",
+          "223 / 223",
+          "0.653 to 0.817",
+          "0.648 to 0.813",
+          "-0.030 to 0.022"
+        ],
+        [
+          "MIMIC",
+          "10%",
+          "446 / 446",
+          "0.569 to 0.876",
+          "0.564 to 0.873",
+          "-0.044 to 0.038"
+        ]
+      ]
+    },
+    {
+      "old_number": 51,
+      "rows": [
+        [
+          "Centre",
+          "Budget",
+          "Positive to negative / reverse",
+          "Historical AUC bounds",
+          "Patient-isolated AUC bounds",
+          "Paired AUC difference bounds"
+        ],
+        [
+          "SCH",
+          "1%",
+          "13 / 0",
+          "0.654 to 0.664",
+          "0.654 to 0.664",
+          "-0.002 to 0.003"
+        ],
+        [
+          "SCH",
+          "1%",
+          "0 / 13",
+          "0.651 to 0.661",
+          "0.651 to 0.661",
+          "-0.002 to 0.004"
+        ],
+        [
+          "SCH",
+          "5%",
+          "66 / 0",
+          "0.639 to 0.687",
+          "0.639 to 0.687",
+          "-0.008 to 0.008"
+        ],
+        [
+          "SCH",
+          "5%",
+          "0 / 66",
+          "0.625 to 0.675",
+          "0.626 to 0.675",
+          "-0.012 to 0.014"
+        ],
+        [
+          "SCH",
+          "10%",
+          "132 / 0",
+          "0.619 to 0.713",
+          "0.619 to 0.713",
+          "-0.014 to 0.014"
+        ],
+        [
+          "SCH",
+          "10%",
+          "0 / 132",
+          "0.597 to 0.690",
+          "0.597 to 0.691",
+          "-0.021 to 0.024"
+        ],
+        [
+          "WHU",
+          "1%",
+          "2 / 0",
+          "0.838 to 0.846",
+          "0.834 to 0.842",
+          "-0.007 to -0.002"
+        ],
+        [
+          "WHU",
+          "1%",
+          "0 / 2",
+          "0.834 to 0.842",
+          "0.830 to 0.838",
+          "-0.008 to -0.001"
+        ],
+        [
+          "WHU",
+          "5%",
+          "14 / 0",
+          "0.827 to 0.873",
+          "0.822 to 0.871",
+          "-0.018 to 0.010"
+        ],
+        [
+          "WHU",
+          "5%",
+          "0 / 14",
+          "0.799 to 0.852",
+          "0.795 to 0.848",
+          "-0.026 to 0.017"
+        ],
+        [
+          "WHU",
+          "10%",
+          "28 / 0",
+          "0.813 to 0.899",
+          "0.808 to 0.897",
+          "-0.025 to 0.018"
+        ],
+        [
+          "WHU",
+          "10%",
+          "0 / 28",
+          "0.762 to 0.863",
+          "0.758 to 0.859",
+          "-0.043 to 0.035"
+        ],
+        [
+          "MIMIC",
+          "1%",
+          "44 / 0",
+          "0.733 to 0.750",
+          "0.728 to 0.746",
+          "-0.008 to -0.001"
+        ],
+        [
+          "MIMIC",
+          "1%",
+          "0 / 44",
+          "0.732 to 0.750",
+          "0.728 to 0.745",
+          "-0.009 to -0.001"
+        ],
+        [
+          "MIMIC",
+          "5%",
+          "223 / 0",
+          "0.700 to 0.783",
+          "0.695 to 0.779",
+          "-0.016 to 0.008"
+        ],
+        [
+          "MIMIC",
+          "5%",
+          "0 / 223",
+          "0.696 to 0.777",
+          "0.691 to 0.773",
+          "-0.018 to 0.010"
+        ],
+        [
+          "MIMIC",
+          "10%",
+          "446 / 0",
+          "0.660 to 0.817",
+          "0.655 to 0.813",
+          "-0.023 to 0.015"
+        ],
+        [
+          "MIMIC",
+          "10%",
+          "0 / 446",
+          "0.654 to 0.806",
+          "0.649 to 0.802",
+          "-0.026 to 0.018"
+        ]
+      ]
+    },
+    {
+      "old_number": 52,
+      "rows": [
+        [
+          "Cohort",
+          "Nominal / testable",
+          "Joint q < 0.05",
+          "All five fold agreement",
+          "Both criteria"
+        ],
+        [
+          "SCH",
+          "104 / 76",
+          "71",
+          "32",
+          "32"
+        ],
+        [
+          "WHU",
+          "104 / 80",
+          "67",
+          "37",
+          "36"
+        ]
+      ]
+    },
+    {
+      "old_number": 53,
+      "rows": [
+        [
+          "Feature",
+          "Cohort",
+          "Observed n",
+          "Spearman rho",
+          "Joint BH q",
+          "Agree / testable folds"
+        ],
+        [
+          "Uric acid",
+          "SCH",
+          "22292",
+          "-0.5965",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Uric acid",
+          "WHU",
+          "2539",
+          "0.8407",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Phosphorus",
+          "SCH",
+          "22069",
+          "-0.5701",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Phosphorus",
+          "WHU",
+          "2522",
+          "0.8634",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Hemoglobin",
+          "SCH",
+          "22612",
+          "-0.4675",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Hemoglobin",
+          "WHU",
+          "2542",
+          "0.7711",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Apolipoprotein B",
+          "SCH",
+          "22930",
+          "-0.8198",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Apolipoprotein B",
+          "WHU",
+          "686",
+          "0.2403",
+          "2.4e-10",
+          "5 / 5"
+        ],
+        [
+          "Ferritin",
+          "SCH",
+          "755",
+          "0.5773",
+          "4.59e-68",
+          "5 / 5"
+        ],
+        [
+          "Ferritin",
+          "WHU",
+          "1272",
+          "-0.5279",
+          "6.98e-92",
+          "5 / 5"
+        ],
+        [
+          "Age",
+          "SCH",
+          "38509",
+          "0.9110",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Age",
+          "WHU",
+          "2562",
+          "-0.7885",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Hospitals and health centres",
+          "SCH",
+          "37942",
+          "-0.4520",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Hospitals and health centres",
+          "WHU",
+          "2561",
+          "0.1910",
+          "2.68e-22",
+          "5 / 5"
+        ],
+        [
+          "Physicians",
+          "SCH",
+          "37942",
+          "0.5869",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Physicians",
+          "WHU",
+          "2561",
+          "-0.8034",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "NSE",
+          "SCH",
+          "15999",
+          "0.0298",
+          "0.000199",
+          "3 / 5"
+        ],
+        [
+          "NSE",
+          "WHU",
+          "619",
+          "-0.1512",
+          "0.000194",
+          "4 / 4"
+        ],
+        [
+          "Albumin",
+          "SCH",
+          "22310",
+          "-0.8010",
+          "Below numeric resolution",
+          "5 / 5"
+        ],
+        [
+          "Albumin",
+          "WHU",
+          "2530",
+          "-0.3462",
+          "6.92e-72",
+          "3 / 5"
+        ]
+      ]
+    },
+    {
+      "old_number": 54,
+      "rows": [
+        [
+          "Cohort",
+          "Variant",
+          "Rank rho all 104",
+          "Rank rho nonzero union",
+          "Top 10 overlap",
+          "Top 20 overlap"
+        ],
+        [
+          "SCH",
+          "Values + indicators",
+          "0.9836",
+          "0.9733",
+          "9 / 10",
+          "19 / 20"
+        ],
+        [
+          "SCH",
+          "Native NaN XGBoost",
+          "0.9726",
+          "0.9605",
+          "9 / 10",
+          "17 / 20"
+        ],
+        [
+          "WHU",
+          "Values + indicators",
+          "0.9831",
+          "0.9756",
+          "6 / 10",
+          "17 / 20"
+        ],
+        [
+          "WHU",
+          "Native NaN XGBoost",
+          "0.9157",
+          "0.8942",
+          "6 / 10",
+          "16 / 20"
+        ]
+      ]
+    },
+    {
+      "old_number": 55,
+      "rows": [
+        [
+          "Cohort",
+          "Model seed",
+          "AUROC",
+          "AP",
+          "Brier"
+        ],
+        [
+          "SCH",
+          "42",
+          "0.6573\n(0.6426, 0.6725)",
+          "0.0623\n(0.0568, 0.0697)",
+          "0.2034\n(0.2023, 0.2045)"
+        ],
+        [
+          "SCH",
+          "43",
+          "0.6537\n(0.6388, 0.6678)",
+          "0.0589\n(0.0540, 0.0653)",
+          "0.2158\n(0.2150, 0.2166)"
+        ],
+        [
+          "SCH",
+          "44",
+          "0.6571\n(0.6419, 0.6712)",
+          "0.0638\n(0.0579, 0.0726)",
+          "0.2028\n(0.2017, 0.2038)"
+        ],
+        [
+          "SCH",
+          "45",
+          "0.6500\n(0.6356, 0.6640)",
+          "0.0593\n(0.0542, 0.0658)",
+          "0.2045\n(0.2035, 0.2055)"
+        ],
+        [
+          "WHU",
+          "42",
+          "0.8197\n(0.7902, 0.8483)",
+          "0.4729\n(0.4113, 0.5348)",
+          "0.0963\n(0.0900, 0.1029)"
+        ],
+        [
+          "WHU",
+          "43",
+          "0.7850\n(0.7522, 0.8148)",
+          "0.4075\n(0.3468, 0.4723)",
+          "0.1351\n(0.1297, 0.1407)"
+        ],
+        [
+          "WHU",
+          "44",
+          "0.7976\n(0.7668, 0.8276)",
+          "0.4449\n(0.3827, 0.5077)",
+          "0.1140\n(0.1078, 0.1200)"
+        ],
+        [
+          "WHU",
+          "45",
+          "0.7876\n(0.7562, 0.8182)",
+          "0.4208\n(0.3578, 0.4812)",
+          "0.1180\n(0.1120, 0.1244)"
+        ]
+      ]
+    },
+    {
+      "old_number": 56,
+      "rows": [
+        [
+          "Cohort",
+          "Comparison",
+          "Delta AUROC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "SCH",
+          "Seed 43 minus 42",
+          "-0.00362\n(-0.01205, 0.00468)",
+          "-0.00341\n(-0.00853, 0.00073)",
+          "0.01237\n(0.01181, 0.01299)"
+        ],
+        [
+          "SCH",
+          "Seed 44 minus 42",
+          "-0.00022\n(-0.00749, 0.00705)",
+          "0.00151\n(-0.00391, 0.00784)",
+          "-0.00063\n(-0.00119, -0.00009)"
+        ],
+        [
+          "SCH",
+          "Seed 45 minus 42",
+          "-0.00732\n(-0.01477, 0.00005)",
+          "-0.00307\n(-0.00812, 0.00106)",
+          "0.00111\n(0.00055, 0.00171)"
+        ],
+        [
+          "WHU",
+          "Seed 43 minus 42",
+          "-0.03471\n(-0.06019, -0.01075)",
+          "-0.06549\n(-0.10705, -0.02184)",
+          "0.03872\n(0.03448, 0.04333)"
+        ],
+        [
+          "WHU",
+          "Seed 44 minus 42",
+          "-0.02217\n(-0.03463, -0.01040)",
+          "-0.02805\n(-0.05254, -0.00112)",
+          "0.01761\n(0.01498, 0.02014)"
+        ],
+        [
+          "WHU",
+          "Seed 45 minus 42",
+          "-0.03213\n(-0.05179, -0.01230)",
+          "-0.05213\n(-0.08458, -0.01800)",
+          "0.02169\n(0.01813, 0.02548)"
+        ]
+      ]
+    },
+    {
+      "old_number": 57,
+      "rows": [
+        [
+          "Seed",
+          "SCH / WHU tests",
+          "Joint tests",
+          "Shared testable",
+          "Opposite signs",
+          "All filters",
+          "Original eight same direction"
+        ],
+        [
+          "42",
+          "76 / 80",
+          "156",
+          "65",
+          "25",
+          "8",
+          "8"
+        ],
+        [
+          "43",
+          "72 / 80",
+          "152",
+          "62",
+          "32",
+          "5",
+          "5"
+        ],
+        [
+          "44",
+          "74 / 78",
+          "152",
+          "62",
+          "28",
+          "5",
+          "5"
+        ],
+        [
+          "45",
+          "74 / 78",
+          "152",
+          "62",
+          "25",
+          "8",
+          "7"
+        ]
+      ]
+    },
+    {
+      "old_number": 58,
+      "rows": [
+        [
+          "Feature",
+          "Seed 42 rho",
+          "Seed 43 rho",
+          "Seed 44 rho",
+          "Seed 45 rho",
+          "All filters seeds"
+        ],
+        [
+          "Uric acid",
+          "-0.597 / 0.841",
+          "-0.555 / 0.696",
+          "-0.590 / 0.723",
+          "-0.428 / 0.683",
+          "3 / 4"
+        ],
+        [
+          "Phosphorus",
+          "-0.570 / 0.863",
+          "-0.646 / 0.792",
+          "-0.560 / 0.835",
+          "-0.503 / 0.832",
+          "4 / 4"
+        ],
+        [
+          "Hemoglobin",
+          "-0.467 / 0.771",
+          "-0.125 / 0.584",
+          "-0.258 / 0.680",
+          "-0.535 / 0.613",
+          "2 / 4"
+        ],
+        [
+          "Apolipoprotein B",
+          "-0.820 / 0.240",
+          "-0.799 / 0.199",
+          "-0.841 / 0.206",
+          "-0.822 / 0.282",
+          "4 / 4"
+        ],
+        [
+          "Ferritin",
+          "0.577 / -0.528",
+          "0.541 / -0.326",
+          "0.499 / -0.391",
+          "0.640 / -0.404",
+          "1 / 4"
+        ],
+        [
+          "Age",
+          "0.911 / -0.788",
+          "0.911 / -0.686",
+          "0.929 / -0.730",
+          "0.913 / -0.748",
+          "4 / 4"
+        ],
+        [
+          "Hospitals and health centres",
+          "-0.452 / 0.191",
+          "-0.381 / 0.129",
+          "-0.590 / 0.174",
+          "-0.471 / 0.212",
+          "3 / 4"
+        ],
+        [
+          "Physicians",
+          "0.587 / -0.803",
+          "0.569 / -0.733",
+          "0.496 / -0.752",
+          "0.534 / -0.735",
+          "4 / 4"
+        ],
+        [
+          "NSE",
+          "0.030 / -0.151",
+          "-0.022 / -0.188",
+          "0.063 / -0.191",
+          "0.150 / -0.177",
+          "0 / 4"
+        ],
+        [
+          "Albumin",
+          "-0.801 / -0.346",
+          "-0.619 / -0.503",
+          "-0.738 / -0.408",
+          "-0.730 / -0.246",
+          "0 / 4"
+        ]
+      ]
+    },
+    {
+      "old_number": 59,
+      "rows": [
+        [
+          "Cohort",
+          "Seeds",
+          "Rank rho all",
+          "Rank rho nonzero union",
+          "Top 10 overlap",
+          "Top 20 overlap"
+        ],
+        [
+          "SCH",
+          "42 versus 43",
+          "0.9780",
+          "0.9588",
+          "10 / 10",
+          "17 / 20"
+        ],
+        [
+          "SCH",
+          "42 versus 44",
+          "0.9851",
+          "0.9699",
+          "10 / 10",
+          "18 / 20"
+        ],
+        [
+          "SCH",
+          "42 versus 45",
+          "0.9803",
+          "0.9649",
+          "9 / 10",
+          "17 / 20"
+        ],
+        [
+          "SCH",
+          "43 versus 44",
+          "0.9845",
+          "0.9670",
+          "10 / 10",
+          "18 / 20"
+        ],
+        [
+          "SCH",
+          "43 versus 45",
+          "0.9718",
+          "0.9489",
+          "9 / 10",
+          "17 / 20"
+        ],
+        [
+          "SCH",
+          "44 versus 45",
+          "0.9804",
+          "0.9697",
+          "9 / 10",
+          "17 / 20"
+        ],
+        [
+          "WHU",
+          "42 versus 43",
+          "0.9832",
+          "0.9780",
+          "10 / 10",
+          "18 / 20"
+        ],
+        [
+          "WHU",
+          "42 versus 44",
+          "0.9909",
+          "0.9897",
+          "8 / 10",
+          "20 / 20"
+        ],
+        [
+          "WHU",
+          "42 versus 45",
+          "0.9888",
+          "0.9861",
+          "10 / 10",
+          "18 / 20"
+        ],
+        [
+          "WHU",
+          "43 versus 44",
+          "0.9810",
+          "0.9766",
+          "8 / 10",
+          "18 / 20"
+        ],
+        [
+          "WHU",
+          "43 versus 45",
+          "0.9820",
+          "0.9783",
+          "10 / 10",
+          "17 / 20"
+        ],
+        [
+          "WHU",
+          "44 versus 45",
+          "0.9902",
+          "0.9864",
+          "8 / 10",
+          "18 / 20"
+        ]
+      ]
+    },
+    {
+      "old_number": 60,
+      "rows": [
+        [
+          "Centre",
+          "Cancer-code stratum",
+          "Patients",
+          "NSE-albumin\ncomplete pairs",
+          "NSE-WBC\ncomplete pairs",
+          "WBC-albumin\ncomplete pairs"
+        ],
+        [
+          "SCH",
+          "All original patients",
+          "38509",
+          "10052",
+          "10000",
+          "14818"
+        ],
+        [
+          "SCH",
+          "Lung/bronchus",
+          "9139",
+          "5057",
+          "4775",
+          "3530"
+        ],
+        [
+          "SCH",
+          "Breast",
+          "2683",
+          "60",
+          "38",
+          "665"
+        ],
+        [
+          "SCH",
+          "Digestive",
+          "12072",
+          "2235",
+          "2523",
+          "5172"
+        ],
+        [
+          "SCH",
+          "Hematologic",
+          "890",
+          "69",
+          "83",
+          "379"
+        ],
+        [
+          "SCH",
+          "Other defined primary site",
+          "7681",
+          "1096",
+          "1239",
+          "3176"
+        ],
+        [
+          "SCH",
+          "Multiple broad source-code groups or C97",
+          "3086",
+          "1095",
+          "1077",
+          "1448"
+        ],
+        [
+          "SCH",
+          "Secondary/unspecified codes only",
+          "245",
+          "75",
+          "57",
+          "72"
+        ],
+        [
+          "SCH",
+          "No interpretable malignant code",
+          "2713",
+          "365",
+          "208",
+          "376"
+        ],
+        [
+          "SCH",
+          "No eligible diagnostic source",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "WHU",
+          "All original patients",
+          "2562",
+          "616",
+          "615",
+          "2522"
+        ],
+        [
+          "WHU",
+          "Lung/bronchus",
+          "8",
+          "4",
+          "4",
+          "8"
+        ],
+        [
+          "WHU",
+          "Breast",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        [
+          "WHU",
+          "Digestive",
+          "11",
+          "2",
+          "2",
+          "11"
+        ],
+        [
+          "WHU",
+          "Hematologic",
+          "2",
+          "1",
+          "1",
+          "2"
+        ],
+        [
+          "WHU",
+          "Other defined primary site",
+          "5",
+          "1",
+          "1",
+          "5"
+        ],
+        [
+          "WHU",
+          "Multiple broad source-code groups or C97",
+          "1",
+          "1",
+          "1",
+          "1"
+        ],
+        [
+          "WHU",
+          "Secondary/unspecified codes only",
+          "29",
+          "20",
+          "20",
+          "29"
+        ],
+        [
+          "WHU",
+          "No interpretable malignant code",
+          "2190",
+          "529",
+          "527",
+          "2165"
+        ],
+        [
+          "WHU",
+          "No eligible diagnostic source",
+          "316",
+          "58",
+          "59",
+          "301"
+        ]
+      ]
+    },
+    {
+      "old_number": 61,
+      "rows": [
+        [
+          "Centre",
+          "Cancer-code stratum",
+          "NSE-albumin",
+          "NSE-WBC",
+          "WBC-albumin"
+        ],
+        [
+          "SCH",
+          "All original patients",
+          "-0.062 (-0.082 to -0.041)",
+          "0.005 (-0.013 to 0.025)",
+          "0.017 (0.003 to 0.032)"
+        ],
+        [
+          "SCH",
+          "Lung/bronchus",
+          "-0.098 (-0.126 to -0.071)",
+          "-0.010 (-0.038 to 0.018)",
+          "0.058 (0.023 to 0.090)"
+        ],
+        [
+          "SCH",
+          "Breast",
+          "0.169 (-0.108 to 0.437)",
+          "Not estimated (pair n < 50)",
+          "0.019 (-0.044 to 0.075) [valid B=1995/2000]"
+        ],
+        [
+          "SCH",
+          "Digestive",
+          "-0.038 (-0.081 to 0.005)",
+          "0.022 (-0.008 to 0.051)",
+          "0.017 (-0.004 to 0.040)"
+        ],
+        [
+          "SCH",
+          "Hematologic",
+          "0.027 (-0.238 to 0.299)",
+          "0.133 (-0.016 to 0.315) [valid B=1742/2000]",
+          "0.010 (-0.073 to 0.096) [valid B=1997/2000]"
+        ],
+        [
+          "SCH",
+          "Other defined primary site",
+          "-0.150 (-0.208 to -0.093)",
+          "-0.001 (-0.045 to 0.053) [valid B=1998/2000]",
+          "-0.012 (-0.040 to 0.015)"
+        ],
+        [
+          "SCH",
+          "Multiple broad source-code groups or C97",
+          "-0.017 (-0.079 to 0.043)",
+          "0.036 (-0.016 to 0.090) [valid B=1997/2000]",
+          "-0.023 (-0.067 to 0.022)"
+        ],
+        [
+          "SCH",
+          "Secondary/unspecified codes only",
+          "-0.279 (-0.471 to -0.048)",
+          "-0.187 (-0.358 to -0.154) [valid B=1306/2000]",
+          "Not estimated (constant variable)"
+        ],
+        [
+          "SCH",
+          "No interpretable malignant code",
+          "0.003 (-0.109 to 0.108)",
+          "Not estimated (constant variable)",
+          "Not estimated (constant variable)"
+        ],
+        [
+          "SCH",
+          "No eligible diagnostic source",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)"
+        ],
+        [
+          "WHU",
+          "All original patients",
+          "0.156 (0.097 to 0.208)",
+          "-0.056 (-0.134 to 0.025)",
+          "-0.210 (-0.251 to -0.173)"
+        ],
+        [
+          "WHU",
+          "Lung/bronchus",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)"
+        ],
+        [
+          "WHU",
+          "Breast",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)"
+        ],
+        [
+          "WHU",
+          "Digestive",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)"
+        ],
+        [
+          "WHU",
+          "Hematologic",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)"
+        ],
+        [
+          "WHU",
+          "Other defined primary site",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)"
+        ],
+        [
+          "WHU",
+          "Multiple broad source-code groups or C97",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)"
+        ],
+        [
+          "WHU",
+          "Secondary/unspecified codes only",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)",
+          "Not estimated (pair n < 50)"
+        ],
+        [
+          "WHU",
+          "No interpretable malignant code",
+          "0.153 (0.089 to 0.217)",
+          "-0.077 (-0.157 to 0.009)",
+          "-0.211 (-0.250 to -0.167)"
+        ],
+        [
+          "WHU",
+          "No eligible diagnostic source",
+          "0.030 (-0.136 to 0.176) [valid B=1918/2000]",
+          "0.165 (-0.068 to 0.358) [valid B=1902/2000]",
+          "-0.194 (-0.301 to -0.086)"
+        ]
+      ]
+    },
+    {
+      "old_number": 62,
+      "rows": [
+        [
+          "Cohort",
+          "Source records",
+          "Patients",
+          "Within-patient numeric changes",
+          "Mean-vector signatures"
+        ],
+        [
+          "SCH",
+          "530450",
+          "38509",
+          "0",
+          "436"
+        ],
+        [
+          "WHU",
+          "7325",
+          "2562",
+          "1032",
+          "834"
+        ]
+      ]
+    },
+    {
+      "old_number": 63,
+      "rows": [
+        [
+          "Cohort",
+          "Model",
+          "AUROC",
+          "AP",
+          "Brier"
+        ],
+        [
+          "SCH",
+          "Original-input ensemble",
+          "0.6578\n(0.6440, 0.6720)",
+          "0.0621\n(0.0563, 0.0689)",
+          "0.1837\n(0.1827, 0.1846)"
+        ],
+        [
+          "SCH",
+          "Without regional inputs",
+          "0.6529\n(0.6390, 0.6670)",
+          "0.0615\n(0.0559, 0.0692)",
+          "0.1909\n(0.1901, 0.1917)"
+        ],
+        [
+          "SCH",
+          "Five regional inputs only",
+          "0.5346\n(0.5190, 0.5498)",
+          "0.0372\n(0.0346, 0.0403)",
+          "0.2397\n(0.2391, 0.2403)"
+        ],
+        [
+          "WHU",
+          "Original-input ensemble",
+          "0.8359\n(0.8086, 0.8616)",
+          "0.4999\n(0.4341, 0.5614)",
+          "0.0928\n(0.0877, 0.0984)"
+        ],
+        [
+          "WHU",
+          "Without regional inputs",
+          "0.8065\n(0.7746, 0.8364)",
+          "0.4503\n(0.3870, 0.5111)",
+          "0.1194\n(0.1149, 0.1239)"
+        ],
+        [
+          "WHU",
+          "Five regional inputs only",
+          "0.6964\n(0.6627, 0.7287)",
+          "0.2183\n(0.1850, 0.2609)",
+          "0.1782\n(0.1727, 0.1839)"
+        ]
+      ]
+    },
+    {
+      "old_number": 64,
+      "rows": [
+        [
+          "Cohort",
+          "Comparison",
+          "Delta AUC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "SCH",
+          "Without regional inputs minus Original-input ensemble",
+          "-0.00488\n(-0.00998, -0.00025)",
+          "-0.00060\n(-0.00473, 0.00477)",
+          "0.00726\n(0.00693, 0.00759)"
+        ],
+        [
+          "SCH",
+          "Five regional inputs only minus Original-input ensemble",
+          "-0.12322\n(-0.14322, -0.10228)",
+          "-0.02486\n(-0.03119, -0.01938)",
+          "0.05604\n(0.05498, 0.05716)"
+        ],
+        [
+          "WHU",
+          "Without regional inputs minus Original-input ensemble",
+          "-0.02938\n(-0.04994, -0.00954)",
+          "-0.04959\n(-0.08108, -0.01852)",
+          "0.02665\n(0.02394, 0.02931)"
+        ],
+        [
+          "WHU",
+          "Five regional inputs only minus Original-input ensemble",
+          "-0.13950\n(-0.17051, -0.10845)",
+          "-0.28161\n(-0.33060, -0.22544)",
+          "0.08540\n(0.07971, 0.09078)"
+        ]
+      ]
+    },
+    {
+      "old_number": 65,
+      "rows": [
+        [
+          "Cohort",
+          "Model",
+          "AUROC",
+          "AP",
+          "Brier"
+        ],
+        [
+          "SCH\nPatient CI",
+          "Original-input ensemble",
+          "0.6575\n(0.6424, 0.6710)",
+          "0.0619\n(0.0563, 0.0688)",
+          "0.1837\n(0.1828, 0.1847)"
+        ],
+        [
+          "SCH\nPatient CI",
+          "Group-held-out ensemble",
+          "0.6450\n(0.6294, 0.6596)",
+          "0.0599\n(0.0548, 0.0670)",
+          "0.1780\n(0.1771, 0.1789)"
+        ],
+        [
+          "SCH\nGroup CI",
+          "Original-input ensemble",
+          "0.6575\n(0.6445, 0.6734)",
+          "0.0619\n(0.0551, 0.0693)",
+          "0.1837\n(0.1774, 0.1875)"
+        ],
+        [
+          "SCH\nGroup CI",
+          "Group-held-out ensemble",
+          "0.6450\n(0.6296, 0.6700)",
+          "0.0599\n(0.0539, 0.0655)",
+          "0.1780\n(0.1696, 0.1862)"
+        ],
+        [
+          "WHU\nPatient CI",
+          "Original-input ensemble",
+          "0.8359\n(0.8086, 0.8616)",
+          "0.4999\n(0.4341, 0.5614)",
+          "0.0928\n(0.0877, 0.0984)"
+        ],
+        [
+          "WHU\nPatient CI",
+          "Group-held-out ensemble",
+          "0.8154\n(0.7870, 0.8413)",
+          "0.4374\n(0.3743, 0.4967)",
+          "0.1006\n(0.0951, 0.1063)"
+        ],
+        [
+          "WHU\nGroup CI",
+          "Original-input ensemble",
+          "0.8359\n(0.7992, 0.8604)",
+          "0.4999\n(0.3945, 0.5821)",
+          "0.0928\n(0.0766, 0.1097)"
+        ],
+        [
+          "WHU\nGroup CI",
+          "Group-held-out ensemble",
+          "0.8154\n(0.7767, 0.8420)",
+          "0.4374\n(0.3479, 0.5160)",
+          "0.1006\n(0.0837, 0.1179)"
+        ]
+      ]
+    },
+    {
+      "old_number": 66,
+      "rows": [
+        [
+          "Cohort",
+          "Comparison",
+          "Delta AUC",
+          "Delta AP",
+          "Delta Brier"
+        ],
+        [
+          "SCH\nPatient CI",
+          "Group-held-out ensemble minus Original-input ensemble",
+          "-0.01245\n(-0.01922, -0.00590)",
+          "-0.00209\n(-0.00605, 0.00210)",
+          "-0.00576\n(-0.00615, -0.00537)"
+        ],
+        [
+          "SCH\nGroup CI",
+          "Group-held-out ensemble minus Original-input ensemble",
+          "-0.01245\n(-0.01908, 0.00017)",
+          "-0.00209\n(-0.00719, 0.00164)",
+          "-0.00576\n(-0.01640, 0.00428)"
+        ],
+        [
+          "WHU\nPatient CI",
+          "Group-held-out ensemble minus Original-input ensemble",
+          "-0.02050\n(-0.03492, -0.00515)",
+          "-0.06253\n(-0.09437, -0.02855)",
+          "0.00782\n(0.00553, 0.01002)"
+        ],
+        [
+          "WHU\nGroup CI",
+          "Group-held-out ensemble minus Original-input ensemble",
+          "-0.02050\n(-0.03577, -0.00462)",
+          "-0.06253\n(-0.09369, -0.02261)",
+          "0.00782\n(0.00433, 0.01212)"
+        ]
+      ]
+    },
+    {
+      "old_number": 67,
+      "rows": [
+        [
+          "Centre",
+          "Boundary",
+          "Earlier training patients / labels",
+          "Later test patients / labels",
+          "Crossing exclusions patients / labels"
+        ],
+        [
+          "SCH",
+          "1 May 2024",
+          "24,687 / 839",
+          "8,471 / 274",
+          "5,351 / 210"
+        ],
+        [
+          "WHU",
+          "1 January 2019",
+          "1,598 / 211",
+          "526 / 18",
+          "438 / 52"
+        ]
+      ]
+    },
+    {
+      "old_number": 68,
+      "rows": [
+        [
+          "Centre",
+          "Model",
+          "AUC",
+          "Average precision",
+          "Brier"
+        ],
+        [
+          "SCH",
+          "All 104 inputs",
+          "0.652 (0.622 to 0.683)",
+          "0.055 (0.046 to 0.071)",
+          "0.213 (0.212 to 0.214)"
+        ],
+        [
+          "SCH",
+          "Without 5 regional inputs",
+          "0.652 (0.621 to 0.684)",
+          "0.056 (0.046 to 0.070)",
+          "0.210 (0.209 to 0.212)"
+        ],
+        [
+          "SCH",
+          "5 regional inputs only",
+          "0.534 (0.499 to 0.566)",
+          "0.037 (0.031 to 0.044)",
+          "0.202 (0.200 to 0.203)"
+        ],
+        [
+          "WHU",
+          "All 104 inputs",
+          "0.652 (0.513 to 0.793)",
+          "0.105 (0.041 to 0.268)",
+          "0.046 (0.036 to 0.057)"
+        ],
+        [
+          "WHU",
+          "Without 5 regional inputs",
+          "0.612 (0.446 to 0.771)",
+          "0.181 (0.047 to 0.388)",
+          "0.117 (0.109 to 0.124)"
+        ],
+        [
+          "WHU",
+          "5 regional inputs only",
+          "0.421 (0.293 to 0.565)",
+          "0.044 (0.019 to 0.149)",
+          "0.065 (0.055 to 0.076)"
+        ]
+      ]
+    },
+    {
+      "old_number": 69,
+      "rows": [
+        [
+          "Centre",
+          "Models",
+          "Metric",
+          "Difference and 95% interval"
+        ],
+        [
+          "SCH",
+          "Without 5 regional inputs minus All 104 inputs",
+          "AUC",
+          "0.0003 (-0.0092 to 0.0106)"
+        ],
+        [
+          "SCH",
+          "Without 5 regional inputs minus All 104 inputs",
+          "Average precision",
+          "0.0004 (-0.0068 to 0.0063)"
+        ],
+        [
+          "SCH",
+          "Without 5 regional inputs minus All 104 inputs",
+          "Brier score",
+          "-0.0022 (-0.0025 to -0.0019)"
+        ],
+        [
+          "SCH",
+          "5 regional inputs only minus All 104 inputs",
+          "AUC",
+          "-0.1179 (-0.1618 to -0.0751)"
+        ],
+        [
+          "SCH",
+          "5 regional inputs only minus All 104 inputs",
+          "Average precision",
+          "-0.0186 (-0.0326 to -0.0098)"
+        ],
+        [
+          "SCH",
+          "5 regional inputs only minus All 104 inputs",
+          "Brier score",
+          "-0.0110 (-0.0125 to -0.0094)"
+        ],
+        [
+          "SCH",
+          "Without 5 regional inputs minus 5 regional inputs only",
+          "AUC",
+          "0.1182 (0.0722 to 0.1643)"
+        ],
+        [
+          "SCH",
+          "Without 5 regional inputs minus 5 regional inputs only",
+          "Average precision",
+          "0.0190 (0.0096 to 0.0319)"
+        ],
+        [
+          "SCH",
+          "Without 5 regional inputs minus 5 regional inputs only",
+          "Brier score",
+          "0.0088 (0.0071 to 0.0105)"
+        ],
+        [
+          "WHU",
+          "Without 5 regional inputs minus All 104 inputs",
+          "AUC",
+          "-0.0401 (-0.1527 to 0.0715)"
+        ],
+        [
+          "WHU",
+          "Without 5 regional inputs minus All 104 inputs",
+          "Average precision",
+          "0.0764 (-0.0701 to 0.2149)"
+        ],
+        [
+          "WHU",
+          "Without 5 regional inputs minus All 104 inputs",
+          "Brier score",
+          "0.0705 (0.0629 to 0.0772)"
+        ],
+        [
+          "WHU",
+          "5 regional inputs only minus All 104 inputs",
+          "AUC",
+          "-0.2314 (-0.4326 to -0.0394)"
+        ],
+        [
+          "WHU",
+          "5 regional inputs only minus All 104 inputs",
+          "Average precision",
+          "-0.0604 (-0.1951 to 0.0115)"
+        ],
+        [
+          "WHU",
+          "5 regional inputs only minus All 104 inputs",
+          "Brier score",
+          "0.0185 (0.0131 to 0.0240)"
+        ],
+        [
+          "WHU",
+          "Without 5 regional inputs minus 5 regional inputs only",
+          "AUC",
+          "0.1913 (-0.0386 to 0.4189)"
+        ],
+        [
+          "WHU",
+          "Without 5 regional inputs minus 5 regional inputs only",
+          "Average precision",
+          "0.1368 (-0.0422 to 0.3407)"
+        ],
+        [
+          "WHU",
+          "Without 5 regional inputs minus 5 regional inputs only",
+          "Brier score",
+          "0.0520 (0.0423 to 0.0609)"
+        ]
+      ]
+    },
+    {
+      "old_number": 70,
+      "rows": [
+        [
+          "Centre",
+          "Source records",
+          "Complete vectors",
+          "Matched vectors",
+          "Matched year equals check year"
+        ],
+        [
+          "SCH",
+          "530450",
+          "212596",
+          "75375",
+          "75375"
+        ],
+        [
+          "WHU",
+          "7325",
+          "7322",
+          "6588",
+          "6588"
+        ]
+      ]
+    },
+    {
+      "old_number": 71,
+      "rows": [
+        [
+          "Residence field",
+          "Candidate year",
+          "Workbook sheet",
+          "Rows",
+          "All five equal",
+          "Complete unequal"
+        ],
+        [
+          "Registered city",
+          "Examination",
+          "Original",
+          "16",
+          "14",
+          "2"
+        ],
+        [
+          "Registered city",
+          "Examination",
+          "Linear",
+          "16",
+          "14",
+          "2"
+        ],
+        [
+          "Registered city",
+          "Examination",
+          "ARIMA",
+          "16",
+          "14",
+          "2"
+        ],
+        [
+          "Registered city",
+          "Admission",
+          "Original",
+          "16",
+          "14",
+          "2"
+        ],
+        [
+          "Registered city",
+          "Admission",
+          "Linear",
+          "16",
+          "14",
+          "2"
+        ],
+        [
+          "Registered city",
+          "Admission",
+          "ARIMA",
+          "16",
+          "14",
+          "2"
+        ],
+        [
+          "Current city",
+          "Examination",
+          "Original",
+          "520",
+          "412",
+          "107"
+        ],
+        [
+          "Current city",
+          "Examination",
+          "Linear",
+          "520",
+          "412",
+          "108"
+        ],
+        [
+          "Current city",
+          "Examination",
+          "ARIMA",
+          "520",
+          "412",
+          "108"
+        ],
+        [
+          "Current city",
+          "Admission",
+          "Original",
+          "520",
+          "377",
+          "143"
+        ],
+        [
+          "Current city",
+          "Admission",
+          "Linear",
+          "520",
+          "377",
+          "143"
+        ],
+        [
+          "Current city",
+          "Admission",
+          "ARIMA",
+          "520",
+          "377",
+          "143"
+        ]
+      ]
+    },
+    {
+      "old_number": 72,
+      "rows": [
+        [
+          "Measure",
+          "Earlier scope",
+          "Expanded scope"
+        ],
+        [
+          "Unique raw contents",
+          "2,329",
+          "2,341"
+        ],
+        [
+          "Patient-anchored record occurrences",
+          "5,744",
+          "6,550"
+        ],
+        [
+          "Patients with any literal current-residence city",
+          "324",
+          "332"
+        ],
+        [
+          "Unambiguous source stay-day keys",
+          "445",
+          "478"
+        ],
+        [
+          "Patients linked to processed regional rows",
+          "324",
+          "324"
+        ],
+        [
+          "Processed rows eligible for comparison",
+          "520",
+          "520"
+        ],
+        [
+          "Patients with one city and no other nonempty value",
+          "148",
+          "148"
+        ]
+      ]
+    },
+    {
+      "old_number": 73,
+      "rows": [
+        [
+          "Run",
+          "Threshold",
+          "Net benefit (95% CI)"
+        ],
+        [
+          "SCH",
+          "0.01",
+          "0.0248 (0.0229 to 0.0265)"
+        ],
+        [
+          "SCH",
+          "0.05",
+          "0.0024 (0.0013 to 0.0035)"
+        ],
+        [
+          "SCH",
+          "0.10",
+          "-0.0000 (-0.0001 to 0.0000)"
+        ],
+        [
+          "SCH",
+          "0.20",
+          "0.0000 (0.0000 to 0.0000)"
+        ],
+        [
+          "SCH",
+          "0.30",
+          "0.0000 (0.0000 to 0.0000)"
+        ],
+        [
+          "SCH",
+          "0.50",
+          "0.0000 (0.0000 to 0.0000)"
+        ],
+        [
+          "WHU",
+          "0.01",
+          "0.1008 (0.0886 to 0.1138)"
+        ],
+        [
+          "WHU",
+          "0.05",
+          "0.0741 (0.0627 to 0.0863)"
+        ],
+        [
+          "WHU",
+          "0.10",
+          "0.0572 (0.0461 to 0.0684)"
+        ],
+        [
+          "WHU",
+          "0.20",
+          "0.0386 (0.0288 to 0.0488)"
+        ],
+        [
+          "WHU",
+          "0.30",
+          "0.0292 (0.0198 to 0.0390)"
+        ],
+        [
+          "WHU",
+          "0.50",
+          "0.0141 (0.0066 to 0.0215)"
+        ],
+        [
+          "MIMIC",
+          "0.01",
+          "0.4431 (0.4308 to 0.4554)"
+        ],
+        [
+          "MIMIC",
+          "0.05",
+          "0.4196 (0.4068 to 0.4325)"
+        ],
+        [
+          "MIMIC",
+          "0.10",
+          "0.3877 (0.3743 to 0.4013)"
+        ],
+        [
+          "MIMIC",
+          "0.20",
+          "0.3167 (0.3021 to 0.3319)"
+        ],
+        [
+          "MIMIC",
+          "0.30",
+          "0.2422 (0.2269 to 0.2578)"
+        ],
+        [
+          "MIMIC",
+          "0.50",
+          "0.1255 (0.1120 to 0.1398)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "0.01",
+          "0.4431 (0.4308 to 0.4554)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "0.05",
+          "0.4196 (0.4068 to 0.4325)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "0.10",
+          "0.3875 (0.3740 to 0.4011)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "0.20",
+          "0.3155 (0.3011 to 0.3303)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "0.30",
+          "0.2423 (0.2272 to 0.2577)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "0.50",
+          "0.1257 (0.1121 to 0.1402)"
+        ]
+      ]
+    },
+    {
+      "old_number": 74,
+      "rows": [
+        [
+          "Run",
+          "Component",
+          "Estimate (95% CI)"
+        ],
+        [
+          "SCH",
+          "positive label component",
+          "1.000 (1.000 to 1.000)"
+        ],
+        [
+          "SCH",
+          "negative label component",
+          "-1.000 (-1.000 to -1.000)"
+        ],
+        [
+          "SCH",
+          "total",
+          "0.000 (0.000 to 0.000)"
+        ],
+        [
+          "WHU",
+          "positive label component",
+          "0.915 (0.863 to 0.959)"
+        ],
+        [
+          "WHU",
+          "negative label component",
+          "-0.505 (-0.540 to -0.469)"
+        ],
+        [
+          "WHU",
+          "total",
+          "0.410 (0.347 to 0.471)"
+        ],
+        [
+          "MIMIC",
+          "positive label component",
+          "0.406 (0.376 to 0.436)"
+        ],
+        [
+          "MIMIC",
+          "negative label component",
+          "0.080 (0.050 to 0.109)"
+        ],
+        [
+          "MIMIC",
+          "total",
+          "0.486 (0.446 to 0.526)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "positive label component",
+          "0.409 (0.379 to 0.438)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "negative label component",
+          "0.070 (0.041 to 0.100)"
+        ],
+        [
+          "MIMIC no AST/HDL",
+          "total",
+          "0.479 (0.438 to 0.519)"
+        ]
+      ]
+    },
+    {
+      "old_number": 75,
+      "rows": [
+        [
+          "Study and cohort",
+          "Outcome and window",
+          "Validation",
+          "Reported discrimination"
+        ],
+        [
+          "Zhou et al 2020 [1]\n4,309 oncology patients at Cleveland Clinic; 838 post-therapy de novo CTRCD labels.",
+          "De novo CTRCD after cancer therapy; no single fixed horizon. Features summarize all available records, including longitudinal echocardiography.",
+          "100 repeated 81/9/10 random training/validation/test splits. A separate calendar-time evaluation was also reported; the quoted AUC is from repeated random splits.",
+          "Selected logistic regression: AUC 0.802 (95% CI 0.797-0.807). Five algorithms included gradient tree boosting, not specifically XGBoost."
+        ],
+        [
+          "Li et al 2025 [2]\n419 patients receiving immune checkpoint inhibitors in 2020-2023.",
+          "Cardiac biomarker or ECG abnormalities within 30 days after treatment initiation, not attributable to other disease; baseline inputs.",
+          "Internal 70/30 training/test split.",
+          "XGBoost AUC 0.83; logistic regression 0.80; random forest 0.74. AUC intervals are not supplied in the accessed abstract."
+        ],
+        [
+          "Zhang et al 2026 [3]\n2,500 cancer survivors receiving systemic antitumour therapy at Jilin Cancer Hospital; 188 incident CVD events.",
+          "Post-treatment incident CVD; models at 1, 2 and 3 years, including tumour and treatment inputs.",
+          "Internal random holdout with 10-fold optimization. The article reports both 75/25 and 70/30 split proportions.",
+          "XGBoost AUC 0.666, described as the 3-year value in Results and as an average in the abstract. No interval is given for this estimate in the accessed text."
+        ]
+      ]
+    },
+    {
+      "old_number": 76,
+      "rows": [
+        [
+          "Source item",
+          "Retained evidence and interpretation"
+        ],
+        [
+          "Main Figure 1",
+          "Original a-e distributions and cohort structure were retained with corrected analysis units and labels. Unsupported survival panels f-h were removed."
+        ],
+        [
+          "Main Figure 2",
+          "The original transfer matrix and within-cohort AUROCs in A/B were retained. Panels c-e were removed because record order does not establish event-aligned chronology."
+        ],
+        [
+          "Main Figure 3",
+          "The original descriptive SHAP, correlation and UMAP panels were retained. Causal and biological-equivalence interpretations were removed."
+        ],
+        [
+          "Main Figure 4",
+          "Original principal ROC data are retained in reconstructed panels; invalid proxy-score comparisons were withdrawn. Figure 4 combines the retained a-f analyses and g-i summaries in one 3-by-3 layout: g compares historical and patient-isolated AUC, h reports simple and all-input missingness comparators, and i reports original-input 0/24/48-hour measurement-window AUC. These are distinct retrospective analyses. Base-model calibration is evaluated separately with pointwise intervals."
+        ],
+        [
+          "Main Figure 5",
+          "Original Chinese A/B rankings were retained. Model-version-mismatched MIMIC panels and the universal monitoring-panel claim were removed."
+        ],
+        [
+          "Archived supplementary Figures S2-S9",
+          "Retained content appears in current Supplementary Figures S5, S6 and S20–S25. The invalid archived S9H fold-change panel is withdrawn. The historical aggregation legends are corrected, and the main Figure 3 versus current Supplementary Figure S25 Albumin source-field and complete-pair differences are disclosed."
+        ],
+        [
+          "Archived supplementary Figures S10 and S11",
+          "Current Supplementary Figure S26 retains the Chinese A/B encounter-importance panels only. Current Supplementary Figure S1 reports the actual 104/43 input inventories without harmonization."
+        ],
+        [
+          "Archived supplementary Figures S1 and S12-S14 and archived Table S2",
+          "Unsupported survival, simulated RMST, and unverified quantitative SES-only/ApoB-ablation evidence were withdrawn. The original files remain archived."
+        ],
+        [
+          "Patient isolated validation and measurement window summaries",
+          "Main Figure 4d-i presents calibration, patient-isolated discrimination and measurement-window summaries. Supplementary Figure S4 retains the broader model comparison; Figures S13 and S14 report window-specific calibration and AST/HDL and common-stay sensitivity."
+        ]
+      ]
+    }
+  ]
+}

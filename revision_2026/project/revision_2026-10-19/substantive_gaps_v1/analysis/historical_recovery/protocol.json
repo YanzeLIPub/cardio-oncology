@@ -1,0 +1,55 @@
+{
+  "analysis_id": "historical_code_replay_20261019_v1",
+  "purpose": "A new, isolated fixed-parameter replay of the surviving historical transfer implementation, NOT recovered historical predictions or confidence intervals for the old AUCs.",
+  "source": "${CARDIO_PIPELINE_ROOT}/Manuscript/v13/compute_v13_metrics.py",
+  "entrypoints": [
+    "load_sch_patient",
+    "load_whu_patient",
+    "transfer_train_predict"
+  ],
+  "numerical_modifications": [],
+  "instrumentation_only": [
+    "Capture prepared patient ordering and model objects before the original returns",
+    "Save probabilities and fitted preprocessing/models",
+    "Compute post-fit target-patient bootstrap intervals"
+  ],
+  "directions": [
+    "SCH_to_MIMIC",
+    "WHU_to_MIMIC",
+    "MIMIC_to_SCH",
+    "MIMIC_to_WHU"
+  ],
+  "source_cohorts": {
+    "SCH": [
+      38509,
+      1323
+    ],
+    "WHU": [
+      2562,
+      281
+    ],
+    "MIMIC": [
+      9946,
+      4462
+    ]
+  },
+  "MIMIC_patients": 6783,
+  "bootstrap": {
+    "draws": 2000,
+    "seed_base": 2026101900,
+    "unit": "target patient, all admissions retained together",
+    "interval": "percentile 2.5/97.5",
+    "scope": "conditional on newly refitted fixed source model; no model-training uncertainty"
+  },
+  "fitting": "Original nominal 43 slots, original all-record median aggregation, original median imputer fitted ONLY on source, original 300-round XGBoost and 300-tree RF ensemble. No unit correction, relabelling, timing repair or target-side imputation fitting.",
+  "identity_gate": "Matching a rounded AUC, or even all four rounded AUCs, does not certify original prediction identity without an archived vector/model and run-bound input/environment evidence.",
+  "claims_prohibited": [
+    "Recovered original AUC confidence intervals",
+    "Validated common-measured-assay transfer",
+    "Prospective incident-MACE prediction",
+    "Causal biological drift",
+    "Clinical utility"
+  ],
+  "old_outputs_unchanged": true,
+  "patient_level_outputs": "Local private/ directory only; no patient identifiers in aggregate reports or logs"
+}

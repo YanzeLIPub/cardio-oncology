@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+.env
+config.local.json
+controlled_data/
+private/
+**/private/
+**/cache/
+**/runs/
+*.npz
+*.npy
+*.joblib
+*.pkl
+*.pickle
+*.ubj

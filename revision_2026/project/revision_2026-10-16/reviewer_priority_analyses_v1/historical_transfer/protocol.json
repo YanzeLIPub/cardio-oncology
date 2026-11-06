@@ -1,0 +1,73 @@
+{
+  "analysis": "Conditional uncertainty for recoverable historical transfer predictions",
+  "locked_on": "2026-10-16",
+  "scope": "No training, no harmonization, no replacement of historical predictions by newly fitted models.",
+  "targets": [
+    {
+      "source": "SCH",
+      "target": "WHU",
+      "reported_auc": 0.438,
+      "reported_decimals": 3,
+      "seed": 2026101601
+    },
+    {
+      "source": "WHU",
+      "target": "SCH",
+      "reported_auc": 0.485,
+      "reported_decimals": 3,
+      "seed": 2026101602
+    },
+    {
+      "source": "SCH",
+      "target": "MIMIC",
+      "reported_auc": 0.4998,
+      "reported_decimals": 4
+    },
+    {
+      "source": "MIMIC",
+      "target": "SCH",
+      "reported_auc": 0.5591,
+      "reported_decimals": 4
+    },
+    {
+      "source": "WHU",
+      "target": "MIMIC",
+      "reported_auc": 0.4938,
+      "reported_decimals": 4
+    },
+    {
+      "source": "MIMIC",
+      "target": "WHU",
+      "reported_auc": 0.444,
+      "reported_decimals": 4
+    }
+  ],
+  "eligibility": [
+    "A stored historical probability vector must be tied to the named direction and historical model source.",
+    "Patient/admission unit, original label, target patient grouping and denominator must be verified.",
+    "The directly recomputed AUC must reproduce the reported value at its original reporting precision.",
+    "A numerical match alone is not enough to certify an unrelated model as the historical source."
+  ],
+  "bootstrap": {
+    "draws": 2000,
+    "unit": "target patient",
+    "scheme": "Ordinary non-stratified patient-cluster bootstrap; sample the original number of patients with replacement and retain all rows from each sampled patient with its sampling multiplicity.",
+    "statistic": "AUROC using half credit for tied scores",
+    "interval": "Two-sided percentile 95% interval, numpy linear quantiles at 0.025 and 0.975",
+    "degenerate_draws": "Record and omit draws with only one outcome class; do not silently redraw.",
+    "conditioning": "Fixed historical prediction vectors, fixed fitted source models and fixed historical preprocessing. No model-refitting, source-sampling, selection or mapping uncertainty is included.",
+    "patient_level_special_case": "Each recovered Chinese target has one row per patient, so the patient-cluster bootstrap reduces to patient resampling."
+  },
+  "verification": [
+    "Compare original and manuscript-copy historical probabilities and labels by centre and patient key without outputting keys.",
+    "Compare Chinese labels with the original patient_level_data.csv label source.",
+    "Check weighted tie-aware AUROC against sklearn and explicit row replication, including unequal cluster multiplicities.",
+    "Repeat the deterministic bootstrap in a separate verify invocation and compare all replicate values and summary intervals.",
+    "Record source, protocol, code and output hashes plus the runtime versions."
+  ],
+  "limitations": [
+    "These intervals do not establish prospective prediction, absence of temporal leakage, clinical utility or a common cross-centre task.",
+    "No CI may be inferred from aggregate AUC values alone.",
+    "Unrecovered directions remain unavailable, with a bounded search record and explicit recovery requirements."
+  ]
+}

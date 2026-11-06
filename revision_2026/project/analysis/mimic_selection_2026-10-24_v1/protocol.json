@@ -1,0 +1,109 @@
+{
+  "version": "MIMIC retrospective cohort selection sensitivity v1",
+  "date": "2026-10-24",
+  "scope": "R3 selection and interpretation sensitivity, not incident-event prediction or complete leakage exclusion",
+  "source_universe": "Authenticated original ever-cancer and broad-cardiac source admissions before hospital-death exclusion",
+  "arms": [
+    "ever_all",
+    "ever_survivor",
+    "prior_all",
+    "prior_survivor"
+  ],
+  "arm_rules": {
+    "ever_all": "All authenticated original source admissions",
+    "ever_survivor": "ever_all and original hospital-expire flag equals zero",
+    "prior_all": "ever_all and both original qualifying diagnosis families in valid source stays completed strictly before current ADMITTIME",
+    "prior_survivor": "prior_all and original hospital-expire flag equals zero"
+  },
+  "prior_history_rule": "Prior ADMITTIME/DISCHTIME nonmissing, DISCHTIME >= ADMITTIME and DISCHTIME < current ADMITTIME; both qualifying families can occur in different prior stays. Current-discharge validity is audited, not an additional exclusion.",
+  "label": "Exactly reconstructed original recorded-diagnosis composite, including historical death-plus-broad-cardiac rule; not adjudicated MACE or cause-specific cardiovascular mortality",
+  "feature_rule": "41 nominal historical slots with AST and HDL Cholesterol uniformly excluded from the original 43; retain historical unrestricted within-admission aggregation and remaining mapping limitations",
+  "predictor_exclusions": [
+    "AST",
+    "HDL Cholesterol",
+    "label or label components",
+    "eligibility and arm flags",
+    "Admission_has_cardiac",
+    "death and discharge variables",
+    "length of stay",
+    "identifiers and absolute dates"
+  ],
+  "folds": 5,
+  "outer_seed": 20261024,
+  "outer_rule": "Outcome-blind permutation of sorted unique source patients divided into five folds once, shared across all arms",
+  "inner_seed_base": 20262024,
+  "inner_rule": "For outer fold f numbered 1..5, independently permute sorted outer-training patients with seed inner_seed_base+f and assign ceil(0.20*N) patients to stopping before applying arm masks",
+  "inner_stop_fraction": 0.2,
+  "failure_rule": "Stop if any arm/role lacks both classes or has no patients; no seed search, arm dropping or outcome-driven redesign",
+  "preprocessing": "Fit nonempty-column selection and median imputation on inner-fitting only for stopping; refit on eligible outer-training only for final models",
+  "primary_model": "50:50 arithmetic mean of XGBoost and random forest; independently trained in each arm/fold",
+  "xgb": {
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "max_rounds": 300,
+    "early_stopping_rounds": 20,
+    "tree_method": "hist"
+  },
+  "rf": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+  },
+  "model_seed": "Outer fold number 1..5 identically across arms",
+  "threads": 2,
+  "class_weights": "XGBoost negative/positive ratio in current fitting partition; random forest balanced in eligible outer-training partition",
+  "calibration": "None; report raw ensemble probabilities only",
+  "hyperparameter_search": "None",
+  "prediction_rule": "Each arm-trained model predicts every global outer-test admission; own-arm metrics use only that arm, common-target comparisons use exact prespecified held-out rows",
+  "metrics": [
+    "ROC_AUC",
+    "average_precision",
+    "Brier"
+  ],
+  "primary_metric": "ROC_AUC",
+  "paired_contrasts": [
+    {
+      "first": "ever_all",
+      "second": "ever_survivor",
+      "target": "ever_survivor"
+    },
+    {
+      "first": "prior_all",
+      "second": "prior_survivor",
+      "target": "prior_survivor"
+    },
+    {
+      "first": "prior_all",
+      "second": "ever_all",
+      "target": "prior_all"
+    },
+    {
+      "first": "prior_survivor",
+      "second": "ever_survivor",
+      "target": "prior_survivor"
+    }
+  ],
+  "contrast_direction": "first minus second; not a causal effect or an estimate of leakage magnitude",
+  "bootstrap_seed_base": 20263024,
+  "bootstrap_seed_rule": "Seed base plus target index in the fixed arms list",
+  "bootstrap_replicates": 2000,
+  "bootstrap_rule": "Exactly 2000 patient-cluster multinomial draws per target, retaining every admission with patient multiplicity; same weights for all compared models on that target",
+  "degenerate_rule": "Mark draws without both labels invalid and report counts; no replacement draws or new seed; if fewer than 1900 valid draws, do not report a percentile interval",
+  "uncertainty": "Percentile95% intervals conditional on fixed OOF predictions; no refitting, training-size or clinical-ascertainment uncertainty",
+  "multiplicity": "Four prespecified exploratory contrasts; no confirmatory multiplicity-controlled claims",
+  "limitations": [
+    "Prior completed diagnosis documentation is not an event-free risk set or authenticated onset time",
+    "Full-admission laboratory summaries can reflect concurrent disease and treatment; first result availability remains unknown",
+    "Original death rule does not authenticate cardiovascular cause of death",
+    "Current invalid admission bounds are reported rather than silently removed",
+    "Common-target contrasts change training size, prevalence and case mix as well as selection rules",
+    "Remaining assay mappings and clinical negative-label capture are not certified",
+    "No clinical adjudication will be performed in this revision because clinical reviewers are unavailable",
+    "New results do not replace original AUCs or close all R1/R3 requirements"
+  ],
+  "private_outputs": "Admission keys, patient groups, matrices, masks, folds, fitted models and probabilities stay outside manuscript delivery",
+  "no_omop": true,
+  "pre_fit_requirement": "Independent preparation verification passed and source/code/environment identities frozen before training"
+}

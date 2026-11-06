@@ -1,0 +1,74 @@
+{
+  "version": "fixed_patient_roles_xgb_seed_stability_v1",
+  "stage": 3,
+  "cohorts": [
+    "SCH",
+    "WHU"
+  ],
+  "seeds": [
+    42,
+    43,
+    44,
+    45
+  ],
+  "baseline_seed": 42,
+  "expected_counts": {
+    "SCH": [
+      38509,
+      38509,
+      1323,
+      104
+    ],
+    "WHU": [
+      2562,
+      2562,
+      281,
+      104
+    ]
+  },
+  "baseline": "Reuse the ten saved 2026-10-15 full-outer-training seed-42 XGBoost components; do not retrain or replace the baseline",
+  "new_training": "Train seeds 43, 44 and 45 for both cohorts and all five fixed outer folds. The only configuration change is the XGBoost training seed. No seed is selected by performance or attribution results.",
+  "roles": "Reconstruct and verify the original role matrix: 0 outer test, 1 calibration, 2 inner fit, 3 inner stop. Use role 2 to fit early-stopping model and role 3 to choose rounds, then fit all role != 0 patients for exactly those rounds. Role 1 is included only in full refit; no calibration model is fitted here.",
+  "preprocessing": "Original 104 nominal Chinese inputs, raw preserved NaN and unchanged labels; original all-record patient means and constant-zero filling. Genuine observed zeros are retained. No feature selection, relabeling, OMOP or new temporal task.",
+  "xgb": {
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "max_rounds": 300,
+    "early_stopping_rounds": 20,
+    "tree_method": "hist"
+  },
+  "class_weights": "Negative/positive ratio calculated separately from inner-fit or full-outer-training labels only",
+  "explanation": "Exact native pred_contribs on outer-test patients only, margin/log-odds scale; check sum including bias against margin and sigmoid against probability. Explain XGBoost only, not RF or the full 50:50 ensemble.",
+  "association": "Two-sided Spearman between raw finite observed values and held-out contributions; missing values excluded from this association and observed zeros retained. Testable if at least 3 observations and at least 2 distinct observed raw values and 2 distinct contributions.",
+  "multiplicity": "For each seed separately, BH over the complete joint set of testable feature-cohort associations. Baseline must reproduce 156; actual family size for other seeds is reported and may change with constant contributions. Never use only the eight selected features as the family. Exploratory q < 0.05, not confirmatory cross-fitting FDR control.",
+  "fold_consistency": "Observed-only Spearman in each of five held-out folds. Report positive/negative/zero/untestable counts. All-five agreement requires every fold testable, nonzero and equal to pooled sign; no fold P-value selection.",
+  "prespecified_display": "Report the eight features selected in the 2026-10-16 held-out analysis at every seed, and always display NSE and albumin. Also publish all 104 features in each cohort, all seed pairs and all cross-cohort filters. Four-seed intersections are descriptive, not independent clinical replications.",
+  "importance_stability": "All six seed pairs per cohort: Spearman correlation of mean absolute held-out contributions across all 104 inputs and their nonzero union, plus nonzero top-10/top-20 overlap with stable original-feature-order tie breaking",
+  "metrics": [
+    "auc",
+    "average_precision",
+    "brier"
+  ],
+  "bootstrap": {
+    "draws": 2000,
+    "seeds": {
+      "SCH": 2026101801,
+      "WHU": 2026101802
+    },
+    "unit": "patient",
+    "pairing": "Same patient multiplicities across all four seed predictions in each draw",
+    "comparison": "Each seed 43/44/45 minus seed 42",
+    "scope": "Nominal percentile 95% intervals conditional on fixed OOF predictions. Do not cover refitting, fold selection or clinical sampling uncertainty."
+  },
+  "maximum_threads": 2,
+  "limits": [
+    "Fixed outer and inner splits do not evaluate split uncertainty.",
+    "Four seeds are not four independent clinical cohorts and do not increase the patient denominator.",
+    "Only the XGBoost component is explained; no ensemble SHAP or new RF fit.",
+    "No timing, endpoint, clinical utility, causal mechanism or random-seed selection claim.",
+    "New seed training changes stochastic fitting and its inner-selected rounds jointly; no isolated causal effect of seed is inferred."
+  ],
+  "runtime": "${CARDIO_PIPELINE_ROOT}/.venv/Scripts/python.exe"
+}

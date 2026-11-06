@@ -1,0 +1,105 @@
+{
+  "version": "restricted_laboratory_target_adaptation_v1",
+  "authorized_on": "2026-10-18",
+  "frozen_before_any_new_fitting": true,
+  "scope": "Reviewer 1 item 6: genuine cross-setting adaptation and local-data learning curves, limited to the existing name/context/literal-unit-reviewed WHU-MIMIC four laboratory matrices. No OMOP, relabeling, prospective-event, three-centre harmonization or clinical minimum-sample-size assertion.",
+  "input_root": "${CARDIO_PROJECT_ROOT}/revision_2026-10-16/reviewer_priority_analyses_v1/common_transfer",
+  "source_model": "Previously fitted full-source 50:50 XGBoost/random-forest ensemble_median; serialized packages are frozen and no source model is refitted",
+  "features": [
+    "Albumin",
+    "Total protein",
+    "CBC hemoglobin",
+    "CBC hematocrit"
+  ],
+  "labels_and_units": {
+    "WHU": {
+      "observations": 2562,
+      "patients": 2562,
+      "positive_labels": 281,
+      "unit": "patient",
+      "label": "Original frozen ever-recorded diagnosis label"
+    },
+    "MIMIC": {
+      "observations": 9946,
+      "patients": 6783,
+      "positive_labels": 4462,
+      "unit": "admission",
+      "label": "Original frozen same-admission label retaining original survivor restriction"
+    }
+  },
+  "aggregation": "Existing all-accessible patient-linked WHU and admission-linked MIMIC accepted-measurement medians; no verified pre-event or result-availability cutoff",
+  "outer_evaluation": "Exact five patient-isolated outer-test roles preserved from the 2026-10-15 matrices via the 2026-10-16 common arrays. All other patients form the target adaptation pool for that fold; source cohorts are institution-namespaced, not linked by coincident numeric identifiers.",
+  "target_sampling": {
+    "patient_counts": [
+      50,
+      200,
+      800
+    ],
+    "repeat_seeds": [
+      2026101801,
+      2026101802,
+      2026101803
+    ],
+    "rule": "For each target and outer fold, patient max-label defines proportional strata within the labelled target outer-training pool. For each repeat, fixed independently permuted stratum orders generate nested prefixes at all three sizes. Positive-patient quota is round(n times pool positive-patient proportion), constrained to 1 through n-1. This is stratified sampling from an already labelled pool, not a prospective label-acquisition study. No outer-test labels or performance influence draws.",
+    "mimic": "Sample patients, retain all admissions of selected patients; sample size is not an admission count",
+    "seed_derivation": "numpy default_rng SeedSequence([repeat_seed, target_index, fold_number]), target_index WHU=0 and MIMIC=1",
+    "reuse": "Exactly the same selected patients/admissions are used by all four adaptation/local methods"
+  },
+  "models": {
+    "direct_source": "Frozen full-source ensemble predictions, unchanged across sample sizes and repeats",
+    "platt_unconstrained": "Unweighted, unpenalized intercept+slope logistic regression of target label on source probability logit, clipped to [1e-6,1-1e-6]. Negative slopes are permitted and explicitly reported as ranking reversal, not order-preserving calibration.",
+    "logistic_update_source_transform": "L2 C=1 unweighted logistic regression with intercept on source logit plus four values. Source-only medians and mean/standard deviation fit on full source inputs, including source-model logits on source records; no target-side transform fitting.",
+    "local_logistic_source_transform": "L2 C=1 unweighted logistic regression using the four values with source-only medians/standardization. This is not a source-independent local baseline.",
+    "local_logistic_target_transform": "L2 C=1 unweighted logistic regression using four values, with medians and standardization fitted only on the selected target training observations; all-empty selected column falls back to 0 and is reported. This is the fully target-local preprocessing comparator."
+  },
+  "logistic_settings": {
+    "solver": "lbfgs",
+    "C_for_regularized_models": 1.0,
+    "max_iter": 10000,
+    "tol": 1e-09,
+    "class_weight": null,
+    "fit_intercept": true,
+    "penalty_for_platt": null
+  },
+  "weights": "Fit and evaluation retain the original row/admission weighting; repeated MIMIC admissions are not silently patient-averaged. Patient grouping governs sampling, isolation and bootstrap clustering.",
+  "platt_failure_rules": "Before fitting: fail if training has one class, constant logit, or complete/quasi separation of the two class logit ranges. After fitting: fail on a convergence warning, nonfinite coefficient/prediction or nonconvergence. No test-selected fallback or arbitrary slope clipping. A failed fold makes that repeat/size Platt full-OOF result unavailable; do not score only surviving folds. Other fixed L2 models similarly fail on nonconvergence/nonfinite outputs. Report failures explicitly.",
+  "evaluation": {
+    "metrics": [
+      "ROC AUC",
+      "noninterpolated average precision",
+      "binary Brier"
+    ],
+    "primary": "Full original target denominator. For each size/repeat, concatenate only predictions from that patient's own outer-test fold and evaluate once. Do not concatenate repeats as independent rows.",
+    "repeat_summary": "Report arithmetic mean and min/max of the three repeat-level metrics. Mean-metric bootstrap intervals use the same target-patient draw across all three repeats and take the mean of the three recalculated metrics. Require all three complete repeats. No probability averaging; this is not a probability-ensemble estimand.",
+    "coverage_secondary": "Predeclared secondary no-refit evaluation among target observations with at least one finite accepted lab in the frozen raw-NaN matrix; retain original source and adaptation fits, labels and predictions. It is conditional on coverage and does not establish clinical test ordering or disease absence. Main denominator is unchanged.",
+    "comparisons": [
+      "platt_unconstrained minus direct_source",
+      "logistic_update_source_transform minus direct_source",
+      "local_logistic_source_transform minus direct_source",
+      "local_logistic_target_transform minus direct_source",
+      "logistic_update_source_transform minus local_logistic_source_transform",
+      "logistic_update_source_transform minus local_logistic_target_transform",
+      "local_logistic_target_transform minus local_logistic_source_transform"
+    ],
+    "bootstrap": {
+      "draws": 2000,
+      "seed": 2026101805,
+      "seed_derivation": "SeedSequence([seed,target_index,population_index]); full=0, covered=1",
+      "unit": "target patient cluster, retaining all eligible admissions and common weights across methods/sizes/repeats",
+      "interval": "Nominal percentile 95%, conditional on frozen source models, selected target training samples, extracted matrices and observed coverage; excludes refitting/source-sampling/target-draw selection and multiplicity uncertainty"
+    }
+  },
+  "source_availability_warning": "WHU has 318 all-four-missing patients including 102 original positives; coverage restriction is an important secondary estimand, not a mechanistic fix. MIMIC total protein is observed in only 795 admissions.",
+  "forbidden_claims": [
+    "equivalent clinical tasks or complete assay/platform equivalence",
+    "future-event or pre-event validation",
+    "minimum clinically acceptable local sample size",
+    "verified three-centre adaptation",
+    "semantic drift or access as identified mechanism",
+    "negative-slope Platt preserves discrimination ordering"
+  ],
+  "threads_maximum": 2,
+  "runtime": "${CARDIO_PIPELINE_ROOT}/.venv/Scripts/python.exe",
+  "privacy": "Patient keys, rows, role membership, selected indices and predictions remain private. Public logs and reports contain only aggregate counts, coefficients and file/array hashes.",
+  "artifacts": "Private 90 direction/fold/size/repeat packages containing all four fitted adapters and patient-isolated roles; private complete OOF arrays; public training manifest, fold counts, calibration coefficients, repeat and mean/range metrics, paired differences, fixed-bootstrap intervals, tests, input/output identities and independently executable package/score replay. No old output is modified."
+}

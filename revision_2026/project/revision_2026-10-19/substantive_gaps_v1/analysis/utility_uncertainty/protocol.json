@@ -1,0 +1,102 @@
+{
+  "version": "diagnostic_label_utility_uncertainty_v1",
+  "scope": "Supplemental statistical sensitivity on fixed patient-isolated out-of-fold diagnostic-label predictions; not future-event or intervention-effect validation",
+  "frozen_before_loading_prediction_values": true,
+  "original_model_results_retained": true,
+  "new_training_or_omop": false,
+  "source_directory": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1",
+  "runs": [
+    "SCH_original",
+    "WHU_original",
+    "MIMIC_original",
+    "MIMIC_exclude_AST_HDL"
+  ],
+  "decision_curve_models": [
+    "base_raw",
+    "base_platt",
+    "primary_raw",
+    "age"
+  ],
+  "threshold_grid": {
+    "integer_start": 1,
+    "integer_stop_inclusive": 99,
+    "divisor": 100,
+    "selection": "outcome-agnostic numerical grid, not clinically recommended cutoffs"
+  },
+  "main_plot_threshold_domain": [
+    0.01,
+    0.5
+  ],
+  "full_plot_threshold_domain": [
+    0.01,
+    0.99
+  ],
+  "display_table_thresholds": [
+    0.01,
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.5
+  ],
+  "decision_rule": "positive if predicted probability >= threshold",
+  "net_benefit_formula": "TP/N - FP/N * threshold/(1-threshold)",
+  "decision_curve_estimand": "Admission-weighted for MIMIC; patient-weighted for China, under original diagnostic labels and source cohort filters",
+  "default_strategies": [
+    "treat_all",
+    "treat_none"
+  ],
+  "paired_net_benefit_contrasts": [
+    "base_platt minus base_raw",
+    "primary_raw minus age",
+    "each model minus treat_all",
+    "each model minus treat_none"
+  ],
+  "nri_comparison": {
+    "new": "primary_raw",
+    "reference": "age",
+    "rationale": "Distinct models trained on identical outer-training patients and tested on identical independent outer-test patients; no proxy score or outcome-as-predictor substitution",
+    "continuous": "P(up|label=1)-P(down|label=1)+P(down|label=0)-P(up|label=0)",
+    "ties": "exact equal probabilities or same decision category contribute zero",
+    "categorical": "Two-category NRI at each numerical threshold; report positive-label and negative-label components separately",
+    "interpretation": "Exploratory reclassification of observed binary diagnostic labels, sensitive to probability calibration; not a prospective risk horizon, clinical threshold endorsement, efficacy or clinical panel validation"
+  },
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 20261019,
+    "sampling_unit": "patient, with replacement, retaining all MIMIC admissions and patient multiplicity",
+    "interval": "pointwise percentile 2.5th and 97.5th quantiles",
+    "paired": true,
+    "models_refitted": false,
+    "uncertainty": "Conditional on existing OOF predictions and splits; does not include model refitting, label error, temporal leakage or full cross-validation training dependence",
+    "simultaneous_intervals": false,
+    "hypothesis_tests_or_optimal_threshold_selection": false
+  },
+  "source_validation": "Check frozen prediction hashes against completed independent saved-model replay; independently recheck role separation and fold mapping",
+  "privacy": "Only aggregate statistics exported; no patient identifiers, row-level probabilities, or patient-level clinical data in logs or reports",
+  "remaining_requirements": [
+    "Clinical action and harms/benefits have not been specified",
+    "Clinically acceptable thresholds have not been established",
+    "Negative-label ascertainment and event-before-predictor timing remain unvalidated",
+    "Prospective or interventional utility is not demonstrated",
+    "Historical same-OOF isotonic DCA/NRI is not validated by these new results"
+  ],
+  "method_sources": [
+    {
+      "title": "Vickers and Elkin (2006), Decision curve analysis: a novel method for evaluating prediction models",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/17099194/",
+      "doi": "10.1177/0272989X06295361"
+    },
+    {
+      "title": "Vickers et al. (2023), Decision curve analysis: confidence intervals and hypothesis testing for net benefit",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10243069/",
+      "use": "Paired differences versus default strategies and uncertainty interpretation"
+    },
+    {
+      "title": "Pencina, D'Agostino and Steyerberg (2011), Extensions of net reclassification improvement calculations to measure usefulness of new biomarkers",
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3341973/",
+      "doi": "10.1002/sim.4085",
+      "use": "NRI formula and separate event/non-event components"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "version": "heldout_xgb_contributions_v1",
+  "scope": "Exploratory explanations of the saved patient-isolated full-outer-training XGBoost component, not the 50:50 ensemble, original historical SHAP analysis, LightGBM S6 model, or causal effects",
+  "cohorts": [
+    "SCH",
+    "WHU"
+  ],
+  "expected_counts": {
+    "SCH": [
+      38509,
+      38509,
+      1323,
+      104
+    ],
+    "WHU": [
+      2562,
+      2562,
+      281,
+      104
+    ]
+  },
+  "training": "None; reuse all five saved full_xgb.ubj models, their full_package.joblib preprocessing, prepared matrices, original labels and patient roles from original_v5_independent_validation_v1",
+  "explanation": "Exact native XGBoost pred_contribs with approx_contribs=false; all outer-test rows once; contribution scale is raw margin (log odds); exclude bias from feature summaries",
+  "maximum_threads": 2,
+  "split_checks": "Reproduce original five-fold outer and inner patient roles; verify full outer train and test are disjoint; never explain a patient's own training fold",
+  "replay_checks": {
+    "xgb_probability_absolute_tolerance": 1e-07,
+    "margin_additivity_absolute_tolerance": 0.0002,
+    "sigmoid_margin_probability_absolute_tolerance": 1e-07
+  },
+  "association": "Two-sided scipy Spearman correlation between raw finite observed feature values and that feature's held-out margin contribution; true observed zero retained, missing/infinite raw values excluded rather than replaced by imputed zero",
+  "testability": "At least three raw observations, at least two distinct raw values and at least two distinct contributions in that observed subset; otherwise report not testable and reason",
+  "multiplicity": "One complete joint BH family comprising every testable pooled feature-cohort association across both cohorts, including demographic, region and any other nominal inputs; no feature selection by previous importance or P values; q<0.05 is exploratory only",
+  "fold_consistency": "Repeat observed-only Spearman separately within each of five held-out folds; report positive, negative, zero and untestable counts and agreement with pooled sign; no fold P threshold selection and no fold FDR claims",
+  "importance": "Mean absolute held-out contribution over all patients, and observed/missing subsets separately; all nominal features reported; zero-importance and non-testable features retained",
+  "cross_cohort": "Describe sign agreement/opposition for features testable in both centres; additionally report both joint-BH q<0.05 and all-five-fold sign agreement as descriptive filters, not cross-centre interaction tests or proof of biological drift",
+  "missingness_sensitivity": "Use already saved heldout_xgb_contributions for value_indicator_ensemble XGBoost component and native_xgb, verify identical patient roles and probabilities, compare ranks of mean absolute contributions for the same original 104 value channels; indicator channels reported separately; report all-feature and nonzero-union Spearman rank correlation plus nonzero top-10/top-20 overlap with deterministic feature-order tie breaking",
+  "limits": [
+    "No random-seed retraining stability, repeated cross-validation or new external cohort is evaluated.",
+    "Fold-specific models share training patients; pooled nominal Spearman P values and BH values are exploratory and do not establish confirmatory FDR control, biological causality or an independent between-cohort effect.",
+    "Conditional explanations cannot repair full-record aggregation, ever-diagnosis labels, predictor timing, treatment confounding or source provenance.",
+    "SHAP directions can depend on feature dependence, missingness handling and model fitting; mean absolute contribution is predictive attribution, not clinical effect size.",
+    "Missingness variants change models and feature spaces; rank changes are descriptive robustness evidence, not a pure causal effect of missingness handling."
+  ]
+}

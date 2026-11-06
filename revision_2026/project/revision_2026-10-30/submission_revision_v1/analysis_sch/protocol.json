@@ -1,0 +1,142 @@
+{
+  "version": "shared_age_six_direction_transport_v1",
+  "frozen_at_utc": "2026-10-29T01:43:22.597644+00:00",
+  "purpose": "Shared-age recorded-diagnosis transport stress test, including SCH, with source-fitted preprocessing.",
+  "population": "Retain every original row and original label, including the 304 WHU patients without linked raw JSON. No exclusions by source availability or diagnosis label.",
+  "feature": "One predictor: age in years, at earliest dated recorded observation in SCH/WHU and admission in MIMIC.",
+  "age_rule": "Use certified source-rebuilt demographics, not the age/sex columns of copied prediction CSVs. Cap age above 91 in every centre before modelling, consistently with the retained MIMIC de-identification handling. The MIMIC age is admission calendar year minus birth calendar year, capped above at 91; Chinese age is the recorded numeric age at the earliest timestamp. These definitions are close but not identical exact-age measurements.",
+  "sex_exclusion": "Chinese codes 1/2 lack an authenticated male/female mapping; no sex transfer or assumed recoding is performed.",
+  "source_unit": "SCH and WHU patients; MIMIC admissions, with all original repeated admissions retained.",
+  "labels": "Original centre-specific stored diagnostic labels, not a common incident clinical endpoint.",
+  "source_training": "Each centre trains on its entire original source population. MIMIC admits each original admission as a training row. Target labels are unavailable to fit_source; there is no target retraining, scaling, imputation, calibration or threshold selection.",
+  "primary_model": {
+    "pipeline": [
+      "StandardScaler fitted only to source age",
+      "L2 LogisticRegression"
+    ],
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "tol": 1e-10,
+    "class_weight": null
+  },
+  "sensitivity_model": {
+    "pipeline": [
+      "SplineTransformer fitted only to source age",
+      "L2 LogisticRegression"
+    ],
+    "n_knots": 5,
+    "degree": 3,
+    "knots": "quantile",
+    "include_bias": false,
+    "extrapolation": "linear",
+    "C": 1.0,
+    "solver": "lbfgs",
+    "max_iter": 5000,
+    "tol": 1e-10,
+    "class_weight": null
+  },
+  "directions": [
+    "SCH->WHU",
+    "SCH->MIMIC",
+    "WHU->SCH",
+    "WHU->MIMIC",
+    "MIMIC->SCH",
+    "MIMIC->WHU"
+  ],
+  "metrics": [
+    "ROC_AUC",
+    "average_precision",
+    "Brier",
+    "expected_to_observed"
+  ],
+  "bootstrap": {
+    "replicates": 2000,
+    "seed_base": 20261029,
+    "unit": "target patient; all of a sampled patient's admissions receive the same multiplicity",
+    "type": "non-stratified multinomial patient-cluster resampling",
+    "interval": "percentile 2.5 and 97.5 percentiles",
+    "same_target_weights_shared_across_models": true,
+    "conditional_on_fixed_source_fit": true,
+    "includes_source_training_uncertainty": false
+  },
+  "model_selection": "Both models and hyperparameters fixed before any target performance is calculated. No choice by target AUC.",
+  "scope_limits": [
+    "Does not complete the four SCH common-laboratory transfers or authenticate SCH assay identity/units/scale.",
+    "Does not make native outcomes, observation windows or patient/admission units equivalent.",
+    "Does not establish prospective prediction, clinical adjudication, complete negative capture or exclude all indirect leakage in the original biomarker models.",
+    "Does not provide independent source-centre validation: only external target scores are evaluated.",
+    "Differences from historical multivariable AUCs cannot be attributed to any single feature family."
+  ],
+  "no_original_artifacts_or_labels_changed": true,
+  "cohorts": [
+    {
+      "centre": "SCH",
+      "rows": 38509,
+      "patients": 38509,
+      "positive_labels": 1323,
+      "unit": "patient",
+      "age_min_before_common_cap": 19.0,
+      "age_max_before_common_cap": 96.0,
+      "rows_above_91_before_common_cap": 28,
+      "age_missing": 0,
+      "source_demographics": {
+        "path": "${CARDIO_PROJECT_ROOT}/analysis/r3_leakage_2026-10-21_v1/china/private/SCH_demographics.npz",
+        "bytes": 106391
+      },
+      "label_array": {
+        "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/prepared/SCH.npz",
+        "bytes": 4028930
+      }
+    },
+    {
+      "centre": "WHU",
+      "rows": 2562,
+      "patients": 2562,
+      "positive_labels": 281,
+      "unit": "patient",
+      "age_min_before_common_cap": 28.0,
+      "age_max_before_common_cap": 98.0,
+      "rows_above_91_before_common_cap": 4,
+      "age_missing": 0,
+      "source_demographics": {
+        "path": "${CARDIO_PROJECT_ROOT}/analysis/r3_leakage_2026-10-21_v1/china/private/WHU_demographics.npz",
+        "bytes": 8162
+      },
+      "label_array": {
+        "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/prepared/WHU.npz",
+        "bytes": 338920
+      }
+    },
+    {
+      "centre": "MIMIC",
+      "rows": 9946,
+      "patients": 6783,
+      "positive_labels": 4462,
+      "unit": "admission",
+      "age_min_before_common_cap": 22.0,
+      "age_max_before_common_cap": 91.0,
+      "rows_above_91_before_common_cap": 0,
+      "age_missing": 0,
+      "source_demographics": {
+        "path": "${CARDIO_PROJECT_ROOT}/analysis/r3_leakage_2026-10-21_v1/mimic/private/MIMIC_demographics.npz",
+        "bytes": 30255
+      },
+      "label_array": {
+        "path": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/prepared/MIMIC.npz",
+        "bytes": 278770
+      }
+    }
+  ],
+  "environment": {
+    "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "packages": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.1",
+      "joblib": "1.5.3"
+    }
+  }
+}

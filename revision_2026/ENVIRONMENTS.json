@@ -1,0 +1,445 @@
+[
+  {
+    "analysis_record": "project/revision_2026-10-15/landmark_completion_v1/mimic/evidence/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-15/landmark_completion_v1/mimic/evidence/analysis_lock.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "scipy": "1.17.1",
+      "joblib": "1.5.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-15/landmark_completion_v1/mimic/evidence/preparation.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-15/original_v5_independent_validation_v1/evidence/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-15/original_v5_independent_validation_v1/evidence/analysis_lock.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "scipy": "1.17.1",
+      "joblib": "1.5.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-15/original_v5_independent_validation_v1/evidence/china_preparation.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-15/original_v5_independent_validation_v1/evidence/mimic_preparation.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-15/original_v5_independent_validation_v1/results/validation_summary.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.8.0",
+      "matplotlib": "3.10.8"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/common_transfer/aggregate/preparation.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/historical_transfer/summary.json",
+    "object_path": ".runtime",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/missingness/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/missingness/analysis_lock.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "scipy": "1.17.1"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/regional/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/regional/analysis_lock.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "scipy": "1.17.1"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/shap/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/shap/analysis_lock.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.8.0",
+      "joblib": "1.5.3",
+      "xgboost": "3.2.0",
+      "threadpoolctl": "3.6.0"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/shap/results/summary.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-16/reviewer_priority_analyses_v1/shap/results/summary.json",
+    "object_path": ".environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.8.0",
+      "joblib": "1.5.3",
+      "xgboost": "3.2.0",
+      "threadpoolctl": "3.6.0"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/high_coverage/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/high_coverage/analysis_lock.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "scipy": "1.17.1"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/high_coverage/independent_preparation_verification.json",
+    "object_path": "$",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/nested_tuning/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/nested_tuning/analysis_lock.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "scipy": "1.17.1"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/nested_tuning/analysis_lock_v2.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/nested_tuning/analysis_lock_v2.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "scipy": "1.17.1"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/shap_seeds/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/shap_seeds/analysis_lock.json",
+    "object_path": ".state.environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "threadpoolctl": "3.6.0"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/shap_seeds/results/summary.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/shap_seeds/results/summary.json",
+    "object_path": ".environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "threadpoolctl": "3.6.0"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-18/four_analysis_v1/transfer_adaptation/analysis_lock.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-19/remaining_requirements_v1/analysis/aggregation/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "scipy": "1.17.1"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-19/remaining_requirements_v1/analysis/aggregation/analysis_lock_v2.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "joblib": "1.5.3",
+      "scipy": "1.17.1"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-19/remaining_requirements_v1/analysis/aggregation/preparation.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "pandas": "2.3.3",
+      "numpy": "2.4.2",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-19/remaining_requirements_v1/analysis/covariate_validation/analysis_lock.json",
+    "object_path": ".state.environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]",
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "xgboost": "3.2.0",
+      "scikit-learn": "1.8.0",
+      "joblib": "1.5.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-30/submission_revision_v1/analysis_sch/protocol.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-30/submission_revision_v1/analysis_sch/protocol.json",
+    "object_path": ".environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "scipy": "1.17.1",
+      "joblib": "1.5.3"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-30/submission_revision_v1/label_sensitivity/protocol.json",
+    "object_path": ".environment",
+    "versions": {
+      "python": "3.14.2 (tags/v3.14.2:df79316, Dec  5 2025, 17:18:21) [MSC v.1944 64 bit (AMD64)]"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-10-30/submission_revision_v1/label_sensitivity/protocol.json",
+    "object_path": ".environment.packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.8.0"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-11-02/graphical_panels_v1/review/plot_environment.json",
+    "object_path": "$",
+    "versions": {
+      "python": "3.12.14",
+      "matplotlib": "3.10.8",
+      "numpy": "2.5.4"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-11-03/source_based_analyses_v1/aggregate/training_environment.json",
+    "object_path": "$",
+    "versions": {
+      "python": "3.14.2"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-11-03/source_based_analyses_v1/aggregate/training_environment.json",
+    "object_path": ".packages",
+    "versions": {
+      "numpy": "2.4.2",
+      "pandas": "2.3.3",
+      "scikit-learn": "1.8.0",
+      "xgboost": "3.2.0",
+      "scipy": "1.17.1",
+      "matplotlib": "3.10.8"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-11-03/source_gap_search_v1/sch_execution_environment.json",
+    "object_path": "$",
+    "versions": {
+      "python": "3.12.14"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-11-03/source_gap_search_v1/whu_execution_environment.json",
+    "object_path": "$",
+    "versions": {
+      "python": "3.12.14"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-11-06/review_simulation_v1/environment.json",
+    "object_path": "$",
+    "versions": {
+      "python": "3.12.14"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-11-06/review_simulation_v1/environment.json",
+    "object_path": ".packages",
+    "versions": {
+      "numpy": "2.3.5",
+      "pandas": "3.0.1"
+    }
+  },
+  {
+    "analysis_record": "project/revision_2026-11-06/review_simulation_v1/plot_environment.json",
+    "object_path": "$",
+    "versions": {
+      "matplotlib": "3.10.8",
+      "numpy": "2.5.4"
+    }
+  }
+]

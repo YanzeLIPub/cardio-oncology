@@ -1,0 +1,86 @@
+{
+  "version": "original_native_inputs_patient_isolated_revalidation_v1",
+  "scope": "New patient-isolated internal validation, not a new external cohort or prospective validation",
+  "original_analysis_retained": true,
+  "omop_or_cross_centre_alignment": false,
+  "original_labels_and_cohort_filters_retained": true,
+  "runs": [
+    {
+      "name": "SCH_original",
+      "cohort": "SCH",
+      "drop_features": []
+    },
+    {
+      "name": "WHU_original",
+      "cohort": "WHU",
+      "drop_features": []
+    },
+    {
+      "name": "MIMIC_original",
+      "cohort": "MIMIC",
+      "drop_features": []
+    },
+    {
+      "name": "MIMIC_exclude_AST_HDL",
+      "cohort": "MIMIC",
+      "drop_features": [
+        "AST",
+        "HDL Cholesterol"
+      ]
+    }
+  ],
+  "outer_folds": 5,
+  "outer_seed": 42,
+  "outer_split": "StratifiedKFold for one-row-per-patient China; StratifiedGroupKFold for MIMIC",
+  "calibration_fraction_of_outer_train_patients": 0.25,
+  "calibration_seed_base": 1042,
+  "inner_validation_fraction_of_base_fit_patients": 0.25,
+  "inner_seed_base": 2042,
+  "inner_and_calibration_stratification": "patient-level any-positive original label, never split a patient",
+  "xgb": {
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "max_rounds": 300,
+    "early_stopping_rounds": 20
+  },
+  "rf": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+  },
+  "class_weights": "fit-role labels only; China RF integer negative/positive ratio as original; MIMIC RF balanced",
+  "primary_model": "50:50 XGBoost/RandomForest; inner-selected rounds; refit all outer-training patients; uncalibrated",
+  "calibration_models": "separate base-fit raw model and Platt-calibrated probabilities; calibration patients excluded from base fit",
+  "calibrator": "L2 logistic C=1 on clipped probability logit, fit on calibration patients only",
+  "comparators": [
+    "L2 logistic C=1 all original features",
+    "L2 logistic C=1 missingness indicators only",
+    "L2 logistic C=1 age only"
+  ],
+  "preprocessing": "China original patient full-record mean and constant-zero imputation; MIMIC fit-role median and fit-role empty-column removal; scaling for logistic fit-role only",
+  "primary_metric": "binary ROC AUC",
+  "secondary_metrics": [
+    "average_precision",
+    "Brier",
+    "E_over_O",
+    "calibration_in_the_large",
+    "joint_calibration_intercept",
+    "joint_calibration_slope"
+  ],
+  "bootstrap_replicates": 2000,
+  "bootstrap_seed": 20261015,
+  "bootstrap_unit": "patient, retaining all admissions and patient multiplicity for MIMIC",
+  "bootstrap_interpretation": "percentile 95 percent intervals conditional on fixed out-of-fold predictions, not refitting uncertainty",
+  "paired_comparisons": [
+    "new primary minus original",
+    "base Platt minus base raw",
+    "primary minus logistic",
+    "primary minus age",
+    "MIMIC excluded columns minus original inputs"
+  ],
+  "no_performance_based_selection": true,
+  "clinical_time_or_endpoint_repairs_claimed": false,
+  "external_validation_claimed": false
+}

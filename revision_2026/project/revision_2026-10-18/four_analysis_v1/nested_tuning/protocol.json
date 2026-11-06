@@ -1,0 +1,110 @@
+{
+  "analysis": "Limited patient-nested XGBoost tuning with a fixed Random Forest component",
+  "date": "2026-10-18",
+  "stage": 4,
+  "cohorts": [
+    "SCH",
+    "WHU",
+    "MIMIC"
+  ],
+  "input": "Frozen 2026-10-15 prepared original 104/43 nominal matrices, labels, denominators, patient groups and outer test assignments",
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "inner_split_seed_base": 2026101800,
+  "stopping_fraction_of_inner_train_patients": 0.25,
+  "stopping_seed_base": 2026101900,
+  "selection": "Highest unweighted mean of three inner held-out AUROCs; exact tie uses candidate order. No outer-test predictions or outcomes enter selection.",
+  "configurations": [
+    {
+      "name": "fixed",
+      "max_depth": 5,
+      "learning_rate": 0.05,
+      "min_child_weight": 1,
+      "reg_lambda": 1
+    },
+    {
+      "name": "shallow",
+      "max_depth": 3,
+      "learning_rate": 0.05,
+      "min_child_weight": 1,
+      "reg_lambda": 1
+    },
+    {
+      "name": "regularized",
+      "max_depth": 5,
+      "learning_rate": 0.05,
+      "min_child_weight": 5,
+      "reg_lambda": 5
+    },
+    {
+      "name": "lower_rate",
+      "max_depth": 5,
+      "learning_rate": 0.025,
+      "min_child_weight": 1,
+      "reg_lambda": 1
+    }
+  ],
+  "common_xgb": {
+    "objective": "binary:logistic",
+    "eval_metric": "auc",
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "tree_method": "hist",
+    "max_rounds": 300,
+    "early_stopping_rounds": 20
+  },
+  "training_seed": "42 for SCH/WHU and outer fold number for MIMIC; unchanged across candidate configurations",
+  "preprocessing": "Chinese original zero fill; MIMIC median plus empty-column removal fitted only to the relevant training role. No feature changes, including known limitations of original MIMIC mapping.",
+  "inner_training": "For each candidate and each inner fold, split inner-training patients into stopping-fit and stopping-validation roles, select rounds there, then refit on all inner-training patients and score the untouched inner scoring fold. Both stages refit preprocessing and class weights only from their own fitting patients.",
+  "outer_training": "Fit chosen candidate on all outer-training patients using floor(median of its three inner selected round counts), at least one round. Fit the fixed candidate under the same median-round rule as a matched nested baseline. No final use of outer-test labels.",
+  "rf_component": "Reuse only the corresponding original saved outer-training RF, after exact preprocessor/feature/role/prediction replay. The unchanged RF is not tuned. Combine 50:50 with the new chosen or fixed XGBoost component.",
+  "models": [
+    "nested_selected_ensemble",
+    "nested_fixed_ensemble",
+    "previous_ensemble",
+    "nested_selected_xgb",
+    "nested_fixed_xgb",
+    "previous_xgb"
+  ],
+  "primary_comparison": [
+    "nested_selected_ensemble",
+    "nested_fixed_ensemble"
+  ],
+  "paired_comparisons": [
+    [
+      "nested_selected_ensemble",
+      "nested_fixed_ensemble"
+    ],
+    [
+      "nested_selected_xgb",
+      "nested_fixed_xgb"
+    ],
+    [
+      "nested_fixed_ensemble",
+      "previous_ensemble"
+    ],
+    [
+      "nested_selected_ensemble",
+      "previous_ensemble"
+    ]
+  ],
+  "metrics": [
+    "auc",
+    "average_precision",
+    "brier"
+  ],
+  "bootstrap_repetitions": 2000,
+  "bootstrap_seed": 20261015,
+  "bootstrap_scope": "Paired target-patient cluster resampling of fixed OOF predictions; conditional percentile 95% intervals, no retraining or selection uncertainty and no multiplicity adjustment",
+  "threads": 2,
+  "expected_inner_scoring_fits": 180,
+  "expected_inner_stopping_fits": 180,
+  "expected_final_xgb_fits": 30,
+  "limits": [
+    "Not exhaustive model selection or RF tuning",
+    "Not a revival of deprecated v12 nested-CV results",
+    "Not a mapping, timing, endpoint or censoring repair",
+    "Not prospective or new external validation",
+    "No selection of the best outer-test model, seed, or cohort result"
+  ]
+}

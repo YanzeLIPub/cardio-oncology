@@ -1,0 +1,151 @@
+{
+  "protocol_version": "limited_common_laboratory_transfer_v1",
+  "authorized_on": "2026-10-16",
+  "scope": "New, separately reported retrospective laboratory subset analysis. No OMOP, relabeling, first-event or result-availability claim.",
+  "centres": {
+    "WHU": {
+      "observations": 2562,
+      "patients": 2562,
+      "positives": 281,
+      "unit": "patient",
+      "label": "Original frozen ever-recorded diagnostic label"
+    },
+    "MIMIC": {
+      "observations": 9946,
+      "patients": 6783,
+      "positives": 4462,
+      "unit": "admission",
+      "label": "Original frozen same-hospitalization label, retaining original survivor selection"
+    }
+  },
+  "features": [
+    {
+      "name": "Albumin",
+      "whu_exact_name": "白蛋白",
+      "whu_unit": "g/L",
+      "whu_context": "chemistry",
+      "mimic_itemid": 50862,
+      "mimic_label": "Albumin",
+      "mimic_category": "Chemistry",
+      "mimic_unit": "g/dL",
+      "mimic_factor_to_g_per_l": 10,
+      "output_unit": "g/L"
+    },
+    {
+      "name": "Total protein",
+      "whu_exact_name": "总蛋白",
+      "whu_unit": "g/L",
+      "whu_context": "chemistry",
+      "mimic_itemid": 50976,
+      "mimic_label": "Protein, Total",
+      "mimic_category": "Chemistry",
+      "mimic_unit": "g/dL",
+      "mimic_factor_to_g_per_l": 10,
+      "output_unit": "g/L"
+    },
+    {
+      "name": "CBC hemoglobin",
+      "whu_exact_name": "血红蛋白",
+      "whu_unit": "g/L",
+      "whu_context": "cbc",
+      "mimic_itemid": 51222,
+      "mimic_label": "Hemoglobin",
+      "mimic_category": "Hematology",
+      "mimic_unit": "g/dL",
+      "mimic_factor_to_g_per_l": 10,
+      "output_unit": "g/L"
+    },
+    {
+      "name": "CBC hematocrit",
+      "whu_exact_name": "红细胞压积",
+      "whu_unit": "%",
+      "whu_context": "cbc",
+      "mimic_itemid": 51221,
+      "mimic_label": "Hematocrit",
+      "mimic_category": "Hematology",
+      "mimic_unit": "%",
+      "mimic_factor_to_g_per_l": 1,
+      "output_unit": "%"
+    }
+  ],
+  "whu_context_rules": {
+    "text_fields": [
+      "report.检验名称",
+      "report.检验类型"
+    ],
+    "reject_regex": "尿|脑脊液|胸水|腹水|血气",
+    "chemistry_accept_regex": "肝|生化",
+    "cbc_accept_regex": "血常规|血细胞|全血",
+    "unknown_or_unaccepted_context": "exclude measurement, retain patient",
+    "numeric": "Full-string finite decimal/scientific number only; do not strip inequality signs or commas"
+  },
+  "measurement_policy": {
+    "source": "Raw ${CARDIO_NJM_ROOT}/WUH JSON and exact MIMIC D_LABITEMS/LABEVENTS; frozen 2026-10-15 labels, patient groups and folds",
+    "aggregation": "Median of all accepted numeric source occurrences per original WHU patient or original MIMIC admission; identical statistic, not identical source observation scope",
+    "duplicates": "Retain source occurrences. Do not deduplicate different physical entries by numeric value; no globally verified report identifier is assumed.",
+    "time_scope": "All accessible patient-linked reports for WHU, all admission-linked LABEVENTS for MIMIC. No outcome-relative cutoff, event-free risk set, first-result or clinician-availability assertion. Source timestamps are audit metadata only.",
+    "units": "Only exact literal units listed above. g/dL to g/L is a factor of ten from the litre prefix definition; % remains %. No distribution-based conversion or reference-range normalization.",
+    "missingness": "Retain every original label row, including all-missing patients/admissions; no eligible measurement is not a clinical negative.",
+    "assay_limit": "Name, explicit physical unit and chemistry/CBC report context are reviewed. Complete specimen/method/platform equivalence is not established; this is a limited name/unit-reviewed subset, not comprehensive harmonization."
+  },
+  "gates": {
+    "SCH_to_WHU": "not_estimated: current SCH assay columns have no source-certified units",
+    "SCH_to_MIMIC": "not_estimated: current SCH assay columns have no source-certified units",
+    "WHU_to_SCH": "not_estimated: current SCH assay columns have no source-certified units",
+    "MIMIC_to_SCH": "not_estimated: current SCH assay columns have no source-certified units",
+    "WHU_to_MIMIC": "execute limited four-laboratory subset",
+    "MIMIC_to_WHU": "execute limited four-laboratory subset"
+  },
+  "models": [
+    "ensemble_median",
+    "ensemble_median_indicator",
+    "logistic",
+    "missingness_only"
+  ],
+  "primary_model": "ensemble_median",
+  "ensemble": "Equal probability average of XGBoost and random forest",
+  "preprocessing": "Fixed four-feature roster; source-fitting-only medians, zero fallback only for all-missing fitting column; indicators refer to four labs only. Logistic numeric features use fitting-only standard scaling. No demographic, regional, diagnosis or outcome-derived inputs.",
+  "xgboost": {
+    "max_rounds": 300,
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "early_stopping_rounds": 20,
+    "tree_method": "hist",
+    "class_weight": "fit-side negative/positive ratio"
+  },
+  "random_forest": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5,
+    "class_weight": "balanced",
+    "n_jobs": 4
+  },
+  "logistic": {
+    "C": 1,
+    "penalty": "l2",
+    "class_weight": "balanced",
+    "max_iter": 2000
+  },
+  "transfer_fit": "Source-only stratified patient 75/25 inner-fit/stop split chooses rounds separately for the two ensembles, then refit preprocessing and models on all source observations. Target labels, values and distributions do not choose features, hyperparameters, rounds, medians or scaling.",
+  "local_reference": "Use exact frozen 2026-10-15 patient-isolated five outer-fold membership and inner roles. Choose rounds on the original inner-fit/stop patients; refit on all outer-training patients. Same four inputs and models. Local OOF fits about 80% of local patients; transferred models fit all source patients, so their difference is descriptive, not a pure causal transport penalty.",
+  "calibration": "No new probability calibrator. Raw class-weighted model scores are evaluated; Brier scores do not imply clinical probability validity.",
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 20261016,
+    "unit": "patient cluster; all MIMIC admissions receive patient multiplicity",
+    "interval": "Nominal 95% percentile conditional on fitted models and extracted matrices; no refitting, source-sampling or multiplicity uncertainty"
+  },
+  "metrics": [
+    "ROC AUC",
+    "noninterpolated average precision",
+    "binary Brier"
+  ],
+  "seeds": {
+    "source_inner": 20261016,
+    "model": 42
+  },
+  "threads_maximum": 4,
+  "privacy": "Patient identifiers and source filenames remain local; logs/reports expose only aggregates and file identities without raw JSON basenames."
+}

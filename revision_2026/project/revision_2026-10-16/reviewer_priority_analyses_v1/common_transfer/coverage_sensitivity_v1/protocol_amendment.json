@@ -1,0 +1,28 @@
+{
+  "amendment_version": "coverage_sensitivity_v1",
+  "locked_before_subset_performance_calculation": true,
+  "authorized_on": "2026-10-16",
+  "origin": "Post hoc, authorized after observing source-availability imbalance in coverage_by_label.csv; not retrospectively prespecified.",
+  "trigger": "WHU: 318 of 2562 patients have no accepted value in the four selected laboratories, including 102 of 281 original positives. MIMIC: 174 of 9946 admissions have no accepted value, including 60 positives.",
+  "population": "At least one finite accepted laboratory in the frozen four-column matrix. Apply only to target evaluation rows, not source or local model training.",
+  "prediction_policy": "Use unchanged saved full-source transfer and original five-fold local OOF probabilities for all four models. No refitting, retuning, recalibration, source exclusion, feature change or label change.",
+  "primary_analysis": "The original all-2562 and all-9946 results remain primary and unchanged.",
+  "metrics": [
+    "ROC AUC",
+    "average precision",
+    "binary Brier"
+  ],
+  "subset_intervals": {
+    "replicates": 2000,
+    "seed": 20261017,
+    "scheme": "Resample covered target patients with replacement, retaining every eligible admission for each selected patient; nominal percentile 95% conditional on covered population and frozen predictions."
+  },
+  "population_difference_intervals": {
+    "replicates": 2000,
+    "seed": 20261016,
+    "direction": "covered-target estimate minus all-target estimate",
+    "scheme": "Shared original full-target patient-cluster multiplicities applied to full rows and coverage-restricted rows. Repeat original full-target interval calculation as a consistency check. Population contrast, not a causal coverage or transport effect."
+  },
+  "uncertainty_limit": "No source-training, model-refit, coverage-definition or selection uncertainty; no multiplicity correction.",
+  "interpretation": "Coverage reflects source accessibility, successful linkage, accepted report context, explicit units and recorded finite results. It is not equivalent to a clinician not ordering tests or to disease absence. The conditional subset changes the target population and does not repair label equivalence, event timing, assay methods or source ascertainment."
+}

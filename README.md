@@ -1,66 +1,22 @@
-# Cardio-Oncology MACE Prediction
+# Cardio oncology model transportability
 
-Code for:
-> **Machine learning prediction of major adverse cardiovascular events
-> in cancer patients across three care architectures**
-> *The Lancet Digital Health* (under review)
+Analysis code for **Exploring biomarker semantic drift and care architecture specificity in cardio oncology model transportability**, revised for *npj Cardiovascular Health*.
 
-## Repository structure
+## Current revision
 
-```
-models/                  XGBoost ensemble model definition
-utils/                   Shared utilities (feature names, plot style)
-calibration/             Post-hoc Platt / isotonic recalibration
-MIMIC-3/                 MIMIC-III v1.4 pipeline (steps 01-08)
-Manuscript/
-  v13/                   Final metric computation + figure generation
-  Admission model/       Admission-level secondary analysis (Fig S11-S13)
-MERGE/                   Published figure assembly scripts
-figures/                 Supplementary figure scripts
-```
+The [`revision_2026`](revision_2026/) directory contains the study analysis and figure-generation source code, including the revision analyses. Its README gives the analysis map, data layout, execution commands and environment requirements.
 
-## Reproducing figures
+The revision evaluates source-specific recorded cardiovascular diagnosis labels in SCH and WHU patients and MIMIC-III admissions. It distinguishes the historical analyses from patient-isolated validation and other sensitivity analyses. The original directories below retain their historical filenames; the current analysis definitions and reproduction instructions are in `revision_2026`.
 
-```bash
-pip install -r requirements.txt
+## Historical source directories
 
-# Main + supplementary figures (requires pre-computed metrics in outputs/)
-python MERGE/pub_main_figures.py
-python MERGE/pub_supp_figures.py
-```
+- `models/` and `utils/`: model and plotting utilities.
+- `calibration/`: historical recalibration scripts.
+- `MIMIC-3/`: historical MIMIC-III extraction and modelling pipeline.
+- `Manuscript/`, `MERGE/` and `figures/`: historical analysis and figure scripts.
 
-## MIMIC-III pipeline
+## Data and execution
 
-```bash
-# Requires PhysioNet credentialed access to MIMIC-III v1.4
-# Set MIMIC_PATH environment variable to your local MIMIC directory
-python MIMIC-3/run_mimic_pipeline.py --mimic_path $MIMIC_PATH
-```
+Raw clinical records, patient-level derived tables, prediction vectors, fitted model files and local logs are not distributed with this code. SCH and WHU records remain subject to the access conditions in the manuscript. MIMIC-III requires the relevant PhysioNet credentials and data-use agreement: https://physionet.org/content/mimiciii/1.4/.
 
-Steps executed in order: `01` identify patients -> `02` extract features ->
-`03` define MACE -> `04` predict -> `05` pretrain transfer -> `06` separate
-transfer -> `08` paper methods.
-
-## Data availability
-
-Raw data are **not** included.
-- **SCH / WHU cohorts**: available on reasonable request to the
-  corresponding author.
-- **MIMIC-III v1.4**: https://physionet.org/content/mimiciii/1.4/
-  (requires CITI training completion).
-
-## Requirements
-
-```
-xgboost>=1.7
-scikit-learn>=1.3
-lifelines>=0.27
-matplotlib>=3.7
-seaborn>=0.12
-numpy>=1.24
-pandas>=2.0
-```
-
-## Reproducibility
-
-All scripts use `RANDOM_SEED = 42` by default.
+Use the configurable paths and per-analysis instructions in [`revision_2026/README.md`](revision_2026/README.md) with an authorised local copy of the required inputs. Seeds, model versions and validation designs are specified for each analysis; they are not assumed to be identical across historical and revision runs.

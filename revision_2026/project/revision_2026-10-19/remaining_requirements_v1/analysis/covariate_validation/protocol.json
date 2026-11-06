@@ -1,0 +1,89 @@
+{
+  "version": "diagnostic_acquisition_era_context_v1",
+  "date": "2026-10-19",
+  "scope": "Retrospective acquisition-era extrapolation of original diagnosis labels, with matched regional-feature ablations. Not prospective temporal validation or future-risk prediction.",
+  "outcome_labels_changed": false,
+  "omop_or_cross_centre_alignment": false,
+  "cohorts": [
+    "SCH",
+    "WHU"
+  ],
+  "boundary_rule": "First day of the month of the lower 80th percentile first laboratory timestamp, among patients with complete valid laboratory timestamps. Written before any predictions were evaluated. No alternative boundary is searched.",
+  "cutoffs": {
+    "SCH": "2024-05-01",
+    "WHU": "2019-01-01"
+  },
+  "expected_counts": {
+    "SCH": {
+      "train": 24687,
+      "train_positive": 839,
+      "test": 8471,
+      "test_positive": 274,
+      "crossing_excluded": 5351
+    },
+    "WHU": {
+      "train": 1598,
+      "train_positive": 211,
+      "test": 526,
+      "test_positive": 18,
+      "crossing_excluded": 438
+    }
+  },
+  "roles": "Train: all processed laboratory timestamps before boundary; test: all at/after boundary; exclude crossing patients. No patient appears in both. Date choice is independent of labels and prediction performance.",
+  "predictors": "Frozen original full-record patient means. Training patients have no laboratory observations at/after the boundary. Full-record labels and regional exposures are not known to have been available by the boundary.",
+  "models": [
+    "full_104",
+    "no_regional_99",
+    "regional_only_5"
+  ],
+  "ensemble": "Equal XGBoost and RandomForest predicted probabilities",
+  "xgb": {
+    "max_depth": 5,
+    "learning_rate": 0.05,
+    "subsample": 0.8,
+    "colsample_bytree": 0.8,
+    "max_rounds": 300,
+    "early_stopping_rounds": 20
+  },
+  "rf": {
+    "n_estimators": 300,
+    "max_depth": 8,
+    "min_samples_leaf": 5
+  },
+  "inner_stop": "25% stratified split of the earlier training patients only, seed 2043; identical patient role indices for all three models. Refit all earlier training patients at inner-selected rounds.",
+  "fit_seed": 42,
+  "preprocessing": "Original constant-zero imputation, no fitted scaling or outcome-derived feature selection. Class weights from the respective fit role only.",
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 20261019,
+    "unit": "patient",
+    "method": "Multinomial resampling of fixed held-out probabilities; shared weights for paired differences. Percentile 95% intervals conditional on fitted models, not refitting uncertainty."
+  },
+  "metrics": [
+    "auc",
+    "average_precision",
+    "brier"
+  ],
+  "paired_comparisons": [
+    [
+      "no_regional_99",
+      "full_104"
+    ],
+    [
+      "regional_only_5",
+      "full_104"
+    ],
+    [
+      "no_regional_99",
+      "regional_only_5"
+    ]
+  ],
+  "limitations": [
+    "SCH 811 and WHU 19 training patients do not have all discharge timestamps established before the cutoff; no additional discharge-based filter is silently introduced.",
+    "Original label-capture timestamps are unknown. This split cannot establish that all training outcomes or nonlaboratory information were historically available before the test era.",
+    "Patients crossing the date boundary are excluded, creating selection by observation duration and cohort-specific case mix.",
+    "WHU has only 18 positive labels in the later test period. Wide uncertainty and altered prevalence preclude a claim of sufficient clinical validation.",
+    "The shared feature-name matrix is not clinical or unit harmonization; original label and measurement limitations persist.",
+    "No effects are interpreted causally and no MACE lead time is estimated."
+  ]
+}

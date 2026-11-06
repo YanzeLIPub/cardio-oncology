@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-06",
+  "scope": "Capacity-constrained retrospective record-review simulation and hypothetical process-improvement scenarios; no model was used in contemporaneous clinical care.",
+  "source_directory": "${CARDIO_PROJECT_ROOT}/revision_2026-10-15/original_v5_independent_validation_v1/private/runs",
+  "runs": [
+    "SCH_original",
+    "WHU_original",
+    "MIMIC_original",
+    "MIMIC_exclude_AST_HDL"
+  ],
+  "action": "Prioritize existing records for cardiovascular specialist review. This is an offline record-review exercise, not an admission-time alert or automatic treatment decision.",
+  "outcome": "Capture of existing source-specific positive diagnosis labels. Positive labels do not establish untreated disease, actionability or preventable future MACE.",
+  "capacity_fractions": [
+    0.05,
+    0.1,
+    0.2
+  ],
+  "capacity_models": [
+    "primary_raw",
+    "age",
+    "base_platt"
+  ],
+  "capacity_rule": "Rank separately within each outer-test fold. Select an exact expected fraction of records using random selection in expectation within the boundary score tie. No label is used for ranking or tie resolution.",
+  "capacity_comparisons": [
+    "primary_raw minus age",
+    "primary_raw minus capacity-matched random review"
+  ],
+  "threshold_models": [
+    "base_raw",
+    "base_platt"
+  ],
+  "numerical_thresholds": [
+    0.01,
+    0.05,
+    0.1,
+    0.2,
+    0.3,
+    0.5
+  ],
+  "threshold_rule": "Select if score >= numerical cutoff; the grid was not selected for performance and is not clinically endorsed.",
+  "defaults": [
+    "capacity-matched random review in expectation",
+    "review all",
+    "review none"
+  ],
+  "comparability": "primary_raw and age use identical outer-training populations. base_platt is the independently calibrated version of base_raw, which uses a smaller fitting population; it is not calibrated primary_raw. China is patient-weighted; MIMIC is admission-weighted with patient-cluster uncertainty. No pooled clinical task is constructed.",
+  "bootstrap": {
+    "replicates": 2000,
+    "seed": 20261106,
+    "unit": "patient; retain all admissions of each sampled MIMIC patient",
+    "interval": "paired 2.5th and 97.5th percentile conditional intervals",
+    "refit_models": false,
+    "capacity_in_each_resample": "Recompute the score quantile using resampled weights within each original test fold, retaining the fixed capacity fraction.",
+    "assumption_uncertainty": "Effect parameters are fixed within each scenario; grid variation is not a confidence interval. No Monte Carlo process noise is added to exact expected values."
+  },
+  "scenario_parameters": {
+    "actionable_fraction_a": [
+      0,
+      0.1,
+      0.25,
+      0.5
+    ],
+    "recommendation_uptake_u": [
+      0.5,
+      0.8,
+      1.0
+    ],
+    "process_success_b": [
+      0.1,
+      0.25,
+      0.5
+    ],
+    "adverse_process_probability_h": [
+      0,
+      0.001,
+      0.005,
+      0.01
+    ]
+  },
+  "parameter_meanings": {
+    "a": "Fraction of selected positive-labelled records with an unresolved issue under usual care that could be addressed by the additional specialist review.",
+    "u": "Probability that the recommendation following a completed review is implemented; all selected records are assumed reviewed.",
+    "b": "Conditional probability that implementation achieves a process improvement, such as completing a specialist-confirmed outstanding assessment. Not probability of preventing MACE.",
+    "h": "Probability per completed review of an adverse process consequence, such as an erroneous escalation of testing. Not an estimated serious-harm rate."
+  },
+  "scenario_formula": {
+    "process_improvements": "selected_positive_records * a * u * b",
+    "adverse_process_consequences": "selected_records * h",
+    "negative_review_burden": "selected_negative_records; not necessarily unnecessary reviews",
+    "net_effect": "Benefits and adverse consequences are reported separately. They are not subtracted without an elicited utility weight."
+  },
+  "illustrative_example": {
+    "capacity_fraction": 0.1,
+    "a": 0.5,
+    "u": 0.8,
+    "b": 0.25,
+    "h": 0.005,
+    "designation": "Arithmetic illustration only, not a best estimate or recommended scenario."
+  },
+  "assumption_sensitivity": "Also report the ratio of model-selected to comparator-selected actionability needed to preserve a hypothetical benefit advantage, assuming equal uptake and success. This is not measured actionability.",
+  "source_output_policy": "Only aggregate results, paths and environment versions; no patient identifiers or row-level clinical data in outputs. Original models, results and v22 submission files remain unchanged.",
+  "method_sources": [
+    {
+      "title": "Evaluation of prediction models, part 2",
+      "url": "https://www.bmj.com/content/384/bmj-2023-074820.long",
+      "use": "Separate numerical cutoffs from clinically justified action thresholds."
+    },
+    {
+      "title": "DECIDE-AI",
+      "url": "https://www.nature.com/articles/s41591-022-01772-9",
+      "use": "Separate in silico evaluation from clinical use and impact."
+    }
+  ]
+}
