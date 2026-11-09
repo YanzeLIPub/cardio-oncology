@@ -1,0 +1,33 @@
+feature,seed,retained
+Uric acid,42,Yes
+Uric acid,43,Yes
+Uric acid,44,No
+Uric acid,45,Yes
+Phosphorus,42,Yes
+Phosphorus,43,Yes
+Phosphorus,44,Yes
+Phosphorus,45,Yes
+Hemoglobin,42,Yes
+Hemoglobin,43,No
+Hemoglobin,44,No
+Hemoglobin,45,Yes
+Apolipoprotein B,42,Yes
+Apolipoprotein B,43,Yes
+Apolipoprotein B,44,Yes
+Apolipoprotein B,45,Yes
+Ferritin,42,Yes
+Ferritin,43,No
+Ferritin,44,No
+Ferritin,45,No
+Age,42,Yes
+Age,43,Yes
+Age,44,Yes
+Age,45,Yes
+Regional hospitals,42,Yes
+Regional hospitals,43,No
+Regional hospitals,44,Yes
+Regional hospitals,45,Yes
+Regional physicians,42,Yes
+Regional physicians,43,Yes
+Regional physicians,44,Yes
+Regional physicians,45,Yes
